@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary_color: #1ABC9C;
+  --color-gray_text3: #032921;
+  --color-secondary_color: #032921;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:#F5F5F5;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+button{
+  cursor: pointer;
+}

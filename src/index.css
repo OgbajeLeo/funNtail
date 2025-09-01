@@ -3,6 +3,7 @@
 @theme {
   --color-primary_color: #1ABC9C;
   --color-gray_text3: #032921;
+  --color-gray_text2: #808B9A;
   --color-secondary_color: #032921;
 }
 
@@ -14,6 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#F5F5F5;
+  overflow: auto;
 }
 
 .montserrat {

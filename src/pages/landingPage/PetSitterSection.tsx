@@ -48,7 +48,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       </motion.h3>
 
       <motion.p
-        className="text-[#032921] text-sm text-center leading-relaxed"
+        className="text-[#032921] lg:text-sm text-base text-center leading-relaxed"
         initial={{ opacity: 0.8 }}
         whileHover={{ opacity: 1 }}
       >
@@ -92,7 +92,7 @@ const PetSittersSection: React.FC = () => {
 
   return (
     <section className="py-20 bg-[#1ABC9C1A] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const PetSittersSection: React.FC = () => {
           className="text-center mb-16"
         >
           <motion.h2
-            className="text-xl md:text-[28px] font-semibold text-gray_text3 leading-tight"
+            className="text-xl md:text-[28px]  font-semibold text-gray_text3 leading-tight"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >

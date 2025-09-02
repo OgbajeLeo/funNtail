@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import heroImage from "../../assets/heroImage.svg";
 import ArrowRight from "../../components/iconComponent/ArrowRight";
+import TrustPilot from "../../components/iconComponent/TrustPilot";
 
 const HeroSection = () => {
   const containerVariants: Variants = {
@@ -44,12 +45,12 @@ const HeroSection = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto w-full max-w-7xl px-6 py-20">
+        <div className="justify-between gap-12 items-center flex flex-col-reverse lg:flex-row">
           {/* Left content */}
-          <motion.div className="text-left space-y-3" variants={textVariants}>
+          <motion.div className="text-left space-y-3 " variants={textVariants}>
             <motion.h1
-              className="text-4xl lg:text-[56px] font-semibold leading-[140%]"
+              className="text-[28px] lg:text-[56px] max-w-[580px] w-full font-semibold leading-[140%]"
               variants={textVariants}
             >
               <span className="text-gray_text3">Find Trusted </span>
@@ -59,7 +60,7 @@ const HeroSection = () => {
               >
                 Pet
               </motion.span>
-              <br />
+              
               <motion.span
                 className="text-primary_color"
                 variants={textVariants}
@@ -70,7 +71,7 @@ const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg text-gray_text3 font-[400] leading-relaxed max-w-[580px] w-full "
+              className="text-base lg:text-lg text-gray_text3 font-[400] leading-relaxed max-w-[580px] w-full "
               variants={textVariants}
             >
               Join thousands of pet owners using FunNTail to find reliable
@@ -78,7 +79,7 @@ const HeroSection = () => {
             </motion.p>
 
             <motion.button
-              className="mt-6 bg-primary_color  text-white font-semibold w-[174px] h-[48px] rounded-xl flex justify-center items-center gap-3  transition-shadow"
+              className="mt-6 bg-primary_color mx-auto lg:mx-0 text-white font-semibold w-[174px] h-[48px] rounded-xl flex justify-center items-center gap-3  transition-shadow"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -91,6 +92,11 @@ const HeroSection = () => {
                 <ArrowRight />
               </motion.div>
             </motion.button>
+
+            <div className="flex items-center justify-center lg:justify-start text-sm space-x-3">
+              <div>24,000+ reviews on</div>
+              <TrustPilot />
+              </div>
           </motion.div>
 
           {/* Right content - Main pet image */}

@@ -29,7 +29,7 @@ const ProfileShowcaseSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden relative">
+    <section className="py-20 bg-[#90919C0F] overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content - Profile Information */}
@@ -56,7 +56,6 @@ const ProfileShowcaseSection: React.FC = () => {
                   alt="Chizoba Odita"
                   className="w-20 h-20 rounded-full object-cover "
                 />
-               
               </motion.div>
 
               <div className="flex-1">
@@ -107,7 +106,7 @@ const ProfileShowcaseSection: React.FC = () => {
               className=""
             >
               <motion.p
-                className="text-gray_text2 font-normal leading-relaxed text-lg"
+                className="text-gray_text2 font-normal leading-relaxed text-base lg:text-lg"
                 whileHover={{ color: "#374151" }}
                 transition={{ duration: 0.3 }}
               >
@@ -136,37 +135,12 @@ const ProfileShowcaseSection: React.FC = () => {
               style={{ perspective: "1000px" }}
             >
               {/* Phone Frame */}
-              <img src={phone} alt="Phone" className="w-full h-full object-cover" />
+              <img
+                src={phone}
+                alt="Phone"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
-
-            {/* Decorative Background Elements */}
-            <motion.div
-              className="absolute -top-10 -right-10 w-40 h-40 bg-teal-500 rounded-full opacity-20 blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 180, 360],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-
-            <motion.div
-              className="absolute -bottom-10 -left-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20 blur-2xl"
-              animate={{
-                scale: [1.2, 1, 1.2],
-                rotate: [360, 180, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-
-          
           </motion.div>
         </div>
       </div>

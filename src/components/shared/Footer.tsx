@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { motion,type Variants } from "framer-motion";
-import {
-  Youtube,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Check,
-} from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 import google from "../../assets/andriod.svg";
 import apple from "../../assets/apple.svg";
+import FacebookIcon from "../iconComponent/FacebookIcon";
+import XIcon from "../iconComponent/XIcon";
+import InstagramIcon from "../iconComponent/InstagramIcon";
+import LinkedinIcon from "../iconComponent/LinkedinIcon";
+import YoutubeIcon from "../iconComponent/YoutubeIcon";
+import { Check } from "lucide-react";
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -28,14 +26,14 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { icon: <Youtube size={24} />, href: "#", name: "YouTube" },
-    { icon: <Facebook size={24} />, href: "#", name: "Facebook" },
-    { icon: <Twitter size={24} />, href: "#", name: "Twitter" },
-    { icon: <Instagram size={24} />, href: "#", name: "Instagram" },
-    { icon: <Linkedin size={24} />, href: "#", name: "LinkedIn" },
+    { icon: <YoutubeIcon />, href: "#", name: "YouTube" },
+    { icon: <FacebookIcon />, href: "#", name: "Facebook" },
+    { icon: <XIcon />, href: "#", name: "Twitter" },
+    { icon: <InstagramIcon />, href: "#", name: "Instagram" },
+    { icon: <LinkedinIcon />, href: "#", name: "LinkedIn" },
   ];
 
-  const containerVariants:Variants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -56,7 +54,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#032921] text-white">
+    <footer className="bg-[#032921] text-white w-full ">
       {/* Main Footer Content */}
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
@@ -65,7 +63,7 @@ const Footer: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 w-full max-w-7xl mx-auto">
           {/* Learn More Section */}
           <motion.div variants={itemVariants} className="space-y-6">
             <motion.h3
@@ -139,7 +137,7 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* FunNTail Section */}
-          <motion.div variants={itemVariants} className="lg:ml-12 space-y-6">
+          <motion.div variants={itemVariants} className="space-y-6 lg:w-fit">
             <motion.h3
               className="text-base font-semibold text-white mb-6"
               whileHover={{ color: "#10B981" }}
@@ -181,7 +179,7 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* Need Help Section */}
-          <motion.div variants={itemVariants} className="lg:ml-12 space-y-6">
+          <motion.div variants={itemVariants} className="space-y-6 w-fit">
             <motion.h3
               className="text-base font-semibold text-white mb-6"
               whileHover={{ color: "#10B981" }}
@@ -213,7 +211,7 @@ const Footer: React.FC = () => {
           {/* Newsletter Section */}
           <motion.div
             variants={itemVariants}
-            className=" space-y-6 lg:w-[387px]"
+            className="space-y-6 sm:w-[387px] w-full lg:-ml-[120px] lg:col-span-1"
           >
             <motion.h3
               className="text-base font-semibold text-white leading-tight"
@@ -342,7 +340,7 @@ const Footer: React.FC = () => {
             {/* Copyright and Links */}
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
               <motion.p
-                className="text-gray-400 text-sm"
+                className="text-[#E2E8F0] text-sm"
                 whileHover={{ color: "#10B981" }}
               >
                 © {new Date().getFullYear()}, FunNTail
@@ -354,7 +352,7 @@ const Footer: React.FC = () => {
                     <motion.a
                       key={link}
                       href="#"
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
+                      className="text-[#E2E8F0] hover:text-white text-sm transition-colors"
                       whileHover={{ color: "#10B981", y: -2 }}
                       transition={{ type: "spring", stiffness: 400 }}
                     >
@@ -373,7 +371,7 @@ const Footer: React.FC = () => {
                   <motion.a
                     key={social.name}
                     href={social.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white hover:text-white transition-colors"
                     whileHover={{
                       scale: 1.2,
                       rotate: 5,
@@ -388,7 +386,7 @@ const Footer: React.FC = () => {
               </div>
 
               {/* App Store Buttons */}
-              <div className="flex items-center space-x-3">
+              <div className="items-center hidden sm:flex space-x-3">
                 <motion.button
                   className="flex items-center font-medium"
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -409,15 +407,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </motion.div>
-
-      {/* Background Decoration */}
-      <motion.div
-        className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary_color to-teal-500"
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-      />
     </footer>
   );
 };

@@ -14,9 +14,9 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   const navItems: NavItem[] = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Services', href: '#services' },
-    { label: 'Contact Us', href: '#contact' }
+    { label: 'About Us', href: '/about' },
+    { label: 'Our Services', href: '/services' },
+    { label: 'Contact Us', href: '/contact' }
   ];
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className={`fixed top-6 left-0 right-0 max-w-[1000px] rounded-[24px] mx-auto w-full z-50 transition-all duration-500 ${
+      className={`fixed lg:top-6 left-2 right-0 max-w-[1000px] rounded-[24px] mx-auto w-full z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-white/90 backdrop-blur-lg shadow-lg ' 
           : 'bg-white'
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
                   {item.label}
                   {activeItem === item.href && (
                     <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary_color rounded-full"
                       layoutId="activeIndicator"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <motion.div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isMobileMenuOpen ? 'h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
         style={{
           backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.98)',
@@ -138,7 +138,7 @@ const Navbar: React.FC = () => {
               onClick={() => handleNavClick(item.href)}
               className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                 activeItem === item.href
-                  ? 'text-primary_color bg-indigo-50 border-l-4 border-indigo-500'
+                  ? 'text-primary_color bg-indigo-50 border-l-4 border-primary_color'
                   : 'text-gray_text3 hover:text-primary_color hover:bg-gray-50'
               }`}
               initial={{ opacity: 0, x: -20 }}

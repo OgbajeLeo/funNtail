@@ -37,13 +37,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       <div className="flex-1">
         <motion.h3
-          className="text-[24px] font-semibold text-[#032921] mb-1 group-hover:text-teal-600 transition-colors"
+          className="text-lg lg:text-[24px] font-semibold text-[#032921] mb-1 group-hover:text-teal-600 transition-colors"
           whileHover={{ x: 5 }}
         >
           {title}
         </motion.h3>
         <motion.p
-          className="text-gray_text2 leading-relaxed"
+          className="text-gray_text2 text-sm lg:text-base leading-relaxed"
           initial={{ opacity: 0.8 }}
           whileHover={{ opacity: 1 }}
         >
@@ -58,6 +58,7 @@ interface ProtectionFeatureProps {
   title: string;
   description: string;
   delay: number;
+  
 }
 
 const ProtectionFeature: React.FC<ProtectionFeatureProps> = ({
@@ -73,15 +74,19 @@ const ProtectionFeature: React.FC<ProtectionFeatureProps> = ({
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       className="flex items-start space-x-3 mb-6 list-disc"
     >
-      
       <li>
         <motion.span
-          className="font-semibold text-[18px] text-[#032921]"
+          className="font-semibold text-base lg:text-[18px] text-[#032921]"
           whileHover={{ color: "#0d9488" }}
         >
           {title}
         </motion.span>
-        <span className="text-gray_text2"> {description}</span>
+        <span className="text-gray_text2"> {description}</span>{" "}
+        {title.includes("Guarantee") ? (
+          <>
+            - <span className="text-primary_color font-semibold underline">learn more</span>
+          </>
+        ) : null}
       </li>
     </motion.ul>
   );
@@ -143,7 +148,7 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white overflow-hidden relative">
+    <section className="lg:py-20 py-10 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Services Header */}
         <motion.div
@@ -181,7 +186,7 @@ const ServicesSection: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white border border-gray-200 rounded-3xl max-w-[1352px] w-full mx-auto overflow-hidden shadow-xl"
+          className="bg-white border border-gray-200 rounded-xl max-w-[1352px] w-full mx-auto overflow-hidden shadow-xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Image Section */}
@@ -212,7 +217,7 @@ const ServicesSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-2xl lg:text-[31px] font-semibold text-[#032921] mb-3"
+                className="text-2xl lg:text-[31px] font-bold text-[#032921] mb-3"
               >
                 FunNTail Protection
               </motion.h3>
@@ -222,13 +227,13 @@ const ServicesSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl text-gray_text2 mb-8"
+                className="text-base lg:text-xl text-gray_text2 lg:mb-8 mb-4"
               >
                 Find peace of mind with every booking.
               </motion.p>
 
               {/* Protection Features */}
-              <div className="space-y-6 mb-8">
+              <div className="space-y-6 mb-8 p-3">
                 {protectionFeatures.map((feature, index) => (
                   <ProtectionFeature
                     key={index}
@@ -247,7 +252,7 @@ const ServicesSection: React.FC = () => {
               >
                 <motion.a
                   href="#"
-                  className="flex justify-center underline text-center items-center text-primary_color  font-semibold text-lg group"
+                  className="flex justify-center text-sm lg:text-base underline text-center items-center text-primary_color  font-semibold  group"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
@@ -265,32 +270,7 @@ const ServicesSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Decorative elements */}
-        <motion.div
-          className="absolute top-20 -left-20 w-40 h-40 bg-teal-200 rounded-full opacity-10 blur-xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 90, 180, 270, 360],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-
-        <motion.div
-          className="absolute bottom-20 -right-20 w-60 h-60 bg-emerald-200 rounded-full opacity-10 blur-xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 270, 180, 90, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+        
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import PetSitterSection from "./PetSitterSection";
 import ServicesSection from "./Services";
 import ProfileShowcaseSection from "./ProfileShowcase";
 import Footer from "../../components/shared/Footer";
+import TestimonialSection from "./Testimonials";
 const landingPage = () => {
   return (
     <div className="overflow-hidden">
@@ -14,6 +15,7 @@ const landingPage = () => {
       <PetSitterSection />
       <ServicesSection />
       <ProfileShowcaseSection />
+      <TestimonialSection />
       <Footer />
     </div>
   );

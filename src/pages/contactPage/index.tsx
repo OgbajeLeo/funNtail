@@ -1,6 +1,5 @@
 import Footer from "../../components/shared/Footer";
 import Navbar from "../../components/shared/Navbar";
-import TestimonialSection from "../landingPage/Testimonials";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/heroImage.svg";
 const ContactPage = () => {

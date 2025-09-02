@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion, type Variants } from "framer-motion";
 import ios from "../../assets/apple.svg";
 import google from "../../assets/andriod.svg";
@@ -6,12 +6,6 @@ import google from "../../assets/andriod.svg";
 import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
 
 const DownloadPage: React.FC = () => {
   const buttonVariants: Variants = {

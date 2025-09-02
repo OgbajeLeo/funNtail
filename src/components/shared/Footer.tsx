@@ -8,10 +8,12 @@ import InstagramIcon from "../iconComponent/InstagramIcon";
 import LinkedinIcon from "../iconComponent/LinkedinIcon";
 import YoutubeIcon from "../iconComponent/YoutubeIcon";
 import { Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const router = useNavigate();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -79,13 +81,13 @@ const Footer: React.FC = () => {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <motion.a
-                  href="#"
+                <motion.button
+                  onClick={() => router("/blog")}
                   className="text-gray-300 hover:text-white transition-colors"
                   whileHover={{ color: "#10B981" }}
                 >
                   Blog
-                </motion.a>
+                </motion.button>
                 <motion.span
                   className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -100,13 +102,13 @@ const Footer: React.FC = () => {
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <motion.a
-                  href="#"
+                <motion.button
+                  onClick={() => router("/community")}
                   className="text-gray-300 hover:text-white transition-colors"
                   whileHover={{ color: "#10B981" }}
                 >
                   FunNTail Community
-                </motion.a>
+                </motion.button>
                 <motion.span
                   className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -116,23 +118,23 @@ const Footer: React.FC = () => {
                 </motion.span>
               </motion.div>
 
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => router("/safety")}
                 className="block text-gray-300 hover:text-white transition-colors"
                 whileHover={{ x: 5, color: "#10B981" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 Safety
-              </motion.a>
+              </motion.button>
 
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => router("/protect")}
                 className="block text-gray-300 hover:text-white transition-colors"
                 whileHover={{ x: 5, color: "#10B981" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 FunNTail Protect
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
 
@@ -146,27 +148,27 @@ const Footer: React.FC = () => {
               FunNTail
             </motion.h3>
             <div className="space-y-4 text-sm">
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => router("/about")}
                 className="block text-gray-300 hover:text-white transition-colors"
                 whileHover={{ x: 5, color: "#10B981" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 About Us
-              </motion.a>
+              </motion.button>
 
               <motion.div
                 className="flex items-center space-x-3"
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <motion.a
-                  href="#"
+                <motion.button
+                  onClick={() => router("/careers")}
                   className="text-gray-300 hover:text-white transition-colors"
                   whileHover={{ color: "#10B981" }}
                 >
                   Careers
-                </motion.a>
+                </motion.button>
                 <motion.span
                   className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -188,23 +190,23 @@ const Footer: React.FC = () => {
               Need Help?
             </motion.h3>
             <div className="space-y-4 text-sm">
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => router("/contact")}
                 className="block text-gray-300 hover:text-white transition-colors"
                 whileHover={{ x: 5, color: "#10B981" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 Contact Us
-              </motion.a>
+              </motion.button>
 
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => router("/faqs")}
                 className="block text-gray-300 hover:text-white transition-colors"
                 whileHover={{ x: 5, color: "#10B981" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 FAQs
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
 
@@ -347,19 +349,21 @@ const Footer: React.FC = () => {
               </motion.p>
 
               <div className="flex flex-wrap items-center justify-center space-x-6">
-                {["Terms of Service", "Privacy Policy", "Manage Cookies"].map(
-                  (link) => (
-                    <motion.a
-                      key={link}
-                      href="#"
-                      className="text-[#E2E8F0] hover:text-white text-sm transition-colors"
-                      whileHover={{ color: "#10B981", y: -2 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                    >
-                      {link}
-                    </motion.a>
-                  )
-                )}
+                {[
+                  { text: "Terms of Service", path: "/terms" },
+                  { text: "Privacy Policy", path: "/privacy" },
+                  { text: "Manage Cookies", path: "#" },
+                ].map((link) => (
+                  <motion.button
+                    key={link.text}
+                    onClick={() => router(link.path)}
+                    className="text-[#E2E8F0] hover:text-white text-sm transition-colors"
+                    whileHover={{ color: "#10B981", y: -2 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {link.text}
+                  </motion.button>
+                ))}
               </div>
             </div>
 
@@ -388,6 +392,7 @@ const Footer: React.FC = () => {
               {/* App Store Buttons */}
               <div className="items-center hidden sm:flex space-x-3">
                 <motion.button
+                  onClick={() => router("/download")}
                   className="flex items-center font-medium"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -396,6 +401,7 @@ const Footer: React.FC = () => {
                 </motion.button>
 
                 <motion.button
+                  onClick={() => router("/download")}
                   className="flex items-center  font-medium"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}

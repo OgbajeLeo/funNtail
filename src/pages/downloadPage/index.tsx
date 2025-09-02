@@ -2,7 +2,7 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 import ios from "../../assets/apple.svg";
 import google from "../../assets/andriod.svg";
-// import app from "../../assets/mobile-app.png";
+import app from "../../assets/app.png";
 import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 
@@ -66,11 +66,11 @@ const DownloadPage: React.FC = () => {
 
   return (
     <>
-      <section className="min-h-screen mb-20 bg-[#ffffff] pt-[120px] lg:pt-[190px] px-2 sm:px-6 lg:px-8">
+      <section className="min-h-screen mb-20 pt-5 lg:pt-[160px] px-2 sm:px-6 lg:px-8">
         <Navbar />
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto text-[#032921] mt-24 sm:mt-0">
           <motion.div
-            className="flex flex-col-reverse lg:flex-row justify-between gap-20 items-center"
+            className="flex flex-col lg:flex-row justify-between gap-20 items-center"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -80,7 +80,7 @@ const DownloadPage: React.FC = () => {
               className="flex justify-center lg:justify-start"
               variants={phoneVariants}
             >
-              {/* <motion.img
+              <motion.img
                 src={app}
                 alt="App Preview"
                 className="w-full max-w-[550px] max-h-[677px] h-auto"
@@ -92,13 +92,13 @@ const DownloadPage: React.FC = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-              /> */}
+              />
             </motion.div>
 
             {/* Content Side */}
             <motion.div className="flex  justify-center items-start flex-col  ">
               <motion.h1
-                className="text-[24px] sm:text-3xl lg:text-[32px] font-bold text-primary_color1 mb-6"
+                className="text-[24px] sm:text-3xl lg:text-[32px] font-bold text-primary_color1 mb-6 text-[#032921]"
                 variants={itemVariants}
               >
                 Download the FunNTail Client app
@@ -113,7 +113,7 @@ const DownloadPage: React.FC = () => {
 
               {/* App Store Badges */}
               <motion.div className="my-10" variants={itemVariants}>
-                <p className="text-grey_text3 font-semibold mb-6">
+                <p className="text-[#141F39] font-semibold mb-6">
                   Will be available for download on
                 </p>
                 <div className="flex items-center justify-stat gap-4">

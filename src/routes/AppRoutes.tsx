@@ -5,6 +5,7 @@ import NotFound from "../pages/NotFound";
 import AboutPage from "../pages/aboutPage";
 import ContactPage from "../pages/contactPage";
 import DownloadPage from "../pages/downloadPage";
+import ScrollToTop from "../components/ScrollToTop";
 
 
 const LandingPage = lazy(() => import("../pages/landingPage"));
@@ -13,6 +14,7 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Suspense fallback={<GlobalLoader />}>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />

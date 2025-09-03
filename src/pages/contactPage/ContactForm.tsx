@@ -103,7 +103,7 @@ const ContactSection: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F5F5F5] py-8 px-4">
       <motion.div
-        className="max-w-7xl p-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6"
+        className="max-w-7xl lg:p-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -135,7 +135,7 @@ const ContactSection: React.FC = () => {
               </motion.h2>
 
               {/* Pet images */}
-              <div className="flex justify-center ">
+              <div className="flex justify-center z-30">
                 <motion.div
                   className="flex items-end "
                   initial={{ scale: 0 }}
@@ -145,15 +145,15 @@ const ContactSection: React.FC = () => {
                   {/* Dog */}
                   <motion.div
                     className="relative"
-                    whileHover={{ y: -5, rotate: 2 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog1} alt="dog" className="" />
                   </motion.div>
                   {/* Dog */}
                   <motion.div
-                    className="relative"
-                    whileHover={{ y: -5, rotate: 2 }}
+                    className="relative lg:-ml-12"
+                    whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog2} alt="dog" className="" />
@@ -167,10 +167,10 @@ const ContactSection: React.FC = () => {
 
           <div className="flex space-x-1 bg-[#E5E4E426] mt-2 backdrop-blur-sm rounded-lg p-1">
             <motion.button
-              className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all duration-300 ${
+              className={`flex-1 py-3 rounded-md text-sm font-semibold transition-all duration-300 ${
                 activeTab === "owners"
                   ? "bg-[#1ABC9C1A] text-primary_color font-semibold"
-                  : "text-gray_text3 hover:bg-white/10"
+                  : "text-gray_text2 hover:bg-white/10"
               }`}
               onClick={() => setActiveTab("owners")}
               whileHover={{ scale: 1.02 }}
@@ -179,10 +179,10 @@ const ContactSection: React.FC = () => {
               Help for Pet Owners
             </motion.button>
             <motion.button
-              className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all duration-300 ${
+              className={`flex-1 py-3  rounded-md text-sm font-semibold  transition-all duration-300 ${
                 activeTab === "workers"
                   ? "bg-[#1ABC9C1A] text-primary_color font-semibold"
-                  : "text-gray_text3 hover:bg-white/10"
+                  : "text-gray_text2 hover:bg-white/10"
               }`}
               onClick={() => setActiveTab("workers")}
               whileHover={{ scale: 1.02 }}
@@ -224,7 +224,7 @@ const ContactSection: React.FC = () => {
                       <span
                         className={`${
                           openFAQ === faq.id
-                            ? "text-[#1ABC9C]"
+                            ? "text-[#1ABC9C] font-semibold"
                             : "text-gray_text3"
                         } font-medium text-sm`}
                       >
@@ -249,12 +249,13 @@ const ContactSection: React.FC = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className={`px-4 pb-4 pl-16 text-gray-600 text-sm leading-relaxed ${
-                          openFAQ === faq.id
-                            ? "bg-[#1ABC9C1A]"
-                            : "bg-emerald-50/30"
-                        }`}
-                      >
+                        <div
+                          className={`px-4 pb-4 pl-16 text-gray-600 text-sm  ${
+                            openFAQ === faq.id
+                              ? "bg-[#1ABC9C1A]"
+                              : "bg-emerald-50/30"
+                          }`}
+                        >
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -397,7 +398,7 @@ const ContactSection: React.FC = () => {
             <h4 className="text-xl font-bold text-gray_text3 mb-6">
               Contact Information
             </h4>
-            <div className="flex items-center space-x-4 justify-between">
+            <div className="flex flex-col lg:flex-row gap-2 lg:items-center space-x-4 justify-between">
               <motion.div
                 className="flex items-center space-x-4"
                 whileHover={{ x: 4 }}
@@ -406,7 +407,7 @@ const ContactSection: React.FC = () => {
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-primary_color" />
                 </div>
-                <span className="text-gray_text2 font-medium">
+                <span className="text-gray_text2 font-normal">
                   contact@funtail.com
                 </span>
               </motion.div>
@@ -419,7 +420,9 @@ const ContactSection: React.FC = () => {
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-primary_color" />
                 </div>
-                <span className="text-gray_text2 font-medium">0800 000 0000</span>
+                <span className="text-gray_text2 font-normal">
+                  0800 000 0000
+                </span>
               </motion.div>
             </div>
           </motion.div>

@@ -12,7 +12,7 @@ const ContactPage = () => {
 
           <img
             src={pageTitle}
-            className="absolute top-0 left-0 w-full opacity-20 h-full"
+            className="absolute top-0 left-0 w-full opacity-20 h-full lg:object-cover "
             alt="bg"
           />
           {/* Header Section */}
@@ -39,7 +39,7 @@ const ContactPage = () => {
           </motion.header>
         </div>
       </div>
-<ContactSection />
+      <ContactSection />
       <Footer />
     </div>
   );

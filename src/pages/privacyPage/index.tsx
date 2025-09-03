@@ -1,7 +1,7 @@
 import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
-import pageTitle from "../../assets/heroImage.svg";
+import pageTitle from "../../assets/navBGG.png";
 
 const PrivacyPage = () => {
   return (
@@ -10,11 +10,11 @@ const PrivacyPage = () => {
         <div className="relative pt-[40px] lg:pt-[140px] w-full max-w-7xl mx-auto">
           <Navbar />
 
-          {/* <img
-            src={aboutBG}
-            className="absolute top-0 left-0 w-full h-full"
+          <img
+            src={pageTitle}
+            className="absolute top-0 left-0 w-full opacity-20 h-full lg:object-cover "
             alt="bg"
-          /> */}
+          />
           {/* Header Section */}
           <motion.header
             className="relative py-8 z-20 overflow-hidden bg-cover bg-center bg-no-repeat"
@@ -35,7 +35,9 @@ const PrivacyPage = () => {
               >
                 Privacy Policy
               </motion.h1>
-              <div className="text-xl text-center">Last updated Date: 20th July 2025</div>
+              <div className="text-xl text-center">
+                Last updated Date: 20th July 2025
+              </div>
             </div>
           </motion.header>
         </div>

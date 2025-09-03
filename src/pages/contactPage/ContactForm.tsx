@@ -145,7 +145,6 @@ const ContactSection: React.FC = () => {
                   {/* Dog */}
                   <motion.div
                     className="relative"
-                    whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog1} alt="dog" className="" />
@@ -153,7 +152,6 @@ const ContactSection: React.FC = () => {
                   {/* Dog */}
                   <motion.div
                     className="relative lg:-ml-12"
-                    whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog2} alt="dog" className="" />

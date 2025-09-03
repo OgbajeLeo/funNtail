@@ -65,267 +65,273 @@ const Footer: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 w-full max-w-7xl mx-auto">
-          {/* Learn More Section */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <motion.h3
-              className="text-base font-semibold text-white mb-6"
-              whileHover={{ color: "#10B981" }}
-              transition={{ duration: 0.3 }}
-            >
-              Learn More
-            </motion.h3>
-            <div className="space-y-4 text-sm">
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
+        <div className="flex flex-row gap-2 lg:gap-12 w-full max-w-7xl mx-auto flex-wrap">
+          {/* Top row for mobile - Learn More and FunNTail sections */}
+          <div className="flex flex-row gap-8 lg:gap-12 mb-2">
+            {/* Learn More Section */}
+            <motion.div variants={itemVariants} className="space-y-6 w-full">
+              <motion.h3
+                className="text-base font-semibold text-white mb-6"
+                whileHover={{ color: "#10B981" }}
+                transition={{ duration: 0.3 }}
               >
-                <motion.button
-                  onClick={() => router("/blog")}
-                  className="text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ color: "#10B981" }}
-                >
-                  Blog
-                </motion.button>
-                <motion.span
-                  className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  BETA
-                </motion.span>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <motion.button
-                  onClick={() => router("/community")}
-                  className="text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ color: "#10B981" }}
-                >
-                  FunNTail Community
-                </motion.button>
-                <motion.span
-                  className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                >
-                  BETA
-                </motion.span>
-              </motion.div>
-
-              <motion.button
-                onClick={() => router("/safety")}
-                className="block text-gray-300 hover:text-white transition-colors"
-                whileHover={{ x: 5, color: "#10B981" }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                Safety
-              </motion.button>
-
-              <motion.button
-                onClick={() => router("/protect")}
-                className="block text-gray-300 hover:text-white transition-colors"
-                whileHover={{ x: 5, color: "#10B981" }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                FunNTail Protect
-              </motion.button>
-            </div>
-          </motion.div>
-
-          {/* FunNTail Section */}
-          <motion.div variants={itemVariants} className="space-y-6 lg:w-fit">
-            <motion.h3
-              className="text-base font-semibold text-white mb-6"
-              whileHover={{ color: "#10B981" }}
-              transition={{ duration: 0.3 }}
-            >
-              FunNTail
-            </motion.h3>
-            <div className="space-y-4 text-sm">
-              <motion.button
-                onClick={() => router("/about")}
-                className="block text-gray-300 hover:text-white transition-colors"
-                whileHover={{ x: 5, color: "#10B981" }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                About Us
-              </motion.button>
-
-              <motion.div
-                className="flex items-center space-x-3"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <motion.button
-                  onClick={() => router("/careers")}
-                  className="text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ color: "#10B981" }}
-                >
-                  Careers
-                </motion.button>
-                <motion.span
-                  className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                >
-                  BETA
-                </motion.span>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Need Help Section */}
-          <motion.div variants={itemVariants} className="space-y-6 w-fit">
-            <motion.h3
-              className="text-base font-semibold text-white mb-6"
-              whileHover={{ color: "#10B981" }}
-              transition={{ duration: 0.3 }}
-            >
-              Need Help?
-            </motion.h3>
-            <div className="space-y-4 text-sm">
-              <motion.button
-                onClick={() => router("/contact")}
-                className="block text-gray-300 hover:text-white transition-colors"
-                whileHover={{ x: 5, color: "#10B981" }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                Contact Us
-              </motion.button>
-
-              <motion.button
-                onClick={() => router("/faqs")}
-                className="block text-gray-300 hover:text-white transition-colors"
-                whileHover={{ x: 5, color: "#10B981" }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                FAQs
-              </motion.button>
-            </div>
-          </motion.div>
-
-          {/* Newsletter Section */}
-          <motion.div
-            variants={itemVariants}
-            className="space-y-6 sm:w-[387px] w-full lg:-ml-[120px] lg:col-span-1"
-          >
-            <motion.h3
-              className="text-base font-semibold text-white leading-tight"
-              whileHover={{ color: "#10B981" }}
-              transition={{ duration: 0.3 }}
-            >
-              All the pet care tips you need - straight to your inbox
-            </motion.h3>
-
-            <motion.p
-              className="text-gray-300 text-sm leading-relaxed"
-              initial={{ opacity: 0.8 }}
-              whileHover={{ opacity: 1 }}
-            >
-              Receive the latest adorable pet photos, care tips, training
-              advice, product recommendations and more.
-            </motion.p>
-
-            {/* Email Form */}
-            <motion.form
-              onSubmit={handleSubscribe}
-              className="space-y-4"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary_color focus:border-transparent transition-all"
-                  required
-                />
-                {isSubscribed && (
-                  <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2"
-                  >
-                    <div className="w-6 h-6 bg-primary_color rounded-full flex items-center justify-center">
-                      <Check size={14} className="text-white" />
-                    </div>
-                  </motion.div>
-                )}
-              </motion.div>
-
-              {/* Checkbox */}
-              <motion.div
-                className="flex items-start space-x-3"
-                whileHover={{ scale: 1.02 }}
-              >
+                Learn More
+              </motion.h3>
+              <div className="space-y-4 text-[13px] lg:text-sm">
                 <motion.div
-                  className="relative mt-1"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center space-x-3"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <input
-                    type="checkbox"
-                    id="consent"
-                    checked={isChecked}
-                    onChange={(e) => setIsChecked(e.target.checked)}
-                    className="sr-only"
-                  />
-                  <motion.div
-                    className={`w-5 h-5 border-2 rounded cursor-pointer flex items-center justify-center ${
-                      isChecked
-                        ? "bg-primary_color border-primary_color"
-                        : "border-gray-400 bg-transparent"
-                    }`}
-                    onClick={() => setIsChecked(!isChecked)}
-                    whileHover={{ borderColor: "#10B981" }}
-                    transition={{ duration: 0.2 }}
+                  <motion.button
+                    onClick={() => router("/blog")}
+                    className="text-gray-300 hover:text-white transition-colors"
+                    whileHover={{ color: "#10B981" }}
                   >
-                    {isChecked && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                      >
-                        <Check size={12} className="text-white" />
-                      </motion.div>
-                    )}
-                  </motion.div>
+                    Blog
+                  </motion.button>
+                  <motion.span
+                    className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    BETA
+                  </motion.span>
                 </motion.div>
 
-                <label
-                  htmlFor="consent"
-                  className="text-sm text-gray-300 leading-relaxed cursor-pointer"
+                <motion.div
+                  className="flex items-center space-x-3"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
-                  I consent to receive marketing communications from
-                  FunNTail.com and it's affiliates and confirm that I am 18
-                  years of age or older. I can unsubscribe at any time.
-                </label>
-              </motion.div>
+                  <motion.button
+                    onClick={() => router("/community")}
+                    className="text-gray-300 hover:text-white transition-colors"
+                    whileHover={{ color: "#10B981" }}
+                  >
+                    FunNTail Community
+                  </motion.button>
+                  <motion.span
+                    className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  >
+                    BETA
+                  </motion.span>
+                </motion.div>
 
-              <motion.button
-                type="submit"
-                disabled={!email || !isChecked}
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all ${
-                  email && isChecked
-                    ? "bg-primary_color hover:bg-emerald-700 text-white"
-                    : "bg-gray-600 text-gray-400 cursor-not-allowed"
-                }`}
-                whileHover={email && isChecked ? { scale: 1.05, y: -2 } : {}}
-                whileTap={email && isChecked ? { scale: 0.98 } : {}}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                <motion.button
+                  onClick={() => router("/safety")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ x: 5, color: "#10B981" }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Safety
+                </motion.button>
+
+                <motion.button
+                  onClick={() => router("/protect")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ x: 5, color: "#10B981" }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  FunNTail Protect
+                </motion.button>
+              </div>
+            </motion.div>
+
+            {/* FunNTail Section */}
+            <motion.div variants={itemVariants} className="space-y-6 flex-1">
+              <motion.h3
+                className="text-base font-semibold text-white mb-6"
+                whileHover={{ color: "#10B981" }}
+                transition={{ duration: 0.3 }}
               >
-                {isSubscribed ? "Subscribed!" : "Subscribe"}
-              </motion.button>
-            </motion.form>
-          </motion.div>
+                FunNTail
+              </motion.h3>
+              <div className="space-y-4 text-[13px] lg:text-sm">
+                <motion.button
+                  onClick={() => router("/about")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ x: 5, color: "#10B981" }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  About Us
+                </motion.button>
+
+                <motion.div
+                  className="flex items-center space-x-3"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <motion.button
+                    onClick={() => router("/careers")}
+                    className="text-gray-300 hover:text-white transition-colors"
+                    whileHover={{ color: "#10B981" }}
+                  >
+                    Careers
+                  </motion.button>
+                  <motion.span
+                    className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                  >
+                    BETA
+                  </motion.span>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom row for mobile - Need Help and Newsletter sections */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            {/* Need Help Section */}
+            <motion.div variants={itemVariants} className="space-y-6 w-fit">
+              <motion.h3
+                className="text-base font-semibold text-white mb-6"
+                whileHover={{ color: "#10B981" }}
+                transition={{ duration: 0.3 }}
+              >
+                Need Help?
+              </motion.h3>
+              <div className="space-y-4 text-[13px] lg:text-sm">
+                <motion.button
+                  onClick={() => router("/contact")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ x: 5, color: "#10B981" }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Contact Us
+                </motion.button>
+
+                <motion.button
+                  onClick={() => router("/faqs")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ x: 5, color: "#10B981" }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  FAQs
+                </motion.button>
+              </div>
+            </motion.div>
+
+            {/* Newsletter Section */}
+            <motion.div
+              variants={itemVariants}
+              className="space-y-6 sm:w-[387px] w-full lg:flex-1"
+            >
+              <motion.h3
+                className="text-base font-semibold text-white leading-tight"
+                whileHover={{ color: "#10B981" }}
+                transition={{ duration: 0.3 }}
+              >
+                All the pet care tips you need - straight to your inbox
+              </motion.h3>
+
+              <motion.p
+                className="text-gray-300 text-sm leading-relaxed"
+                initial={{ opacity: 0.8 }}
+                whileHover={{ opacity: 1 }}
+              >
+                Receive the latest adorable pet photos, care tips, training
+                advice, product recommendations and more.
+              </motion.p>
+
+              {/* Email Form */}
+              <motion.form
+                onSubmit={handleSubscribe}
+                className="space-y-4"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your Email"
+                    className="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary_color focus:border-transparent transition-all"
+                    required
+                  />
+                  {isSubscribed && (
+                    <motion.div
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                    >
+                      <div className="w-6 h-6 bg-primary_color rounded-full flex items-center justify-center">
+                        <Check size={14} className="text-white" />
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
+
+                {/* Checkbox */}
+                <motion.div
+                  className="flex items-start space-x-3"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.div
+                    className="relative mt-1"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      checked={isChecked}
+                      onChange={(e) => setIsChecked(e.target.checked)}
+                      className="sr-only"
+                    />
+                    <motion.div
+                      className={`w-5 h-5 border-2 rounded cursor-pointer flex items-center justify-center ${
+                        isChecked
+                          ? "bg-primary_color border-primary_color"
+                          : "border-gray-400 bg-transparent"
+                      }`}
+                      onClick={() => setIsChecked(!isChecked)}
+                      whileHover={{ borderColor: "#10B981" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {isChecked && (
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ type: "spring", stiffness: 400 }}
+                        >
+                          <Check size={12} className="text-white" />
+                        </motion.div>
+                      )}
+                    </motion.div>
+                  </motion.div>
+
+                  <label
+                    htmlFor="consent"
+                    className="text-sm text-gray-300 leading-relaxed cursor-pointer"
+                  >
+                    I consent to receive marketing communications from
+                    FunNTail.com and it's affiliates and confirm that I am 18
+                    years of age or older. I can unsubscribe at any time.
+                  </label>
+                </motion.div>
+
+                <motion.button
+                  type="submit"
+                  disabled={!email || !isChecked}
+                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all ${
+                    email && isChecked
+                      ? "bg-primary_color hover:bg-emerald-700 text-white"
+                      : "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  }`}
+                  whileHover={email && isChecked ? { scale: 1.05, y: -2 } : {}}
+                  whileTap={email && isChecked ? { scale: 0.98 } : {}}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  {isSubscribed ? "Subscribed!" : "Subscribe"}
+                </motion.button>
+              </motion.form>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 

@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
-import GlobalLoader from "../components/loaders/GlobalLoader";
+import {  lazy } from "react";
 import NotFound from "../pages/NotFound";
 import AboutPage from "../pages/aboutPage";
 import ContactPage from "../pages/contactPage";
@@ -17,7 +16,6 @@ const LandingPage = lazy(() => import("../pages/landingPage"));
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<GlobalLoader />}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -35,7 +33,6 @@ export default function AppRoutes() {
                   <Route path="/admin" element={<Dashboard />} />
                 </Route> */}
         </Routes>
-      </Suspense>
     </BrowserRouter>
   );
 }

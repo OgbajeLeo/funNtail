@@ -107,15 +107,11 @@ const HeroSection = () => {
           >
             <motion.div
               className="relative"
-              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
               {/* Main dog image */}
               <motion.div
                 className=" flex items-center justify-center"
-                animate={{
-                  y: [0, -10, 0],
-                }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
@@ -123,11 +119,7 @@ const HeroSection = () => {
                 }}
               >
                 <div className="overflow-hidden">
-                  {/* <img
-                    src={heroImage}
-                    alt="Happy Dog"
-                    className="w-full h-full object-cover"
-                  /> */}
+                  
                   <motion.img
                     src={heroImage}
                     // width={800}
@@ -135,9 +127,6 @@ const HeroSection = () => {
                     alt="logo"
                     className="size-full"
                     initial={{ rotate: 0 }}
-                    animate={{ rotate: window.innerWidth >= 640 ? 0 : 0 }}
-                    // transition={{ duration: 0.5 }}
-                    whileHover={{ rotateX: 10, rotateY: -10 }}
                     transition={{ type: "spring", stiffness: 100, damping: 10 }}
                   />
                 </div>

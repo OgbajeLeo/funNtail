@@ -160,8 +160,7 @@ const ServicesSection: React.FC = () => {
         >
           <motion.h2
             className="text-2xl md:text-[36px] font-semibold text-[#032921] mb-4"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
+             transition={{ type: "spring", stiffness: 300 }}
           >
             Our Services
           </motion.h2>
@@ -257,13 +256,7 @@ const ServicesSection: React.FC = () => {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   Learn more about FunNTail Protection
-                  {/* <motion.span
-                    className="ml-2"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span> */}
+                 
                 </motion.a>
               </motion.div>
             </div>

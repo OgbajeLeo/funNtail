@@ -84,9 +84,6 @@ const DownloadPage: React.FC = () => {
                 src={app}
                 alt="App Preview"
                 className="w-full max-w-[550px] max-h-[677px] h-auto"
-                animate={{
-                  y: [0, -10, 0],
-                }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,

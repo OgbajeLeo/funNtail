@@ -191,7 +191,7 @@ const AboutSection = () => {
               </motion.div>
 
               <motion.h2
-                className="lg:text-[20px] font-bold tex-center my-4 text-gray_text3 leading-tight"
+                className="lg:text-[20px] font-bold text-center my-4 text-gray_text3 leading-tight"
                 variants={textVariants}
               >
                 Fast & Easy Booking—Find a Sitter Today!

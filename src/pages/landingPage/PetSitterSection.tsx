@@ -16,22 +16,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   title,
   description,
-  delay,
 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      whileHover={{
-        scale: 1.02,
-        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-      }}
+      // transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      // whileHover={{
+      //   scale: 1.02,
+      //   boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+      // }}
       className="bg-white rounded-xl px-6 py-8 shadow-2xl hover:shadow-xl transition-all duration-300 max-h-[390px] group"
     >
       <motion.div
-        whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         className="mb-6"
       >
@@ -42,7 +40,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
       <motion.h3
         className="text-2xl text-center font-semibold text-gray_text3 mb-3 group-hover:text-primary_color transition-colors"
-        whileHover={{ x: 5 }}
+       
       >
         {title}
       </motion.h3>

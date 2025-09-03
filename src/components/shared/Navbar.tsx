@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 
   const navItems: NavItem[] = [
     { label: "About Us", href: "/about" },
-    { label: "Our Services", href: "/services" },
+    { label: "Our Services", href: "#services" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -30,14 +30,33 @@ const Navbar: React.FC = () => {
   }, []);
 
   const handleNavClick = (href: string) => {
-    router(href);
+    if (href.startsWith("#")) {
+      if (window.location.pathname !== "/") {
+        router("/");
+        setTimeout(() => {
+          const element = document.getElementById(href.substring(1));
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
+      } else {
+        const element = document.getElementById(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else {
+      router(href);
+    }
     setActiveItem(href);
     setIsMobileMenuOpen(false);
   };
 
   return (
     <motion.nav
-      className={`fixed lg:top-6 left-0 right-0 max-w-[1000px] rounded-[24px] mx-auto w-full z-50 transition-all duration-500 ${
+      className={`fixed lg:top-6 ${
+        isMobileMenuOpen ? "top-0 " : "top-6 rounded-[24px]"
+      } left-0 right-0 max-w-[1000px]  mx-auto w-full z-50 transition-all duration-500 ${
         isScrolled ? "bg-white/90 backdrop-blur-lg shadow-lg " : "bg-white"
       }`}
       style={{
@@ -156,7 +175,7 @@ const Navbar: React.FC = () => {
               onClick={() => handleNavClick(item.href)}
               className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                 activeItem === item.href
-                  ? "text-primary_color bg-indigo-50 border-l-4 border-primary_color"
+                  ? "text-primary_color"
                   : "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
               }`}
               initial={{ opacity: 0, x: -20 }}

@@ -41,7 +41,7 @@ const HeroSection = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="text-black text-sm lg:text-base leading-relaxed text-justify"
+          className="text-black text-base leading-relaxed text-justify"
         >
           At FunNTail, we believe safety and trust are built when we work
           together as a community. These guidelines outline the role each of

@@ -20,17 +20,7 @@ const DownloadPage: React.FC = () => {
 
   const handleButtonClick = (store: string) => {
     console.log(store);
-    //  if (store === "ios") {
-    //    window.open(
-    //      "https://chat.whatsapp.com/EPuMBsQdCDzFvarvkEduJs",
-    //      "_blank"
-    //    );
-    //  } else if (store === "android") {
-    //    window.open(
-    //      "https://chat.whatsapp.com/EPuMBsQdCDzFvarvkEduJs",
-    //      "_blank"
-    //    );
-    //  }
+    
   };
 
   const containerVariants: Variants = {

@@ -20,9 +20,7 @@ const AboutPage = () => {
           {/* Header Section */}
           <motion.header
             className="relative py-8 z-20 overflow-hidden opacity-20 bg-cover bg-center bg-no-repeat"
-            // style={{
-            //   backgroundImage: `url(${pageTitle})`,
-            // }}
+            
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}

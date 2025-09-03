@@ -113,10 +113,8 @@ const ContactSection: React.FC = () => {
           className="bg-white rounded-[24px] overflow-hidden"
           variants={itemVariants}
         >
-          {/* Header with pets and pattern */}
           <div className="bg-[#1ABC9C] px-6 pt-8 relative overflow-hidden">
-            {/* Floating paw prints pattern */}
-            <div className="absolute inset-0">
+             <div className="absolute inset-0">
               <img
                 src={pageTitle}
                 className="absolute top-0 left-0 w-full opacity-20 h-full"
@@ -142,14 +140,14 @@ const ContactSection: React.FC = () => {
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.4, type: "spring" }}
                 >
-                  {/* Dog */}
+                
                   <motion.div
                     className="relative"
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog1} alt="dog" className="" />
                   </motion.div>
-                  {/* Dog */}
+                
                   <motion.div
                     className="relative lg:-ml-12"
                     transition={{ type: "spring", stiffness: 300 }}
@@ -159,7 +157,6 @@ const ContactSection: React.FC = () => {
                 </motion.div>
               </div>
 
-              {/* Tab buttons */}
             </div>
           </div>
 

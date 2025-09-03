@@ -8,20 +8,18 @@ const TermsPage = () => {
   return (
     <div>
       <div className="bg-[#032921] w-full ">
-        <div className="relative pt-[40px] lg:pt-[140px] w-full max-w-7xl mx-auto">
+        <div className="relative pt-[40px] lg:pt-[140px] w-full  mx-auto">
           <Navbar />
 
           <img
             src={pageTitle}
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 w-full h-full lg:object-cover"
             alt="bg"
           />
           {/* Header Section */}
           <motion.header
             className="relative py-8 z-20 overflow-hidden bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${pageTitle})`,
-            }}
+           
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}

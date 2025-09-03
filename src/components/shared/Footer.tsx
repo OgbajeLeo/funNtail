@@ -65,9 +65,8 @@ const Footer: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="flex flex-row gap-2 lg:gap-12 w-full max-w-7xl mx-auto flex-wrap">
-          {/* Top row for mobile - Learn More and FunNTail sections */}
-          <div className="flex flex-row gap-8 lg:gap-12 mb-2">
+        <div className="flex justify-between flex-row gap-2 lg:gap-20 w-full max-w-7xl mx-auto flex-wrap">
+          <div className="flex flex-row gap-8 lg:gap-40 mb-6 lg:mb-0">
             {/* Learn More Section */}
             <motion.div variants={itemVariants} className="space-y-6 w-full">
               <motion.h3
@@ -183,8 +182,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Bottom row for mobile - Need Help and Newsletter sections */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-40">
             {/* Need Help Section */}
             <motion.div variants={itemVariants} className="space-y-6 w-fit">
               <motion.h3
@@ -241,8 +239,7 @@ const Footer: React.FC = () => {
               <motion.form
                 onSubmit={handleSubscribe}
                 className="space-y-4"
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                   transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
                   <input
@@ -269,11 +266,9 @@ const Footer: React.FC = () => {
                 {/* Checkbox */}
                 <motion.div
                   className="flex items-start space-x-3"
-                  whileHover={{ scale: 1.02 }}
-                >
+                  >
                   <motion.div
                     className="relative mt-1"
-                    whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <input
@@ -375,7 +370,6 @@ const Footer: React.FC = () => {
 
             {/* Social Links and App Store Buttons */}
             <div className="flex items-center space-x-6">
-              {/* Social Icons */}
               <div className="flex items-center space-x-4">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -395,7 +389,6 @@ const Footer: React.FC = () => {
                 ))}
               </div>
 
-              {/* App Store Buttons */}
               <div className="items-center hidden sm:flex space-x-3">
                 <motion.button
                   onClick={() => router("/download")}

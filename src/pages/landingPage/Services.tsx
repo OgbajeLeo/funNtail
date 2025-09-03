@@ -148,7 +148,7 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="lg:py-20 py-10 bg-white overflow-hidden relative">
+    <section id="services" className="lg:py-20 py-10 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Services Header */}
         <motion.div

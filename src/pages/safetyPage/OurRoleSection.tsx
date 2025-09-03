@@ -1,0 +1,169 @@
+import React from "react";
+import { motion ,type Variants} from "framer-motion";
+
+interface RoleCardProps {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  index: number;
+}
+
+const RoleCard: React.FC<RoleCardProps> = ({
+  title,
+  description,
+  imageSrc,
+  imageAlt,
+  index,
+}) => {
+  const cardVariants:Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: index * 0.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ y: -5 }}
+      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    >
+      <div className="aspect-video w-full overflow-hidden">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+          {title}
+        </h3>
+        <p className="text-gray-600 leading-relaxed">{description}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+const OurRoleSection: React.FC = () => {
+  const containerVariants:Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.6,
+      },
+    },
+  };
+
+  const titleVariants: Variants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const roleData = [
+    {
+      title: "Reporting and blocking",
+      description:
+        "If someone behaves inappropriately, you can easily report and block them directly in the app. Our team reviews every report and takes action where needed to keep the community safe.",
+      imageSrc: "/api/placeholder/400/250",
+      imageAlt: "Person using tablet for reporting functionality",
+    },
+    {
+      title: "24/7 support",
+      description:
+        "Help is always available. Our dedicated support team is here around the clock to answer questions, resolve issues, and provide guidance whenever you need it.",
+      imageSrc: "/api/placeholder/400/250",
+      imageAlt: "Customer support representative at desk",
+    },
+    {
+      title: "FunNTail Guarantee",
+      description:
+        "Your trust means everything. With our FunNTail Guarantee, you can book with confidence knowing we stand behind the safety, reliability, and quality of our community.",
+      imageSrc: "/api/placeholder/400/250",
+      imageAlt: "Woman holding cat showing trust and care",
+    },
+    {
+      title: "Security and encryption",
+      description:
+        "All personal data, messages, and payments are protected with industry-standard encryption. Your privacy and security are always a top priority.",
+      imageSrc: "/api/placeholder/400/250",
+      imageAlt: "Security concept with wooden blocks spelling SECURITY",
+    },
+    {
+      title: "Booking Protection",
+      description:
+        "We've got you covered. If something unexpected happens, FunNTail's booking protection ensures that you're supported and your pets remain safe.",
+      imageSrc: "/api/placeholder/400/250",
+      imageAlt: "Two women with white rabbit showing care and protection",
+    },
+  ];
+
+  return (
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            variants={titleVariants}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-16"
+          >
+            Our Role
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {/* First row - 3 cards on large screens, 2 on medium, 1 on small */}
+            {roleData.slice(0, 3).map((role, index) => (
+              <RoleCard
+                key={index}
+                title={role.title}
+                description={role.description}
+                imageSrc={role.imageSrc}
+                imageAlt={role.imageAlt}
+                index={index}
+              />
+            ))}
+          </div>
+
+          {/* Second row - 2 cards stretched to fill width */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-10">
+            {roleData.slice(3).map((role, index) => (
+              <RoleCard
+                key={index + 3}
+                title={role.title}
+                description={role.description}
+                imageSrc={role.imageSrc}
+                imageAlt={role.imageAlt}
+                index={index + 3}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default OurRoleSection;

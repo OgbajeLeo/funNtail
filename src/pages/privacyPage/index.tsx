@@ -2,6 +2,7 @@ import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
+import LegalScreen from "./Policy";
 
 const PrivacyPage = () => {
   return (
@@ -18,9 +19,7 @@ const PrivacyPage = () => {
           {/* Header Section */}
           <motion.header
             className="relative py-8 z-20 overflow-hidden bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${pageTitle})`,
-            }}
+           
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -35,14 +34,14 @@ const PrivacyPage = () => {
               >
                 Privacy Policy
               </motion.h1>
-              <div className="text-xl text-center">
+              <div className="text-lg lg:text-xl text-center text-white">
                 Last updated Date: 20th July 2025
               </div>
             </div>
           </motion.header>
         </div>
       </div>
-
+      <LegalScreen />
       <Footer />
     </div>
   );

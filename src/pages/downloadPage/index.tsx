@@ -66,7 +66,7 @@ const DownloadPage: React.FC = () => {
 
   return (
     <>
-      <section className="min-h-screen mb-20 pt-5 lg:pt-[160px] px-2 sm:px-6 lg:px-8">
+      <section className="pt-5 lg:pt-[160px] px-2 sm:px-6 lg:px-8">
         <Navbar />
         <div className="max-w-7xl mx-auto text-[#032921] mt-24 sm:mt-0">
           <motion.div

@@ -71,7 +71,7 @@ const TestimonialSection: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentStartIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [isAutoPlay]);

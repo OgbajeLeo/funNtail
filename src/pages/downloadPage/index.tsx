@@ -19,8 +19,7 @@ const DownloadPage: React.FC = () => {
   };
 
   const handleButtonClick = (store: string) => {
-    console.log(store);
-    
+    console.log(store); 
   };
 
   const containerVariants: Variants = {

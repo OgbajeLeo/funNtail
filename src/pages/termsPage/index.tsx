@@ -32,7 +32,7 @@ const TermsPage = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Privacy Policy
+               Terms & Conditions
               </motion.h1>
               <div className="text-lg lg:text-xl text-white text-center">
                 Last updated Date: 20th July 2025

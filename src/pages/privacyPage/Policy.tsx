@@ -195,30 +195,7 @@ const LegalScreen: React.FC = () => {
     },
   };
 
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
 
-  const contentVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: 0.2,
-        ease: "easeOut",
-      },
-    },
-  };
 
   return (
     <div className="min-h-screen">
@@ -241,7 +218,6 @@ const LegalScreen: React.FC = () => {
                 {sections.map((section,index) => (
                   <motion.button
                     key={section.id}
-                    variants={itemVariants}
                     onClick={() => scrollToSection(section.id)}
                     className={`w-full text-left p-3  transition-all duration-200 flex items-center gap-3 group ${
                       activeSection === section.id
@@ -298,7 +274,6 @@ const LegalScreen: React.FC = () => {
 
           {/* Main Content */}
           <motion.main
-            variants={contentVariants}
             initial="hidden"
             animate="visible"
             className="flex-1 max-w-none"

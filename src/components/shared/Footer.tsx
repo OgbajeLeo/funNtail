@@ -46,15 +46,6 @@ const Footer: React.FC = () => {
     },
   };
 
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <footer className="bg-[#032921] text-white w-full ">
       {/* Main Footer Content */}
@@ -65,10 +56,10 @@ const Footer: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="flex justify-between flex-row gap-2 lg:gap-20 w-full max-w-7xl mx-auto flex-wrap">
-          <div className="flex flex-row gap-8 lg:gap-40 mb-6 lg:mb-0">
+        <div className="flex justify-between flex-row gap-2 lg:gap-10 w-full max-w-7xl mx-auto flex-wrap">
+          <div className="flex flex-row justify-between gap-8 lg:gap-40 mb-6 lg:mb-0">
             {/* Learn More Section */}
-            <motion.div variants={itemVariants} className="space-y-6 w-full">
+            <motion.div className="space-y-6 w-full">
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
@@ -140,7 +131,7 @@ const Footer: React.FC = () => {
             </motion.div>
 
             {/* FunNTail Section */}
-            <motion.div variants={itemVariants} className="space-y-6 flex-1">
+            <motion.div className="space-y-6 flex-1">
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
@@ -182,9 +173,9 @@ const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-40">
+          <div className="flex flex-col lg:flex-row fle-wrap gap-8 lg:gap-40">
             {/* Need Help Section */}
-            <motion.div variants={itemVariants} className="space-y-6 w-fit">
+            <motion.div className="space-y-6 w-fit">
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
@@ -192,7 +183,7 @@ const Footer: React.FC = () => {
               >
                 Need Help?
               </motion.h3>
-              <div className="space-y-4 text-[13px] lg:text-sm">
+              <div className="space-y-4 text-[13px] lg:text-sm w-full">
                 <motion.button
                   onClick={() => router("/contact")}
                   className="block text-gray-300 hover:text-white transition-colors"
@@ -212,12 +203,9 @@ const Footer: React.FC = () => {
                 </motion.button>
               </div>
             </motion.div>
-
+            
             {/* Newsletter Section */}
-            <motion.div
-              variants={itemVariants}
-              className="space-y-6 sm:w-[387px] w-full lg:flex-1"
-            >
+            <motion.div className="space-y-6 sm:w-[387px] w-full lg:flex-1">
               <motion.h3
                 className="text-base font-semibold text-white leading-tight"
                 whileHover={{ color: "#10B981" }}
@@ -239,7 +227,7 @@ const Footer: React.FC = () => {
               <motion.form
                 onSubmit={handleSubscribe}
                 className="space-y-4"
-                   transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
                   <input
@@ -264,9 +252,7 @@ const Footer: React.FC = () => {
                 </motion.div>
 
                 {/* Checkbox */}
-                <motion.div
-                  className="flex items-start space-x-3"
-                  >
+                <motion.div className="flex items-start space-x-3">
                   <motion.div
                     className="relative mt-1"
                     whileTap={{ scale: 0.95 }}
@@ -333,8 +319,6 @@ const Footer: React.FC = () => {
       {/* Bottom Footer */}
       <motion.div
         className="border-t border-slate-700"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >

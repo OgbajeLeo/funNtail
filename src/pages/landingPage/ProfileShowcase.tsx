@@ -9,8 +9,6 @@ const ProfileShowcaseSection: React.FC = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <motion.div
         key={index}
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: index * 0.1 + 0.5 }}
         whileHover={{ scale: 1.2, rotate: 15 }}

@@ -4,25 +4,7 @@ import ArrowRight from "../../components/iconComponent/ArrowRight";
 import TrustPilot from "../../components/iconComponent/TrustPilot";
 
 const HeroSection = () => {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const textVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
 
   const buttonVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -41,17 +23,17 @@ const HeroSection = () => {
   return (
     <motion.div
       className="relative mt-12 overflow-hidden"
-      variants={containerVariants}
+ 
       initial="hidden"
       animate="visible"
     >
       <div className="container mx-auto w-full max-w-7xl px-6 py-20">
         <div className="justify-between gap-12 items-center flex flex-col-reverse lg:flex-row">
           {/* Left content */}
-          <motion.div className="text-left space-y-3 " variants={textVariants}>
+          <motion.div className="text-left space-y-3 " >
             <motion.h1
               className="text-[28px] lg:text-[56px] max-w-[580px] w-full font-semibold leading-[140%]"
-              variants={textVariants}
+          
             >
               <span className="text-gray_text3">Find Trusted </span>
               <motion.span
@@ -63,7 +45,7 @@ const HeroSection = () => {
               
               <motion.span
                 className="text-primary_color"
-                variants={textVariants}
+              
               >
                 Sitters
               </motion.span>
@@ -72,7 +54,7 @@ const HeroSection = () => {
 
             <motion.p
               className="text-base lg:text-lg text-gray_text3 font-[400] leading-relaxed max-w-[580px] w-full "
-              variants={textVariants}
+    
             >
               Join thousands of pet owners using FunNTail to find reliable
               sitters. We love em just as much!

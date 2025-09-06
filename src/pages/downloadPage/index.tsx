@@ -34,14 +34,7 @@ const DownloadPage: React.FC = () => {
     },
   };
 
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+ 
 
   const phoneVariants: Variants = {
     hidden: { opacity: 0, x: -100, rotate: -10 },
@@ -55,7 +48,7 @@ const DownloadPage: React.FC = () => {
 
   return (
     <>
-      <section className="pt-5 lg:pt-[160px] px-2 sm:px-6 lg:px-8">
+      <section className="pt-5 sm:pt-[160px] lg:pt-[160px] px-2 sm:px-6 lg:px-8">
         <Navbar />
         <div className="max-w-7xl mx-auto text-[#032921] mt-24 sm:mt-0">
           <motion.div
@@ -82,27 +75,27 @@ const DownloadPage: React.FC = () => {
             </motion.div>
 
             {/* Content Side */}
-            <motion.div className="flex  justify-center items-start flex-col  ">
+            <motion.div className="flex  justify-center text-center lg:items-start flex-col  ">
               <motion.h1
                 className="text-[24px] sm:text-3xl lg:text-[32px] font-bold text-primary_color1 mb-6 text-[#032921]"
-                variants={itemVariants}
+              
               >
                 Download the FunNTail Client app
               </motion.h1>
 
               <motion.p
                 className="text-lg text-grey_text2 max-w-md mx-auto lg:mx-0"
-                variants={itemVariants}
+              
               >
                 Download the app, set up your accont, and apply for jobs today.
               </motion.p>
 
               {/* App Store Badges */}
-              <motion.div className="my-10" variants={itemVariants}>
+              <motion.div className="my-10">
                 <p className="text-[#141F39] font-semibold mb-6">
                   Will be available for download on
                 </p>
-                <div className="flex items-center justify-stat gap-4">
+                <div className="flex items-center justify-center lg:justify-start gap-4">
                   <motion.button
                     variants={buttonVariants}
                     onClick={() => handleButtonClick("ios")}

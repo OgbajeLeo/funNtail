@@ -71,17 +71,7 @@ const OurRoleSection: React.FC = () => {
     },
   };
 
-  const titleVariants: Variants = {
-    hidden: { opacity: 0, y: -30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
+ 
 
   const roleData = [
     {
@@ -131,7 +121,7 @@ const OurRoleSection: React.FC = () => {
           viewport={{ once: true }}
         >
           <motion.h2
-            variants={titleVariants}
+
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray_text3 mb-16"
           >
             Our Role

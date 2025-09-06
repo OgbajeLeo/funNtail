@@ -15,14 +15,6 @@ const HeroSection = () => {
     },
   };
 
-  const textVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
 
 
 
@@ -38,8 +30,6 @@ const HeroSection = () => {
           FunNTail’s Saftey and Community Guidelines
         </motion.h1>
         <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
           className="text-black text-base leading-relaxed text-justify"
         >
@@ -60,18 +50,17 @@ const HeroSection = () => {
           {/* Left content */}
           <motion.div
             className="text-left space-y-6 max-w-[780px] w-full"
-            variants={textVariants}
           >
             <motion.h1
               className="text-[20px] lg:text-[24px] max-w-[580px] w-full font-semibold leading-[140%]"
-              variants={textVariants}
+
             >
               For Pet Owners
             </motion.h1>
 
             <motion.div
               className="text-base lg:text-lg text-gray_text3 font-[400] leading-relaxed max-w-[780px] w-full"
-              variants={textVariants}
+
             >
               <ul className="list-disc list-inside space-y-3 text-lg w-full">
                 <li className="leading-relaxed">
@@ -119,18 +108,17 @@ const HeroSection = () => {
           {/* Left content */}
           <motion.div
             className="text-left space-y-6 max-w-[782px] w-full"
-            variants={textVariants}
           >
             <motion.h1
               className="text-[20px] lg:text-[24px] max-w-[580px] w-full font-semibold leading-[140%]"
-              variants={textVariants}
+
             >
               For Pet Workers
             </motion.h1>
 
             <motion.div
               className="text-base lg:text-lg text-gray_text3 font-[400] leading-relaxed max-w-[782px] w-full"
-              variants={textVariants}
+
             >
               <ul className="list-disc list-inside space-y-3 text-lg w-full">
                 <li className="leading-relaxed">
@@ -176,18 +164,17 @@ const HeroSection = () => {
           {/* Left content */}
           <motion.div
             className="text-left space-y-6 max-w-[780px] w-full"
-            variants={textVariants}
           >
             <motion.h1
               className="text-[20px] lg:text-[24px] max-w-[580px] w-full font-semibold leading-[140%]"
-              variants={textVariants}
+
             >
               Our Role
             </motion.h1>
 
             <motion.div
               className="text-base lg:text-lg text-gray_text3 font-[400] leading-relaxed max-w-[780px] w-full"
-              variants={textVariants}
+
             >
               <ul className="list-disc list-inside space-y-3 text-lg w-full">
                 <li className="leading-relaxed">

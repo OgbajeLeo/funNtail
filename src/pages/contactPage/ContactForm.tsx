@@ -95,10 +95,6 @@ const ContactSection: React.FC = () => {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   return (
     <div className="min-h-screen bg-[#F5F5F5] py-8 px-4">
@@ -111,7 +107,7 @@ const ContactSection: React.FC = () => {
         {/* FAQ Section */}
         <motion.div
           className="bg-white rounded-[24px] overflow-hidden"
-          variants={itemVariants}
+         
         >
           <div className="bg-[#1ABC9C] px-6 pt-8 relative overflow-hidden">
              <div className="absolute inset-0">
@@ -193,8 +189,7 @@ const ContactSection: React.FC = () => {
                 <motion.div
                   key={faq.id}
                   className="border border-gray-100 rounded-lg overflow-hidden"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                 
                   transition={{ delay: faq.id * 0.1 }}
                 >
                   <motion.button
@@ -263,7 +258,7 @@ const ContactSection: React.FC = () => {
         </motion.div>
 
         {/* Contact Form Section */}
-        <motion.div className="space-y-6" variants={itemVariants}>
+        <motion.div className="space-y-6">
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8">
             <motion.h3

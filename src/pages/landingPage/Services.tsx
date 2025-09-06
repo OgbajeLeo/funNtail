@@ -68,8 +68,6 @@ const ProtectionFeature: React.FC<ProtectionFeatureProps> = ({
 }) => {
   return (
     <motion.ul
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       className="flex items-start space-x-3 mb-6 list-disc"
@@ -152,8 +150,6 @@ const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Services Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
@@ -181,8 +177,6 @@ const ServicesSection: React.FC = () => {
 
         {/* Protection Section */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-white border border-gray-200 rounded-xl max-w-[1352px] w-full mx-auto overflow-hidden shadow-xl"
@@ -190,8 +184,6 @@ const ServicesSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Image Section */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="relative h-96 lg:h-full"
@@ -203,8 +195,7 @@ const ServicesSection: React.FC = () => {
               />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+              
                 transition={{ duration: 1, delay: 0.5 }}
               />
             </motion.div>
@@ -212,8 +203,6 @@ const ServicesSection: React.FC = () => {
             {/* Content Section */}
             <div className="p-8 lg:p-12">
               <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-2xl lg:text-[31px] font-bold text-[#032921] mb-3"
@@ -222,8 +211,6 @@ const ServicesSection: React.FC = () => {
               </motion.h3>
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-base lg:text-xl text-gray_text2 lg:mb-8 mb-4"
@@ -244,8 +231,6 @@ const ServicesSection: React.FC = () => {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >

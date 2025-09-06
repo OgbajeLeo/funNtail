@@ -27,52 +27,7 @@ const AboutSection = () => {
     },
   };
 
-  const textVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
 
-  const slideFromLeft: Variants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  const slideFromRight: Variants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  //   const scaleUp: Variants = {
-  //     hidden: { opacity: 0, scale: 0.8 },
-  //     visible: {
-  //       opacity: 1,
-  //       scale: 1,
-  //       transition: { duration: 0.6, ease: "easeOut" },
-  //     },
-  //   };
-
-  //   const floatVariants: Variants = {
-  //     animate: {
-  //       y: [0, -10, 0],
-  //       transition: {
-  //         duration: 3,
-  //         repeat: Infinity,
-  //         ease: "easeInOut",
-  //       },
-  //     },
-  //   };
 
   return (
     <div ref={ref} className="bg-gray-50 lg:py-20 py-16 overflow-hidden">
@@ -85,19 +40,18 @@ const AboutSection = () => {
         >
           {/* Left Content */}
           <motion.div
-            variants={slideFromLeft}
             className="space-y-8 max-w-[498px] w-full"
           >
             <motion.h2
               className="text-2xl lg:text-[32px] font-bold text-gray_text3 leading-tight text-center lg:text-left"
-              variants={textVariants}
+             
             >
               Find Reliable & Loving Pet Sitters Near You!
             </motion.h2>
 
             <motion.p
               className=" text-gray-600 leading-relaxed"
-              variants={textVariants}
+             
             >
               Find trustworthy, caring sitters for your pets whenever you need
               them. Browse verified sitters, stay updated with secure chats, and
@@ -110,7 +64,7 @@ const AboutSection = () => {
             </p>
 
             <div className="lg:block hidden mt-4">
-              <motion.div variants={textVariants}>
+              <motion.div>
                 <h3 className="text-[20px] font-semibold text-gray_text3 mb-4">
                   Available for download on
                 </h3>
@@ -135,14 +89,14 @@ const AboutSection = () => {
 
               <motion.h2
                 className="lg:text-[20px] mt-4 font-bold text-gray_text3 leading-tight"
-                variants={textVariants}
+               
               >
                 Fast & Easy Booking—Find a Sitter Today!
               </motion.h2>
 
               <motion.p
                 className="text-lg text-gray-600 leading-relaxed"
-                variants={textVariants}
+               
               >
                 Find a Loving Pet Sitter to Care for Your Pet Like You Would! or
                 Find Trusted Sitters for Your Pet’s Comfort and Care!
@@ -151,7 +105,7 @@ const AboutSection = () => {
           </motion.div>
 
           {/* Right Content - App Interface Mockup */}
-          <motion.div variants={slideFromRight} className="">
+          <motion.div className="">
             <img
               width={712}
               height={800}
@@ -167,7 +121,7 @@ const AboutSection = () => {
               className="lg:hidden block"
             />
             <div className="lg:hidden flex flex-col justify-center gap-6 items-center mt-10">
-              <motion.div variants={textVariants}>
+              <motion.div>
                 <h3 className="text-[20px] text-center font-semibold text-gray_text3 mb-4">
                   Available for download on
                 </h3>
@@ -192,14 +146,14 @@ const AboutSection = () => {
 
               <motion.h2
                 className="lg:text-[20px] font-bold text-center my-4 text-gray_text3 leading-tight"
-                variants={textVariants}
+               
               >
                 Fast & Easy Booking—Find a Sitter Today!
               </motion.h2>
 
               <motion.p
                 className="text-lg text-gray-600 text-center  leading-relaxed"
-                variants={textVariants}
+               
               >
                 Find a Loving Pet Sitter to Care for Your Pet Like You Would! or
                 Find Trusted Sitters for Your Pet’s Comfort and Care!

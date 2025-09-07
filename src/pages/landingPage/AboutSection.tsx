@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion,  } from "framer-motion";
-import right from "../../assets/right.svg";
-import right2 from "../../assets/right2.svg";
+import right from "../../assets/desktopCalendar.png"
+import right2 from "../../assets/mobileCalendar.png";
 import google from "../../assets/andriod.svg";
 import apple from "../../assets/apple.svg";
 const AboutSection = () => {
@@ -90,7 +90,7 @@ const AboutSection = () => {
             />
             <img
               width={712}
-              height={800}
+              height={600}
               src={right2}
               alt="image"
               className="lg:hidden block"

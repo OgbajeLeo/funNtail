@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
     useState<boolean>(false);
   const router = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
 
   const navItems: NavItem[] = [
     { label: "About Us", href: "/about" },
@@ -33,12 +34,13 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
       if (
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current.contains(target) &&
+        window.innerWidth >= 768 // md breakpoint
       ) {
         setIsDownloadDropdownOpen(false);
       }
@@ -77,8 +79,20 @@ const Navbar: React.FC = () => {
     setIsDownloadDropdownOpen(!isDownloadDropdownOpen);
   };
 
-  const handleDropdownOptionClick = () => {
-    router("/download");
+  const handleDropdownOptionClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDownloadDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+    setTimeout(() => {
+      router("/download");
+    }, 100);
+  };
+
+  const handleMobileDropdownOptionClick = () => {
+    setTimeout(() => {
+      router("/download");
+    }, 100);
     setIsDownloadDropdownOpen(false);
     setIsMobileMenuOpen(false);
   };
@@ -148,17 +162,13 @@ const Navbar: React.FC = () => {
               <motion.button
                 onClick={handleDownloadClick}
                 className="inline-flex justify-center items-center w-[179px] h-[46px] bg-primary_color text-white font-medium rounded-2xl shadow-lg hover:shadow-xl "
-                
               >
                 <span>Download App</span>
               </motion.button>
 
               {/* Dropdown Menu */}
               {isDownloadDropdownOpen && (
-                <motion.div
-                  
-                  className="absolute top-full right-0 text-sm py-4 mt-2 w-[200px] bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
-                >
+                <motion.div className="absolute top-full right-0 text-sm py-4 mt-2 w-[200px] bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50">
                   <motion.button
                     onClick={handleDropdownOptionClick}
                     className="w-full px-4 py-3 text-left text-gray-800 hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100"
@@ -181,7 +191,6 @@ const Navbar: React.FC = () => {
             <motion.button
               className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray_text3 hover:text-primary_color hover:bg-gray-100 "
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          
             >
               <HarmburgerIcon isOpen={isMobileMenuOpen} />
             </motion.button>
@@ -201,7 +210,7 @@ const Navbar: React.FC = () => {
           }}
         >
           <div className="px-4 pt-2 pb-6 space-y-1 border-t border-gray-100">
-            {navItems.map((item,) => (
+            {navItems.map((item) => (
               <motion.button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
@@ -210,37 +219,32 @@ const Navbar: React.FC = () => {
                     ? "text-primary_color"
                     : "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
                 }`}
-               
               >
                 {item.label}
               </motion.button>
             ))}
 
             {/* Mobile Download Button with Dropdown */}
-            <div className="w-full mt-4">
+            <div className="w-full mt-4" ref={mobileDropdownRef}>
               <motion.button
                 onClick={handleDownloadClick}
                 className="w-full px-6 py-3 bg-primary_color text-white font-medium rounded-2xl transition-all duration-300"
-              
               >
                 <span>Download App</span>
               </motion.button>
 
               {/* Mobile Dropdown Menu */}
-              {isDownloadDropdownOpen && isMobileMenuOpen && (
-                <motion.div
-                 
-                  className="mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden"
-                >
+              {isDownloadDropdownOpen && (
+                <motion.div className="mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
                   <motion.button
-                    onClick={handleDropdownOptionClick}
+                    onClick={handleMobileDropdownOptionClick}
                     className="w-full px-4 py-3 text-left text-gray-800 hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100"
                     whileHover={{ backgroundColor: "#f9fafb" }}
                   >
                     Become a Pet Worker
                   </motion.button>
                   <motion.button
-                    onClick={handleDropdownOptionClick}
+                    onClick={handleMobileDropdownOptionClick}
                     className="w-full px-4 py-3 text-left text-gray-800 hover:bg-gray-50 transition-colors duration-200"
                     whileHover={{ backgroundColor: "#f9fafb" }}
                   >

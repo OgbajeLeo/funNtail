@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import heroImage from "../../assets/heroImage.svg";
+import heroImage from "../../assets/heroDogBg.png";
 import ArrowRight from "../../components/iconComponent/ArrowRight";
 import TrustPilot from "../../components/iconComponent/TrustPilot";
 
@@ -107,7 +107,7 @@ const HeroSection = () => {
                     // width={800}
                     // height={800}
                     alt="logo"
-                    className="size-full"
+                    className="size-full max-w-[550px] max-h-[500px] h-full object-cover"
                     initial={{ rotate: 0 }}
                     transition={{ type: "spring", stiffness: 100, damping: 10 }}
                   />

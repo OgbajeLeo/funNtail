@@ -40,10 +40,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#032921] text-white w-full ">
       {/* Main Footer Content */}
-      <motion.div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
-       
-      >
+      <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex justify-between flex-row gap-2 lg:gap-10 w-full max-w-7xl mx-auto flex-wrap">
           <div className="flex flex-row justify-between gap-8 lg:gap-40 mb-6 lg:mb-0">
             {/* Learn More Section */}
@@ -51,15 +48,11 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
-               
               >
                 Learn More
               </motion.h3>
               <div className="space-y-4 text-[13px] lg:text-sm">
-                <motion.div
-                  className="flex items-center space-x-3"
-                  
-                >
+                <motion.div className="flex items-center space-x-3">
                   <motion.button
                     onClick={() => router("/blog")}
                     className="text-gray-300 hover:text-white transition-colors"
@@ -67,17 +60,12 @@ const Footer: React.FC = () => {
                   >
                     Blog
                   </motion.button>
-                  <motion.span
-                    className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                    >
+                  <motion.span className="bg-[#F3E8FF] text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold">
                     BETA
                   </motion.span>
                 </motion.div>
 
-                <motion.div
-                  className="flex items-center space-x-3"
-                 
-                >
+                <motion.div className="flex items-center space-x-3">
                   <motion.button
                     onClick={() => router("/community")}
                     className="text-gray-300 hover:text-white transition-colors"
@@ -85,9 +73,7 @@ const Footer: React.FC = () => {
                   >
                     FunNTail Community
                   </motion.button>
-                  <motion.span
-                    className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                   >
+                  <motion.span className="bg-[#F3E8FF] text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold">
                     BETA
                   </motion.span>
                 </motion.div>
@@ -95,14 +81,14 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/safety")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                 >
+                >
                   Safety
                 </motion.button>
 
                 <motion.button
                   onClick={() => router("/protect")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                   >
+                >
                   FunNTail Protect
                 </motion.button>
               </div>
@@ -113,7 +99,6 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
-               
               >
                 FunNTail
               </motion.h3>
@@ -121,14 +106,11 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/about")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                 >
+                >
                   About Us
                 </motion.button>
 
-                <motion.div
-                  className="flex items-center space-x-3"
-                 
-                >
+                <motion.div className="flex items-center space-x-3">
                   <motion.button
                     onClick={() => router("/careers")}
                     className="text-gray-300 hover:text-white transition-colors"
@@ -136,9 +118,7 @@ const Footer: React.FC = () => {
                   >
                     Careers
                   </motion.button>
-                  <motion.span
-                    className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                    >
+                  <motion.span className="bg-[#F3E8FF] text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold">
                     BETA
                   </motion.span>
                 </motion.div>
@@ -152,7 +132,6 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
-               
               >
                 Need Help?
               </motion.h3>
@@ -160,14 +139,14 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/contact")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                 >
+                >
                   Contact Us
                 </motion.button>
 
                 <motion.button
                   onClick={() => router("/faqs")}
                   className="block text-gray-300 hover:text-white transition-colors"
-               >
+                >
                   FAQs
                 </motion.button>
               </div>
@@ -178,23 +157,17 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white leading-tight"
                 whileHover={{ color: "#10B981" }}
-               
               >
                 All the pet care tips you need - straight to your inbox
               </motion.h3>
 
-              <motion.p
-                className="text-gray-300 text-sm leading-relaxed"
-                 >
+              <motion.p className="text-gray-300 text-sm leading-relaxed">
                 Receive the latest adorable pet photos, care tips, training
                 advice, product recommendations and more.
               </motion.p>
 
               {/* Email Form */}
-              <motion.form
-                onSubmit={handleSubscribe}
-                className="space-y-4"
-               >
+              <motion.form onSubmit={handleSubscribe} className="space-y-4">
                 <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
                   <input
                     type="email"
@@ -240,8 +213,7 @@ const Footer: React.FC = () => {
                       whileHover={{ borderColor: "#10B981" }}
                     >
                       {isChecked && (
-                        <motion.div
-                        >
+                        <motion.div>
                           <Check size={12} className="text-white" />
                         </motion.div>
                       )}
@@ -266,7 +238,7 @@ const Footer: React.FC = () => {
                       ? "bg-primary_color hover:bg-emerald-700 text-white"
                       : "bg-gray-600 text-gray-400 cursor-not-allowed"
                   }`}
-               >
+                >
                   {isSubscribed ? "Subscribed!" : "Subscribe"}
                 </motion.button>
               </motion.form>
@@ -276,9 +248,7 @@ const Footer: React.FC = () => {
       </motion.div>
 
       {/* Bottom Footer */}
-      <motion.div
-        className="border-t border-slate-700"
-      >
+      <motion.div className="border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             {/* Copyright and Links */}
@@ -300,7 +270,6 @@ const Footer: React.FC = () => {
                     key={link.text}
                     onClick={() => router(link.path)}
                     className="text-[#E2E8F0] hover:text-white text-sm transition-colors"
-                    
                   >
                     {link.text}
                   </motion.button>
@@ -316,7 +285,6 @@ const Footer: React.FC = () => {
                     key={social.name}
                     href={social.href}
                     className="text-white hover:text-white transition-colors"
-                   
                   >
                     {social.icon}
                   </motion.a>
@@ -327,7 +295,6 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/download")}
                   className="flex items-center font-medium"
-                 
                 >
                   <img src={apple} alt="" className="h-10" />
                 </motion.button>
@@ -335,7 +302,6 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/download")}
                   className="flex items-center  font-medium"
-                 
                 >
                   <img src={google} alt="" className="h-10" />
                 </motion.button>

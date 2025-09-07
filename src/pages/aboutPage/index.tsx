@@ -19,7 +19,7 @@ const AboutPage = () => {
 
           {/* Header Section */}
           <motion.header
-            className="relative py-8 z-20 overflow-hidden opacity-20 bg-cover bg-center bg-no-repeat"
+            className="relative py-8 z-20 overflow-hidden bg-cover bg-center bg-no-repeat"
             
           >
             {/* Header content */}

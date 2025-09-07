@@ -201,7 +201,7 @@ const Navbar: React.FC = () => {
           }}
         >
           <div className="px-4 pt-2 pb-6 space-y-1 border-t border-gray-100">
-            {navItems.map((item, index) => (
+            {navItems.map((item,) => (
               <motion.button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}

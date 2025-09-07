@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import google from "../../assets/andriod.svg";
 import apple from "../../assets/apple.svg";
 import FacebookIcon from "../iconComponent/FacebookIcon";
@@ -35,26 +35,13 @@ const Footer: React.FC = () => {
     { icon: <LinkedinIcon />, href: "#", name: "LinkedIn" },
   ];
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
 
   return (
     <footer className="bg-[#032921] text-white w-full ">
       {/* Main Footer Content */}
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+       
       >
         <div className="flex justify-between flex-row gap-2 lg:gap-10 w-full max-w-7xl mx-auto flex-wrap">
           <div className="flex flex-row justify-between gap-8 lg:gap-40 mb-6 lg:mb-0">
@@ -63,15 +50,14 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
-                transition={{ duration: 0.3 }}
+               
               >
                 Learn More
               </motion.h3>
               <div className="space-y-4 text-[13px] lg:text-sm">
                 <motion.div
                   className="flex items-center space-x-3"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+                  
                 >
                   <motion.button
                     onClick={() => router("/blog")}
@@ -82,17 +68,14 @@ const Footer: React.FC = () => {
                   </motion.button>
                   <motion.span
                     className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
+                    >
                     BETA
                   </motion.span>
                 </motion.div>
 
                 <motion.div
                   className="flex items-center space-x-3"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+                 
                 >
                   <motion.button
                     onClick={() => router("/community")}
@@ -103,9 +86,7 @@ const Footer: React.FC = () => {
                   </motion.button>
                   <motion.span
                     className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                  >
+                   >
                     BETA
                   </motion.span>
                 </motion.div>
@@ -113,18 +94,14 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/safety")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ x: 5, color: "#10B981" }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+                 >
                   Safety
                 </motion.button>
 
                 <motion.button
                   onClick={() => router("/protect")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ x: 5, color: "#10B981" }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+                   >
                   FunNTail Protect
                 </motion.button>
               </div>
@@ -135,7 +112,7 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
-                transition={{ duration: 0.3 }}
+               
               >
                 FunNTail
               </motion.h3>
@@ -143,16 +120,13 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/about")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ x: 5, color: "#10B981" }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+                 >
                   About Us
                 </motion.button>
 
                 <motion.div
                   className="flex items-center space-x-3"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
+                 
                 >
                   <motion.button
                     onClick={() => router("/careers")}
@@ -163,9 +137,7 @@ const Footer: React.FC = () => {
                   </motion.button>
                   <motion.span
                     className="bg-white text-gray_text3 text-[10px] px-2 py-1 rounded-sm font-semibold"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                  >
+                    >
                     BETA
                   </motion.span>
                 </motion.div>
@@ -179,7 +151,7 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white mb-6"
                 whileHover={{ color: "#10B981" }}
-                transition={{ duration: 0.3 }}
+               
               >
                 Need Help?
               </motion.h3>
@@ -187,18 +159,14 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/contact")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ x: 5, color: "#10B981" }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+                 >
                   Contact Us
                 </motion.button>
 
                 <motion.button
                   onClick={() => router("/faqs")}
                   className="block text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ x: 5, color: "#10B981" }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+               >
                   FAQs
                 </motion.button>
               </div>
@@ -209,16 +177,14 @@ const Footer: React.FC = () => {
               <motion.h3
                 className="text-base font-semibold text-white leading-tight"
                 whileHover={{ color: "#10B981" }}
-                transition={{ duration: 0.3 }}
+               
               >
                 All the pet care tips you need - straight to your inbox
               </motion.h3>
 
               <motion.p
                 className="text-gray-300 text-sm leading-relaxed"
-                initial={{ opacity: 0.8 }}
-                whileHover={{ opacity: 1 }}
-              >
+                 >
                 Receive the latest adorable pet photos, care tips, training
                 advice, product recommendations and more.
               </motion.p>
@@ -227,8 +193,7 @@ const Footer: React.FC = () => {
               <motion.form
                 onSubmit={handleSubscribe}
                 className="space-y-4"
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+               >
                 <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
                   <input
                     type="email"
@@ -272,13 +237,9 @@ const Footer: React.FC = () => {
                       }`}
                       onClick={() => setIsChecked(!isChecked)}
                       whileHover={{ borderColor: "#10B981" }}
-                      transition={{ duration: 0.2 }}
                     >
                       {isChecked && (
                         <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ type: "spring", stiffness: 400 }}
                         >
                           <Check size={12} className="text-white" />
                         </motion.div>
@@ -304,10 +265,7 @@ const Footer: React.FC = () => {
                       ? "bg-primary_color hover:bg-emerald-700 text-white"
                       : "bg-gray-600 text-gray-400 cursor-not-allowed"
                   }`}
-                  whileHover={email && isChecked ? { scale: 1.05, y: -2 } : {}}
-                  whileTap={email && isChecked ? { scale: 0.98 } : {}}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
+               >
                   {isSubscribed ? "Subscribed!" : "Subscribe"}
                 </motion.button>
               </motion.form>
@@ -319,8 +277,6 @@ const Footer: React.FC = () => {
       {/* Bottom Footer */}
       <motion.div
         className="border-t border-slate-700"
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.5 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
@@ -343,8 +299,7 @@ const Footer: React.FC = () => {
                     key={link.text}
                     onClick={() => router(link.path)}
                     className="text-[#E2E8F0] hover:text-white text-sm transition-colors"
-                    whileHover={{ color: "#10B981", y: -2 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    
                   >
                     {link.text}
                   </motion.button>
@@ -360,13 +315,7 @@ const Footer: React.FC = () => {
                     key={social.name}
                     href={social.href}
                     className="text-white hover:text-white transition-colors"
-                    whileHover={{
-                      scale: 1.2,
-                      rotate: 5,
-                      color: "#10B981",
-                    }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                   
                   >
                     {social.icon}
                   </motion.a>
@@ -377,8 +326,7 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/download")}
                   className="flex items-center font-medium"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                 
                 >
                   <img src={apple} alt="" className="h-10" />
                 </motion.button>
@@ -386,8 +334,7 @@ const Footer: React.FC = () => {
                 <motion.button
                   onClick={() => router("/download")}
                   className="flex items-center  font-medium"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                 
                 >
                   <img src={google} alt="" className="h-10" />
                 </motion.button>

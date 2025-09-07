@@ -9,6 +9,7 @@ import LinkedinIcon from "../iconComponent/LinkedinIcon";
 import YoutubeIcon from "../iconComponent/YoutubeIcon";
 import { Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);

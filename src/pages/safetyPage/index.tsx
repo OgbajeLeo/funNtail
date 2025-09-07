@@ -25,8 +25,7 @@ const SafetyPage = () => {
 
           <motion.header
             className="relative py-8 z-20 overflow-hidden bg-cover bg-center bg-no-repeat"
-            
-            transition={{ duration: 0.8 }}
+         
           >
             {/* Header content */}
 
@@ -34,7 +33,6 @@ const SafetyPage = () => {
               <motion.h1
                 className="text-[24px] md:text-3xl lg:text-[40px] font-bold text-primary_color mb-4"
            
-                transition={{ duration: 0.8, delay: 0.2 }}
               >
                 Safety
               </motion.h1>

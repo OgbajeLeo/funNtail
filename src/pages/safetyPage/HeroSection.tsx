@@ -1,19 +1,10 @@
-import { motion, type Variants } from "framer-motion";
+import { motion, } from "framer-motion";
 import image1 from "../../assets/Frame 2147223916.webp"
 import image2 from "../../assets/Frame 2147223919.webp"
 import image3 from "../../assets/Frame 2147223919-1.webp"
 
 const HeroSection = () => {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2,
-      },
-    },
-  };
+
 
 
 
@@ -21,9 +12,7 @@ const HeroSection = () => {
   return (
     <motion.div
       className="relative overflow-hidden bg-gradient-to-br from-[#F5F5F5] to-[#E8F5F3] pb-20"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+     
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 mb-6 lg:mb-20">
         <motion.h1 className="text-gray_text3 text-2xl lg:text-[32px] font-bold leading-tight text-center my-6">
@@ -204,7 +193,7 @@ const HeroSection = () => {
           {/* Right content - Pet safety images collage */}
           <motion.div
             className="relative flex justify-center items-center"
-            animate="float"
+          
           >
             <img
               src={image3}

@@ -84,33 +84,18 @@ const ContactSection: React.FC = () => {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
+ 
 
   return (
     <div className="min-h-screen bg-[#F5F5F5] py-8 px-4">
       <motion.div
         className="max-w-7xl lg:p-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+      
       >
         {/* FAQ Section */}
-        <motion.div
-          className="bg-white rounded-[24px] overflow-hidden"
-         
-        >
+        <motion.div className="bg-white rounded-[24px] overflow-hidden">
           <div className="bg-[#1ABC9C] px-6 pt-8 relative overflow-hidden">
-             <div className="absolute inset-0">
+            <div className="absolute inset-0">
               <img
                 src={pageTitle}
                 className="absolute top-0 left-0 w-full opacity-20 h-full"
@@ -121,9 +106,7 @@ const ContactSection: React.FC = () => {
             <div className="relative z-10">
               <motion.h2
                 className="text-white text-xl lg:text-[28px] text-center font-semibold mb-6"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+              
               >
                 Do you still have questions?
               </motion.h2>
@@ -132,27 +115,21 @@ const ContactSection: React.FC = () => {
               <div className="flex justify-center z-30">
                 <motion.div
                   className="flex items-end "
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.4, type: "spring" }}
+              
                 >
-                
                   <motion.div
                     className="relative"
-                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog1} alt="dog" className="" />
                   </motion.div>
-                
+
                   <motion.div
                     className="relative lg:-ml-12"
-                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <img src={dog2} alt="dog" className="" />
                   </motion.div>
                 </motion.div>
               </div>
-
             </div>
           </div>
 
@@ -164,8 +141,7 @@ const ContactSection: React.FC = () => {
                   : "text-gray_text2 hover:bg-white/10"
               }`}
               onClick={() => setActiveTab("owners")}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+             
             >
               Help for Pet Owners
             </motion.button>
@@ -176,8 +152,7 @@ const ContactSection: React.FC = () => {
                   : "text-gray_text2 hover:bg-white/10"
               }`}
               onClick={() => setActiveTab("workers")}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+           
             >
               Help for Pet Workers
             </motion.button>
@@ -189,7 +164,6 @@ const ContactSection: React.FC = () => {
                 <motion.div
                   key={faq.id}
                   className="border border-gray-100 rounded-lg overflow-hidden"
-                 
                   transition={{ delay: faq.id * 0.1 }}
                 >
                   <motion.button
@@ -222,8 +196,7 @@ const ContactSection: React.FC = () => {
                       </span>
                     </div>
                     <motion.div
-                      animate={{ rotate: openFAQ === faq.id ? 45 : 0 }}
-                      transition={{ duration: 0.2 }}
+                     
                       className="text-gray-400 group-hover:text-emerald-500"
                     >
                       <Plus className="w-5 h-5" />
@@ -233,10 +206,7 @@ const ContactSection: React.FC = () => {
                   <AnimatePresence>
                     {openFAQ === faq.id && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      
                         className="overflow-hidden"
                       >
                         <div
@@ -261,29 +231,15 @@ const ContactSection: React.FC = () => {
         <motion.div className="space-y-6">
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8">
-            <motion.h3
-              className="text-2xl font-bold text-gray_text3 mb-2"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
+            <motion.h3 className="text-2xl font-bold text-gray_text3 mb-2">
               Get in Touch With Us
             </motion.h3>
-            <motion.p
-              className="text-gray_text2 mb-8 text-sm"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+            <motion.p className="text-gray_text2 mb-8 text-sm">
               Kindly fill in your details so we can reach you back!
             </motion.p>
 
             <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
+              <motion.div>
                 <label className="block text-sm font-semibold text-gray_text3 mb-3">
                   Email Address
                 </label>
@@ -298,11 +254,7 @@ const ContactSection: React.FC = () => {
                 />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
+              <motion.div>
                 <label className="block text-sm font-semibold text-gray_text3 mb-3">
                   Message
                 </label>
@@ -325,22 +277,9 @@ const ContactSection: React.FC = () => {
                   !formData.email.trim() ||
                   !formData.message.trim()
                 }
-                whileHover={{ scale: 1.02, y: -1 }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
               >
                 {isSubmitting ? (
-                  <motion.div
-                    className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      duration: 1,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
+                  <motion.div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
                 ) : (
                   <span className="text-white text-lg">Submit</span>
                 )}
@@ -350,12 +289,7 @@ const ContactSection: React.FC = () => {
             {/* Success/Error Messages */}
             <AnimatePresence>
               {submitStatus === "success" && (
-                <motion.div
-                  className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-2"
-                  initial={{ opacity: 0, scale: 0.8, y: -10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, y: -10 }}
-                >
+                <motion.div className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-2">
                   <Check className="w-5 h-5 text-primary_color" />
                   <span className="text-primary_color text-sm">
                     Message sent successfully! We'll get back to you soon.
@@ -364,12 +298,7 @@ const ContactSection: React.FC = () => {
               )}
 
               {submitStatus === "error" && (
-                <motion.div
-                  className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2"
-                  initial={{ opacity: 0, scale: 0.8, y: -10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, y: -10 }}
-                >
+                <motion.div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2">
                   <X className="w-5 h-5 text-red-600" />
                   <span className="text-red-700 text-sm">
                     Failed to send message. Please try again.
@@ -379,21 +308,12 @@ const ContactSection: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          <motion.div
-            className="bg-white rounded-2xl p-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
+          <motion.div className="bg-white rounded-2xl p-8">
             <h4 className="text-xl font-bold text-gray_text3 mb-6">
               Contact Information
             </h4>
             <div className="flex flex-col lg:flex-row gap-2 lg:items-center space-x-4 justify-between">
-              <motion.div
-                className="flex items-center space-x-4"
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
+              <motion.div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-primary_color" />
                 </div>
@@ -402,11 +322,7 @@ const ContactSection: React.FC = () => {
                 </span>
               </motion.div>
 
-              <motion.div
-                className="flex items-center space-x-4"
-                whileHover={{ x: 4 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
+              <motion.div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-primary_color" />
                 </div>

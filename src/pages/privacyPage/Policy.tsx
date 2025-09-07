@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence,type Variants } from "framer-motion";
+import { motion, AnimatePresence,} from "framer-motion";
 import {
   FileText,
   Shield,
@@ -184,17 +184,6 @@ const LegalScreen: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        duration: 0.6,
-      },
-    },
-  };
-
 
 
   return (
@@ -204,9 +193,6 @@ const LegalScreen: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Table of Contents - Desktop */}
           <motion.aside
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
             className="hidden lg:block lg:w-[350px] shrink-0"
           >
             <div className=" p-6 sticky top-28">
@@ -243,9 +229,6 @@ const LegalScreen: React.FC = () => {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
                 className="lg:hidden  lg:p-6 mb-6"
               >
                 <h2 className="text-lg font-semibold text-gray_text3 mb-4 flex items-center gap-2">
@@ -274,15 +257,11 @@ const LegalScreen: React.FC = () => {
 
           {/* Main Content */}
           <motion.main
-            initial="hidden"
-            animate="visible"
             className="flex-1 max-w-none"
           >
             {/* Introduction */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+       
               className=" lg:p-8 mb-8"
             >
               <p className="text-gray_text2 leading-relaxed mb-4">
@@ -310,10 +289,7 @@ const LegalScreen: React.FC = () => {
                 <motion.section
                   key={section.id}
                   id={section.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+          
                   className=" lg:p-8 scroll-mt-28"
                 >
                   <div className="flex items-center gap-3 mb-6">

@@ -20,13 +20,12 @@ const PrivacyPage = () => {
           <motion.header
             className="relative py-8 z-20 overflow-hidden "
        
-            transition={{ duration: 0.8 }}
           >
             {/* Header content */}
             <div className="relative z-10 max-w-4xl mx-auto text-center pt-10 lg:p-0">
               <motion.h1
                 className="text-[24px] md:text-3xl lg:text-[40px] font-bold text-primary_color mb-4"
-                transition={{ duration: 0.8, delay: 0.2 }}
+            
               >
                 Privacy Policy
               </motion.h1>

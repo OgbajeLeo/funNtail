@@ -78,8 +78,8 @@ const Navbar: React.FC = () => {
   };
 
   const handleDropdownOptionClick = () => {
-    setIsDownloadDropdownOpen(false);
     router("/download");
+    setIsDownloadDropdownOpen(false);
     setIsMobileMenuOpen(false);
   };
 
@@ -147,11 +147,8 @@ const Navbar: React.FC = () => {
             <div className="hidden md:block relative" ref={dropdownRef}>
               <motion.button
                 onClick={handleDownloadClick}
-                className="inline-flex justify-center items-center w-[179px] h-[46px] bg-primary_color text-white font-medium rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
-                whileHover={{
-                  scale: 1.05,
-                }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex justify-center items-center w-[179px] h-[46px] bg-primary_color text-white font-medium rounded-2xl shadow-lg hover:shadow-xl "
+                
               >
                 <span>Download App</span>
               </motion.button>
@@ -159,10 +156,7 @@ const Navbar: React.FC = () => {
               {/* Dropdown Menu */}
               {isDownloadDropdownOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  
                   className="absolute top-full right-0 text-sm py-4 mt-2 w-[200px] bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
                 >
                   <motion.button
@@ -185,9 +179,9 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray_text3 hover:text-primary_color hover:bg-gray-100 focus:outline-none transition-colors duration-200"
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray_text3 hover:text-primary_color hover:bg-gray-100 "
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              whileTap={{ scale: 0.95 }}
+          
             >
               <HarmburgerIcon isOpen={isMobileMenuOpen} />
             </motion.button>
@@ -216,12 +210,7 @@ const Navbar: React.FC = () => {
                     ? "text-primary_color"
                     : "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
                 }`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{
-                  opacity: isMobileMenuOpen ? 1 : 0,
-                  x: isMobileMenuOpen ? 0 : -20,
-                }}
-                transition={{ delay: index * 0.1 }}
+               
               >
                 {item.label}
               </motion.button>
@@ -232,13 +221,7 @@ const Navbar: React.FC = () => {
               <motion.button
                 onClick={handleDownloadClick}
                 className="w-full px-6 py-3 bg-primary_color text-white font-medium rounded-2xl transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: isMobileMenuOpen ? 1 : 0,
-                  y: isMobileMenuOpen ? 0 : 20,
-                }}
-                transition={{ delay: 0.3 }}
-                whileTap={{ scale: 0.95 }}
+              
               >
                 <span>Download App</span>
               </motion.button>
@@ -246,10 +229,7 @@ const Navbar: React.FC = () => {
               {/* Mobile Dropdown Menu */}
               {isDownloadDropdownOpen && isMobileMenuOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
+                 
                   className="mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden"
                 >
                   <motion.button

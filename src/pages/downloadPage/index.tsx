@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import ios from "../../assets/apple.svg";
 import google from "../../assets/andriod.svg";
 import app from "../../assets/app.png";
@@ -8,44 +8,12 @@ import Footer from "../../components/shared/Footer";
 
 
 const DownloadPage: React.FC = () => {
-  const buttonVariants: Variants = {
-    hover: {
-      y: -1,
-      transition: {
-        duration: 0.2,
-        ease: "easeInOut",
-      },
-    },
-  };
-
+ 
   const handleButtonClick = (store: string) => {
     console.log(store); 
   };
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
  
-
-  const phoneVariants: Variants = {
-    hidden: { opacity: 0, x: -100, rotate: -10 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      rotate: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
   return (
     <>
       <section className="pt-5 sm:pt-[160px] lg:pt-[160px] px-2 sm:px-6 lg:px-8">
@@ -53,24 +21,18 @@ const DownloadPage: React.FC = () => {
         <div className="max-w-7xl mx-auto text-[#032921] mt-24 sm:mt-0">
           <motion.div
             className="flex flex-col lg:flex-row justify-between gap-20 items-center"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+         
           >
             {/* Phone Mockup Side */}
             <motion.div
               className="flex justify-center lg:justify-start"
-              variants={phoneVariants}
+             
             >
               <motion.img
                 src={app}
                 alt="App Preview"
                 className="w-full max-w-[550px] max-h-[677px] h-auto"
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+               
               />
             </motion.div>
 
@@ -97,7 +59,6 @@ const DownloadPage: React.FC = () => {
                 </p>
                 <div className="flex items-center justify-center lg:justify-start gap-4">
                   <motion.button
-                    variants={buttonVariants}
                     onClick={() => handleButtonClick("ios")}
                     whileHover="hover"
                     className="inline-flex items-center gap-2 text-primary_color1 font-semibold text-base lg:text-lg  transition-colors group cursor-pointer"
@@ -106,8 +67,7 @@ const DownloadPage: React.FC = () => {
                   </motion.button>
                   <motion.button
                     onClick={() => handleButtonClick("android")}
-                    variants={buttonVariants}
-                    whileHover="hover"
+                   
                     className="inline-flex items-center gap-2 text-primary_color1 font-semibold text-base lg:text-lg  transition-colors group cursor-pointer"
                   >
                     <img src={google} alt="Google Play" className="w-32 h-10" />

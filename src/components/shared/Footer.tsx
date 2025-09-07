@@ -203,7 +203,7 @@ const Footer: React.FC = () => {
                 </motion.button>
               </div>
             </motion.div>
-            
+
             {/* Newsletter Section */}
             <motion.div className="space-y-6 sm:w-[387px] w-full lg:flex-1">
               <motion.h3

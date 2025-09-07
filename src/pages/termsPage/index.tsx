@@ -20,17 +20,12 @@ const TermsPage = () => {
           <motion.header
             className="relative py-8 z-20 overflow-hidden bg-cover bg-center bg-no-repeat"
            
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
           >
             {/* Header content */}
             <div className="relative z-10 max-w-4xl mx-auto text-center pt-10 lg:p-0">
               <motion.h1
                 className="text-[24px] md:text-3xl lg:text-[40px] font-bold text-primary_color mb-4"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                
               >
                Terms & Conditions
               </motion.h1>

@@ -7,9 +7,7 @@ const AboutContent = () => {
         About FunNTail
       </motion.h1>
       <motion.p
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
+       
         className="text-gray_text2 text-sm lg:text-base leading-relaxed text-justify"
       >
         FunNTail, founded by Efe Apoki, is a pet matchmaking platform built to

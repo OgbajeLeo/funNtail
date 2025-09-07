@@ -1,41 +1,18 @@
-import { useRef, useEffect } from "react";
-import { motion, type Variants, useInView, useAnimation } from "framer-motion";
+import { useRef } from "react";
+import { motion,  } from "framer-motion";
 import right from "../../assets/right.svg";
 import right2 from "../../assets/right2.svg";
 import google from "../../assets/andriod.svg";
 import apple from "../../assets/apple.svg";
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
-
-  // Animation variants
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
 
 
   return (
     <div ref={ref} className="bg-gray-50 lg:py-20 py-16 overflow-hidden">
       <div className="container w-full max-w-7xl mx-auto px-6">
         <motion.div
-          variants={containerVariants}
           initial="hidden"
-          animate={controls}
           className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:justify-between  mb-20"
         >
           {/* Left Content */}
@@ -71,16 +48,14 @@ const AboutSection = () => {
                 <div className="flex  gap-4">
                   <motion.button
                     className="flex items-center font-medium"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
+                   
                   >
                     <img src={apple} alt="" />
                   </motion.button>
 
                   <motion.button
                     className="flex items-center  font-medium"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
+                   
                   >
                     <img src={google} alt="" />
                   </motion.button>
@@ -128,16 +103,14 @@ const AboutSection = () => {
                 <div className="flex  gap-4">
                   <motion.button
                     className="flex items-center font-medium"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
+                   
                   >
                     <img src={apple} alt="" />
                   </motion.button>
 
                   <motion.button
                     className="flex items-center  font-medium"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
+                   
                   >
                     <img src={google} alt="" />
                   </motion.button>

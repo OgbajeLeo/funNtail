@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion} from "framer-motion";
 import frame3 from "../../assets/frame3.webp"
 import frame5 from "../../assets/frame5.webp"
 import frame4 from "../../assets/frame4.jpg"
@@ -11,7 +11,7 @@ interface RoleCardProps {
   description: string;
   imageSrc: string;
   imageAlt: string;
-  index: number;
+
 }
 
 const RoleCard: React.FC<RoleCardProps> = ({
@@ -19,24 +19,12 @@ const RoleCard: React.FC<RoleCardProps> = ({
   description,
   imageSrc,
   imageAlt,
-  index,
+
 }) => {
-  const cardVariants:Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: index * 0.2,
-        ease: "easeOut",
-      },
-    },
-  };
+ 
 
   return (
     <motion.div
-      variants={cardVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
@@ -60,17 +48,6 @@ const RoleCard: React.FC<RoleCardProps> = ({
 };
 
 const OurRoleSection: React.FC = () => {
-  const containerVariants:Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        duration: 0.6,
-      },
-    },
-  };
-
  
 
   const roleData = [
@@ -115,10 +92,7 @@ const OurRoleSection: React.FC = () => {
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+       
         >
           <motion.h2
 
@@ -135,7 +109,7 @@ const OurRoleSection: React.FC = () => {
                 description={role.description}
                 imageSrc={role.imageSrc}
                 imageAlt={role.imageAlt}
-                index={index}
+               
               />
             ))}
           </div>
@@ -148,7 +122,7 @@ const OurRoleSection: React.FC = () => {
                 description={role.description}
                 imageSrc={role.imageSrc}
                 imageAlt={role.imageAlt}
-                index={index + 3}
+             
               />
             ))}
           </div>

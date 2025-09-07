@@ -19,18 +19,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      // transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      // whileHover={{
-      //   scale: 1.02,
-      //   boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
-      // }}
-      className="bg-white rounded-xl px-6 py-8 shadow-2xl hover:shadow-xl transition-all duration-300 max-h-[390px] group"
+     
+      className="bg-white rounded-xl px-6 py-8 shadow-2xl hover:shadow-xl transition-all duration-300 max-h-[390px] group lg:mx-auto mx-8"
     >
       <motion.div
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
         className="mb-6"
       >
         <div className=" flex items-center justify-center text-white">
@@ -39,16 +31,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       </motion.div>
 
       <motion.h3
-        className="text-2xl text-center font-semibold text-gray_text3 mb-3 group-hover:text-primary_color transition-colors"
+        className="text-lg lg:text-2xl text-center font-semibold text-gray_text3 mb-3 group-hover:text-primary_color transition-colors"
        
       >
         {title}
       </motion.h3>
 
       <motion.p
-        className="text-[#032921] lg:text-sm text-base text-center leading-relaxed"
-        initial={{ opacity: 0.8 }}
-        whileHover={{ opacity: 1 }}
+        className="text-[#032921] lg:text-sm text-sm text-center leading-relaxed"
+       
       >
         {description}
       </motion.p>
@@ -92,10 +83,7 @@ const PetSittersSection: React.FC = () => {
     <section className="py-20 bg-[#1ABC9C1A] overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+         
           className="text-center mb-16"
         >
           <motion.h2

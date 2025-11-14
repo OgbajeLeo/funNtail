@@ -31,21 +31,22 @@ jobs:
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
         
-      # ✅ NO --delete FLAG = 100% SAFE
-      # Old files stay but get overwritten, user content never touched
-      - name: Sync S3 bucket (no delete, completely safe)
+
+      - name: Deploy to S3 website_frontend folder
         run: |
-          aws s3 sync dist/ s3://funntail-bucket/ \
+          aws s3 sync dist/ s3://funntail-bucket/website_frontend/ \
+            --delete \
             --region eu-west-2 \
-            --size-only \
-            --cache-control "public, max-age=31536000"
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
+            --exclude "*.json"
           
-          # Upload HTML files with no-cache separately
-          find dist -name "*.html" -type f | while read file; do
-            aws s3 cp "$file" "s3://funntail-bucket/$(basename $file)" \
-              --region eu-west-2 \
-              --cache-control "no-cache, no-store, must-revalidate"
-          done
+          aws s3 sync dist/ s3://funntail-bucket/website_frontend/ \
+            --region eu-west-2 \
+            --cache-control "no-cache, no-store, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.json"
         
       - name: CloudFront Invalidation
         run: |

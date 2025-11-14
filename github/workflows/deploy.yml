@@ -9,10 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: funntail_website
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -20,19 +16,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19'
+          node-version: "20.19"
 
       - name: Install dependencies
         run: npm install
+        working-directory: funntail_website
 
       - name: Build project
         run: npm run build
+        working-directory: funntail_website
 
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
 
       - name: Sync S3 bucket
         run: aws s3 sync dist s3://funntail-bucket --delete --region eu-west-2
+        working-directory: funntail_website
 
       - name: CloudFront Invalidation
         run: aws cloudfront create-invalidation --distribution-id E2YRBHJE7WASUV --paths "/*"

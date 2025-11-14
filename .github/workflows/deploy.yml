@@ -31,37 +31,23 @@ jobs:
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
         
-      # ✅ SAFEST: Only sync/delete files matching your build output patterns
-      # This protects ALL user-uploaded content automatically
-      - name: Sync S3 bucket (frontend assets only)
+      # ✅ NO --delete FLAG = 100% SAFE
+      # Old files stay but get overwritten, user content never touched
+      - name: Sync S3 bucket (no delete, completely safe)
         run: |
           aws s3 sync dist/ s3://funntail-bucket/ \
-            --delete \
-            --exclude "*" \
-            --include "*.html" \
-            --include "*.js" \
-            --include "*.css" \
-            --include "*.svg" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.ico" \
-            --include "*.json" \
-            --include "*.woff*" \
-            --include "*.ttf" \
-            --include "assets/*" \
-            --region eu-west-2
-        
-      - name: Check for changes
-        id: check_changes
-        run: |
-          if git diff --quiet HEAD^ HEAD -- dist; then
-            echo "no_changes=true" >> $GITHUB_ENV
-          else
-            echo "no_changes=false" >> $GITHUB_ENV
-          fi
+            --region eu-west-2 \
+            --size-only \
+            --cache-control "public, max-age=31536000"
           
+          # Upload HTML files with no-cache separately
+          find dist -name "*.html" -type f | while read file; do
+            aws s3 cp "$file" "s3://funntail-bucket/$(basename $file)" \
+              --region eu-west-2 \
+              --cache-control "no-cache, no-store, must-revalidate"
+          done
+        
       - name: CloudFront Invalidation
-        if: env.no_changes == 'false'
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E2YRBHJE7WASUV \

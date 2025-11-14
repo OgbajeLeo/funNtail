@@ -304,7 +304,7 @@ const ContactSection: React.FC = () => {
                   <Phone className="w-5 h-5 text-primary_color" />
                 </div>
                 <span className="text-gray_text2 font-normal">
-                  +44 7464 368 373
+                  07464 368 373
                 </span>
               </motion.div>
             </div>

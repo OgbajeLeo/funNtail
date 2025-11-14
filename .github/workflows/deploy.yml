@@ -9,10 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: funntail_website
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -34,7 +30,17 @@ jobs:
       - name: Sync S3 bucket
         run: aws s3 sync dist s3://funntail-bucket --delete --region eu-west-2
 
+      - name: Check for changes in dist
+        id: check_changes
+        run: |
+          if git diff --quiet HEAD^ HEAD -- dist; then
+            echo "no_changes=true" >> $GITHUB_ENV
+          else
+            echo "no_changes=false" >> $GITHUB_ENV
+          fi
+
       - name: CloudFront Invalidation
+        if: env.no_changes == 'false'
         run: aws cloudfront create-invalidation --distribution-id E2YRBHJE7WASUV --paths "/*"
 
     env:

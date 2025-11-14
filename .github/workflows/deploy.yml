@@ -1,36 +1,57 @@
-name: Deploy to S3 + CloudFront
-
+name: Deploy Frontend to S3 + CloudFront
 on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'vite.config.ts'
+      - 'index.html'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.19'
-
+          
       - name: Install dependencies
         run: npm install
-
+        
       - name: Build project
         run: npm run build
-
+        
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
-
-      - name: Sync S3 bucket
-        run: aws s3 sync dist s3://funntail-bucket --delete --region eu-west-2
-
-      - name: Check for changes in dist
+        
+      # ✅ SAFEST: Only sync/delete files matching your build output patterns
+      # This protects ALL user-uploaded content automatically
+      - name: Sync S3 bucket (frontend assets only)
+        run: |
+          aws s3 sync dist/ s3://funntail-bucket/ \
+            --delete \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.js" \
+            --include "*.css" \
+            --include "*.svg" \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.ico" \
+            --include "*.json" \
+            --include "*.woff*" \
+            --include "*.ttf" \
+            --include "assets/*" \
+            --region eu-west-2
+        
+      - name: Check for changes
         id: check_changes
         run: |
           if git diff --quiet HEAD^ HEAD -- dist; then
@@ -38,11 +59,15 @@ jobs:
           else
             echo "no_changes=false" >> $GITHUB_ENV
           fi
-
+          
       - name: CloudFront Invalidation
         if: env.no_changes == 'false'
-        run: aws cloudfront create-invalidation --distribution-id E2YRBHJE7WASUV --paths "/*"
-
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2YRBHJE7WASUV \
+            --paths "/*" \
+            --no-cli-pager
+            
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

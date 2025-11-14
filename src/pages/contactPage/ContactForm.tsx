@@ -84,14 +84,9 @@ const ContactSection: React.FC = () => {
     }
   };
 
- 
-
   return (
     <div className="min-h-screen bg-[#F5F5F5] py-8 px-4">
-      <motion.div
-        className="max-w-7xl lg:p-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6"
-      
-      >
+      <motion.div className="max-w-7xl lg:p-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* FAQ Section */}
         <motion.div className="bg-white rounded-[24px] overflow-hidden">
           <div className="bg-[#1ABC9C] px-6 pt-8 relative overflow-hidden">
@@ -104,28 +99,18 @@ const ContactSection: React.FC = () => {
             </div>
 
             <div className="relative z-10">
-              <motion.h2
-                className="text-white text-xl lg:text-[28px] text-center font-semibold mb-6"
-              
-              >
+              <motion.h2 className="text-white text-xl lg:text-[28px] text-center font-semibold mb-6">
                 Do you still have questions?
               </motion.h2>
 
               {/* Pet images */}
               <div className="flex justify-center z-30">
-                <motion.div
-                  className="flex items-end "
-              
-                >
-                  <motion.div
-                    className="relative"
-                  >
+                <motion.div className="flex items-end ">
+                  <motion.div className="relative">
                     <img src={dog1} alt="dog" className="" />
                   </motion.div>
 
-                  <motion.div
-                    className="relative lg:-ml-12"
-                  >
+                  <motion.div className="relative lg:-ml-12">
                     <img src={dog2} alt="dog" className="" />
                   </motion.div>
                 </motion.div>
@@ -141,7 +126,6 @@ const ContactSection: React.FC = () => {
                   : "text-gray_text2 hover:bg-white/10"
               }`}
               onClick={() => setActiveTab("owners")}
-             
             >
               Help for Pet Owners
             </motion.button>
@@ -152,7 +136,6 @@ const ContactSection: React.FC = () => {
                   : "text-gray_text2 hover:bg-white/10"
               }`}
               onClick={() => setActiveTab("workers")}
-           
             >
               Help for Pet Workers
             </motion.button>
@@ -195,20 +178,14 @@ const ContactSection: React.FC = () => {
                         {faq.question}
                       </span>
                     </div>
-                    <motion.div
-                     
-                      className="text-gray-400 group-hover:text-emerald-500"
-                    >
+                    <motion.div className="text-gray-400 group-hover:text-emerald-500">
                       <Plus className="w-5 h-5" />
                     </motion.div>
                   </motion.button>
 
                   <AnimatePresence>
                     {openFAQ === faq.id && (
-                      <motion.div
-                      
-                        className="overflow-hidden"
-                      >
+                      <motion.div className="overflow-hidden">
                         <div
                           className={`px-4 pb-4 pl-16 text-gray-600 text-sm  ${
                             openFAQ === faq.id
@@ -318,7 +295,7 @@ const ContactSection: React.FC = () => {
                   <Mail className="w-5 h-5 text-primary_color" />
                 </div>
                 <span className="text-gray_text2 font-normal">
-                  contact@funtail.com
+                  support@funtail.co.uk
                 </span>
               </motion.div>
 
@@ -327,7 +304,7 @@ const ContactSection: React.FC = () => {
                   <Phone className="w-5 h-5 text-primary_color" />
                 </div>
                 <span className="text-gray_text2 font-normal">
-                  0800 000 0000
+                  07464 368 373
                 </span>
               </motion.div>
             </div>

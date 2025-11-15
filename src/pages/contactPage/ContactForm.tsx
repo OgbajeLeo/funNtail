@@ -12,6 +12,7 @@ interface FAQ {
 }
 
 interface FormData {
+  name: string;
   email: string;
   message: string;
 }
@@ -20,6 +21,7 @@ const ContactSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"owners" | "workers">("owners");
   const [openFAQ, setOpenFAQ] = useState<number | null>(2);
   const [formData, setFormData] = useState<FormData>({
+    name: "",
     email: "",
     message: "",
   });
@@ -27,6 +29,7 @@ const ContactSection: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const faqs: FAQ[] = [
     {
@@ -60,25 +63,59 @@ const ContactSection: React.FC = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (submitStatus === "error") {
+      setSubmitStatus("idle");
+      setErrorMessage("");
+    }
   };
 
   const handleSubmit = async () => {
-    if (!formData.email.trim() || !formData.message.trim()) return;
+    if (!formData.name.trim()) {
+      setErrorMessage("Please enter your name");
+      setSubmitStatus("error");
+      return;
+    }
+    if (!formData.email.trim() || !formData.email.includes("@")) {
+      setErrorMessage("Please enter a valid email");
+      setSubmitStatus("error");
+      return;
+    }
+    if (!formData.message.trim()) {
+      setErrorMessage("Please enter your message");
+      setSubmitStatus("error");
+      return;
+    }
 
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setErrorMessage("");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("https://api.funntail.co.uk/api/v1/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-      if (Math.random() > 0.3) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setSubmitStatus("success");
-        setFormData({ email: "", message: "" });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         setSubmitStatus("error");
+        setErrorMessage(data.message || "Failed to send message");
       }
     } catch (error) {
+      console.error("Contact form error:", error);
       setSubmitStatus("error");
+      setErrorMessage("Network error. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -103,7 +140,6 @@ const ContactSection: React.FC = () => {
                 Do you still have questions?
               </motion.h2>
 
-              {/* Pet images */}
               <div className="flex justify-center z-30">
                 <motion.div className="flex items-end ">
                   <motion.div className="relative">
@@ -140,7 +176,7 @@ const ContactSection: React.FC = () => {
               Help for Pet Workers
             </motion.button>
           </div>
-          {/* FAQ Content */}
+
           <div className="p-6">
             <div className="space-y-3">
               {faqs.map((faq) => (
@@ -206,7 +242,6 @@ const ContactSection: React.FC = () => {
 
         {/* Contact Form Section */}
         <motion.div className="space-y-6">
-          {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8">
             <motion.h3 className="text-2xl font-bold text-gray_text3 mb-2">
               Get in Touch With Us
@@ -216,6 +251,21 @@ const ContactSection: React.FC = () => {
             </motion.p>
 
             <div className="space-y-6">
+              <motion.div>
+                <label className="block text-sm font-semibold text-gray_text3 mb-3">
+                  Full Name
+                </label>
+                <motion.input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-4 bg-gray-50 outline-none border-0 rounded-lg focus:ring-2 focus:ring-primary_color focus:bg-white transition-all duration-200 text-sm placeholder-gray-400"
+                  whileFocus={{ scale: 1.02 }}
+                />
+              </motion.div>
+
               <motion.div>
                 <label className="block text-sm font-semibold text-gray_text3 mb-3">
                   Email Address
@@ -248,37 +298,53 @@ const ContactSection: React.FC = () => {
 
               <motion.button
                 onClick={handleSubmit}
-                className="w-full bg-primary_color text-white py-4 px-6 rounded-[99px] font-semibold transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary_color text-white py-4 px-6 rounded-[99px] font-semibold transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-opacity-90"
                 disabled={
                   isSubmitting ||
+                  !formData.name.trim() ||
                   !formData.email.trim() ||
                   !formData.message.trim()
                 }
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {isSubmitting ? (
-                  <motion.div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
+                  <motion.div
+                    className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  />
                 ) : (
                   <span className="text-white text-lg">Submit</span>
                 )}
               </motion.button>
             </div>
 
-            {/* Success/Error Messages */}
             <AnimatePresence>
               {submitStatus === "success" && (
-                <motion.div className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-2">
-                  <Check className="w-5 h-5 text-primary_color" />
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-2"
+                >
+                  <Check className="w-5 h-5 text-primary_color flex-shrink-0" />
                   <span className="text-primary_color text-sm">
-                    Message sent successfully! We'll get back to you soon.
+                    Message sent! We'll get back to you within 24-48 hours.
                   </span>
                 </motion.div>
               )}
 
               {submitStatus === "error" && (
-                <motion.div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2">
-                  <X className="w-5 h-5 text-red-600" />
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2"
+                >
+                  <X className="w-5 h-5 text-red-600 flex-shrink-0" />
                   <span className="text-red-700 text-sm">
-                    Failed to send message. Please try again.
+                    {errorMessage || "Failed to send. Please try again."}
                   </span>
                 </motion.div>
               )}
@@ -294,18 +360,24 @@ const ContactSection: React.FC = () => {
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-primary_color" />
                 </div>
-                <span className="text-gray_text2 font-normal">
-                  support@funtail.co.uk
-                </span>
+                <a
+                  href="mailto:support@funntail.co.uk"
+                  className="text-gray_text2 font-normal hover:text-primary_color transition-colors"
+                >
+                  support@funntail.co.uk
+                </a>
               </motion.div>
 
               <motion.div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-primary_color" />
                 </div>
-                <span className="text-gray_text2 font-normal">
+                <a
+                  href="tel:+447464368373"
+                  className="text-gray_text2 font-normal hover:text-primary_color transition-colors"
+                >
                   +44 7464 368 373
-                </span>
+                </a>
               </motion.div>
             </div>
           </motion.div>

@@ -244,7 +244,7 @@ const ContactSection: React.FC = () => {
         <motion.div className="space-y-6">
           <div className="bg-white rounded-2xl p-8">
             <motion.h3 className="text-2xl font-bold text-gray_text3 mb-2">
-              Get in Touch With Us
+              Get in Touch With Us Today
             </motion.h3>
             <motion.p className="text-gray_text2 mb-8 text-sm">
               Kindly fill in your details so we can reach you back!

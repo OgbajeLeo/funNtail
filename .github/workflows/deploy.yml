@@ -9,7 +9,6 @@ on:
       - 'package.json'
       - 'vite.config.ts'
       - 'index.html'
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -31,17 +30,16 @@ jobs:
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
         
-
-      - name: Deploy to S3 website_frontend folder
+      - name: Deploy to S3 (funntail-website)
         run: |
-          aws s3 sync dist/ s3://funntail-bucket/website_frontend/ \
+          aws s3 sync dist/ s3://funntail-website/ \
             --delete \
             --region eu-west-2 \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "*.html" \
             --exclude "*.json"
           
-          aws s3 sync dist/ s3://funntail-bucket/website_frontend/ \
+          aws s3 sync dist/ s3://funntail-website/ \
             --region eu-west-2 \
             --cache-control "no-cache, no-store, must-revalidate" \
             --exclude "*" \

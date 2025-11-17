@@ -2,17 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://funntail.co.uk/assets/vite.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://funntail.co.uk/assets/vite.svg"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="icon" type="image/png" sizes="32x32" href="/vite.svg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/vite.svg" />
 
     <!-- Primary Meta Tags -->
     <title>Pet Sitting, Grooming & Walking You Can Trust</title>
@@ -36,7 +46,10 @@
       property="og:description"
       content="Find local vetted pet sitters, groomers, and dog walkers. Safe payments, protected bookings, and 24/7 support make pet care simple, stress-free, and reliable."
     />
-    <meta property="og:image" content="src/assets/link_preview.png" />
+    <meta
+      property="og:image"
+      content="https://funntail.co.uk/assets/link_preview-CoBBdzGk.png"
+    />
 
     <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -49,18 +62,32 @@
       property="twitter:description"
       content="Find local vetted pet sitters, groomers, and dog walkers. Safe payments, protected bookings, and 24/7 support make pet care simple, stress-free, and reliable."
     />
-    <meta property="twitter:image" content="src/assets/link_preview.png" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+    <meta
+      property="twitter:image"
+      content="https://funntail.co.uk/assets/link_preview-CoBBdzGk.png"
     />
   </head>
-  <body>
-    <div class="montserrat" id="root"></div>
+  <body
+    style="
+      margin: 0;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+    "
+  >
+    <!-- Centered Logo -->
+    <img
+      src="https://funntail.co.uk/assets/logo.png"
+      alt="FunNTail Logo"
+      style="max-width: 250px; height: auto"
+    />
+
+    <!-- React Root -->
+    <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

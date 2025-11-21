@@ -52,7 +52,7 @@ jobs:
             --exclude "*" \
             --include "*.html"
 
-      # 3️⃣ Upload JSON files — also no-cache (e.g., manifest.json)
+      # 3️⃣ Upload JSON files — also no-cache
       - name: Upload JSON files
         run: |
           aws s3 sync dist/ s3://funntail-website/ \

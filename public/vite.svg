@@ -1,5 +1,22 @@
-<svg width="1715" height="2045" viewBox="0 0 1715 2045" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M122.243 866.048L1648.84 865.394V1088.62L0 1411.34L122.243 866.048Z" fill="#1ABC9C"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M987.294 1286.31L1182.16 1713.77L697.506 2045L606.902 1369.44L987.294 1286.31Z" fill="#1ABC9C"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M473.153 375.746L892.375 248.752L940.553 185.909L1016.78 211.439L1067.83 144.014L1163.47 166.925L1222.43 98.1914L1266.3 135.504L1715 0L1541.7 593.731L927.61 611.405L1082.93 803.206L528.522 803.86L465.243 377.055L473.153 375.746Z" fill="#1ABC9C"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.4239in" height="3.17605in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2385 3124"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:black}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1862531519840">
+   <polygon class="fil0" points="170,1323 2293,1322 2293,1663 0,2156 "/>
+   <polygon class="fil0" points="1373,1965 1644,2618 970,3124 844,2092 "/>
+   <polygon class="fil0" points="658,574 1241,380 1308,284 1414,323 1485,220 1618,255 1700,150 1761,207 2385,0 2144,907 1290,934 1506,1227 735,1228 647,576 "/>
+  </g>
+ </g>
 </svg>

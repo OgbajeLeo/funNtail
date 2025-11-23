@@ -10,6 +10,7 @@ import PrivacyPage from "../pages/privacyPage";
 import SafetyPage from "../pages/safetyPage";
 import FaqSection from "../pages/FaqSection";
 import InvitePage from "../pages/invitePage";
+import ProtectPage from "../pages/protectPage";
 
 const LandingPage = lazy(() => import("../pages/landingPage"));
 
@@ -27,6 +28,7 @@ export default function AppRoutes() {
         <Route path="/safety" element={<SafetyPage />} />
         <Route path="/faqs" element={<FaqSection />} />
         <Route path="/invite" element={<InvitePage />} />
+        <Route path="/protect" element={<ProtectPage />} />
 
         <Route path="/*" element={<NotFound />} />
         {/* Protected admin route */}

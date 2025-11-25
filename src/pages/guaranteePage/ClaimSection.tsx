@@ -36,10 +36,7 @@ const ClaimSection = () => {
     <section className="py-8 md:py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
-        <motion.div
-          
-          className="mb-8 md:mb-10 lg:mb-12 mx-auto text-center"
-        >
+        <motion.div className="mb-8 md:mb-10 lg:mb-12 mx-auto text-center">
           <h2 className="text-[24px] md:text-[30px] lg:text-[32px] font-bold text-gray_text3 mb-6 md:mb-8">
             Take these steps before filing a claim
           </h2>
@@ -57,12 +54,11 @@ const ClaimSection = () => {
           {steps.map((step) => (
             <motion.div
               key={step.id}
-              
-              className="flex flex-col rounded-[999px] p-6 pr-12 border border-primary_color md:flex-row gap-6 md:gap-8 lg:gap-12 items-start md:items-center bg-[#1ABC9C1A]"
+              className="flex flex-col rounded-[99px] lg:rounded-[999px] p-6 pr-12 border border-primary_color md:flex-row gap-6 md:gap-8 lg:gap-12 items-start md:items-center bg-[#1ABC9C1A]"
             >
               {/* Circular Image */}
               <div className="flex-shrink-0 gap-20 w-full md:w-auto">
-                <div className="w-40 h-40 lg:w-[300px] lg:h-[300px] rounded-full overflow-hidden mx-auto md:mx-0 border-2 border-primary_color">
+                <div className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] rounded-full overflow-hidden mx-auto md:mx-0 border-2 border-primary_color">
                   <img
                     src={step.image}
                     alt={step.title}
@@ -76,7 +72,7 @@ const ClaimSection = () => {
                 <h3 className="text-xl md:text-[24px] font-semibold text-black mb-4 md:mb-6">
                   {step.title}
                 </h3>
-                <div className="space-y-4 md:space-y-5">
+                <div className="space-y-4 md:space-y-5  pb-20 lg:pb-0">
                   {step.content.map((paragraph, pIndex) => (
                     <p
                       key={pIndex}
@@ -90,9 +86,7 @@ const ClaimSection = () => {
             </motion.div>
           ))}
         </div>
-          </div>
-          
-          
+      </div>
     </section>
   );
 };

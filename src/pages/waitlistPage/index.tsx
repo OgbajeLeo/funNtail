@@ -1,6 +1,6 @@
 import Footer from "../../components/shared/Footer";
 import Navbar from "../../components/shared/Navbar";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import ios from "../../assets/apple.svg";
 import google from "../../assets/andriod.svg";
@@ -13,15 +13,32 @@ interface TimeLeft {
   seconds: number;
 }
 
-const WaitList = () => {
-  // Set launch date (78 days from now based on the design)
-  const calculateTargetDate = () => {
-    const now = new Date();
-    const target = new Date(now.getTime() + 78 * 24 * 60 * 60 * 1000);
-    return target;
-  };
+// Flip animation component
+const FlipNumber = ({ value }: { value: number }) => {
+  return (
+    <div className="relative overflow-hidden h-[48px] lg:h-[56px] flex items-center justify-center">
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={value}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{
+            duration: 0.4,
+            ease: "easeInOut",
+          }}
+          className="absolute text-3xl lg:text-4xl font-bold text-[#1F2937]"
+        >
+          {value}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+};
 
-  const [targetDate] = useState(calculateTargetDate());
+const WaitList = () => {
+  // Set specific launch date
+  const [targetDate] = useState(new Date("2026-05-13T10:00:00Z"));
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -52,8 +69,6 @@ const WaitList = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
-    // Add your email submission logic here
     alert(`Thank you! We'll notify you at ${email}`);
     setEmail("");
   };
@@ -111,28 +126,28 @@ const WaitList = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="bg-[#1ABC9C1A] border border-[#14B8A6] rounded-xl p-4 text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-[#1F2937]">
-                  {timeLeft.days}
+                <FlipNumber value={timeLeft.days} />
+                <div className="text-xs lg:text-sm text-[#6B7280] -mt-1">
+                  Days
                 </div>
-                <div className="text-sm text-[#6B7280] mt-1">Days</div>
               </div>
               <div className="bg-[#1ABC9C1A] border border-[#14B8A6] rounded-xl p-4 text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-[#1F2937]">
-                  {timeLeft.hours}
+                <FlipNumber value={timeLeft.hours} />
+                <div className="text-xs lg:text-sm text-[#6B7280] -mt-1">
+                  Hours
                 </div>
-                <div className="text-sm text-[#6B7280] mt-1">Hours</div>
               </div>
               <div className="bg-[#1ABC9C1A] border border-[#14B8A6] rounded-xl p-4 text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-[#1F2937]">
-                  {timeLeft.minutes}
+                <FlipNumber value={timeLeft.minutes} />
+                <div className="text-xs lg:text-sm text-[#6B7280] -mt-1">
+                  Minutes
                 </div>
-                <div className="text-sm text-[#6B7280] mt-1">Minutes</div>
               </div>
               <div className="bg-[#1ABC9C1A] border border-[#14B8A6] rounded-xl p-4 text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-[#1F2937]">
-                  {timeLeft.seconds}
+                <FlipNumber value={timeLeft.seconds} />
+                <div className="text-xs lg:text-sm text-[#6B7280] -mt-1">
+                  Seconds
                 </div>
-                <div className="text-sm text-[#6B7280] mt-1">Seconds</div>
               </div>
             </motion.div>
 

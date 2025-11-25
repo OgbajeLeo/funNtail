@@ -54,10 +54,10 @@ const ClaimSection = () => {
           {steps.map((step) => (
             <motion.div
               key={step.id}
-              className="flex flex-col rounded-[99px] lg:rounded-[999px] p-6 pr-12 border border-primary_color md:flex-row gap-6 md:gap-8 lg:gap-12 items-start md:items-center bg-[#1ABC9C1A]"
+              className="flex flex-col rounded-[99px] lg:rounded-[999px] p-12 lg:p-6 pr-12 border border-primary_color md:flex-row gap-6 md:gap-8 lg:gap-12 items-start md:items-center bg-[#1ABC9C1A]"
             >
               {/* Circular Image */}
-              <div className="flex-shrink-0 gap-20 w-full md:w-auto">
+              <div className="flex-shrink-0 gap-20 w-full md:w-auto mx-auto">
                 <div className="w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] rounded-full overflow-hidden mx-auto md:mx-0 border-2 border-primary_color">
                   <img
                     src={step.image}

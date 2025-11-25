@@ -47,20 +47,17 @@ const HeroSection = () => {
   return (
     <section className="relative  overflow-hidden flex items-center">
       <div className="absolute inset-0 max-w-4xl w-full mx-auto pointer-events-none">
-        {/* Bottom Left - Large */}
-        <div className="absolute bottom-10 left-10 md:bottom-20 md:left-20">
+       <div className="absolute bottom-10 left-40 md:bottom-20 md:left-20">
           <PawPrint size={80} className="" />
         </div>
 
-        <div className="absolute right-32 rotate-[60deg] top-[66%] md:right-40">
+        <div className="absolute right-12 rotate-[60deg] top-[66%] md:right-40">
           <PawPrint size={80} className="" />
         </div>
-        {/* Mid Right - Large */}
-        <div className="absolute left-32 top-[55%] md:left-[100px]">
+         <div className="absolute left-12 top-[55%] md:left-[100px]">
           <PawPrint size={50} className="" />
         </div>
-        {/* Bottom Right - Small */}
-        <div className="absolute bottom-16 right-16 md:bottom-24 md:right-24">
+        <div className="absolute bottom-10 right-40 md:bottom-24 md:right-24">
           <PawPrint size={30} className="" />
         </div>
       </div>

@@ -85,13 +85,13 @@ const Navbar: React.FC = () => {
     setIsDownloadDropdownOpen(false);
     setIsMobileMenuOpen(false);
     setTimeout(() => {
-      router("/download");
+      router("/waitlist");
     }, 100);
   };
 
   const handleMobileDropdownOptionClick = () => {
     setTimeout(() => {
-      router("/download");
+      router("/waitlist");
     }, 100);
     setIsDownloadDropdownOpen(false);
     setIsMobileMenuOpen(false);

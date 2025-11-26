@@ -27,7 +27,7 @@ const FlipNumber = ({ value }: { value: number }) => {
             duration: 0.4,
             ease: "easeInOut",
           }}
-          className="absolute text-3xl lg:text-4xl font-bold text-[#1F2937]"
+          className="absolute text-[24px] lg:text-4xl font-bold text-[#1F2937]"
         >
           {value}
         </motion.div>
@@ -38,7 +38,7 @@ const FlipNumber = ({ value }: { value: number }) => {
 
 const WaitList = () => {
   // Set specific launch date
-  const [targetDate] = useState(new Date("2026-05-13T10:00:00Z"));
+  const [targetDate] = useState(new Date("2026-05-30T10:00:00Z"));
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,

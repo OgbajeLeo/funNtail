@@ -36,7 +36,6 @@ const Footer: React.FC = () => {
     { icon: <LinkedinIcon />, href: "#", name: "LinkedIn" },
   ];
 
-
   return (
     <footer className="bg-[#032921] text-white w-full ">
       {/* Main Footer Content */}
@@ -90,6 +89,12 @@ const Footer: React.FC = () => {
                   className="block text-gray-300 hover:text-white transition-colors"
                 >
                   FunNTail Protect
+                </motion.button>
+                <motion.button
+                  onClick={() => router("/guarantee")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                >
+                  FunNTail Guarantee
                 </motion.button>
               </div>
             </motion.div>

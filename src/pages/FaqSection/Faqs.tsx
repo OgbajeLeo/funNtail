@@ -9,63 +9,124 @@ interface FAQItem {
 const petOwnersFAQ: FAQItem[] = [
   {
     id: 1,
-    question: "How do I book a pet sitter or walker on FunNTail?",
+    question: "How does the FunNTail booking system work?",
     answer:
-      "To book a pet sitter or walker, simply browse through our verified pet care professionals, check their profiles and reviews, select your preferred dates and services, and confirm your booking with secure payment.",
+      "FunNTail is a pet-care matchmaking platform. Instead of searching endlessly, you post your job and qualified, verified sitters apply. You can review profiles, chat instantly, and pick the perfect match.",
   },
   {
     id: 2,
-    question: "Are the pet sitters and walkers verified or background checked?",
+    question: "Are pet sitters and walkers verified?",
     answer:
-      "Absolutely! Every worker goes through an ID check, shares photos with pets, and fills out an experience form before they're approved. We take your pet's safety seriously.",
+      "Yes. Every sitter completes ID verification, uploads pet-related photos, provides references, and details their pet-care experience. Only approved applicants appear on the platform.",
   },
   {
     id: 3,
-    question: "What if I need to cancel a booking?",
+    question: "What services does FunNTail offer?",
     answer:
-      "You can cancel your booking through your account dashboard. Cancellation policies vary depending on how far in advance you cancel. Full details are available in your booking confirmation.",
+      "We offer pet sitting, grooming, and walking nationwide across the UK. Many sitters also provide extras like feeding, administering medication, and overnight stays.",
   },
   {
     id: 4,
-    question: "How do I pay, and is it secure?",
+    question: "What protection does the FunNTail Guarantee include?",
     answer:
-      "We use industry-standard encryption and secure payment processing. You can pay with major credit cards, debit cards, or digital wallets. Payment is only processed after you confirm your booking.",
+      "Every booking includes FunNTail Protection: up to £20,000 in eligible vet care coverage for accidents during the booking. You also get secure payments, verified sitters, and 24/7 support.",
   },
   {
     id: 5,
-    question: "Can I request things like overnight stays or pet grooming?",
+    question: "How secure is communication and tracking?",
     answer:
-      "Yes! Many of our pet care professionals offer additional services like overnight stays, pet grooming, feeding, and medication administration. You can specify your needs when booking.",
+      "You stay connected through built-in messaging, photo updates, booking notes, and live GPS tracking for walks. All communication stays safely in the app.",
   },
   {
     id: 6,
-    question: "Can I meet a pet worker before confirming a booking?",
+    question: "How do payments and fees work?",
     answer:
-      "Absolutely! We encourage meet-and-greets before your first booking. You can arrange this through our messaging system to ensure you and your pet feel comfortable.",
+      "Pet Owners pay the sitter’s rate plus a 5% FunNTail service fee. Payments are processed securely through Stripe and only charged once you confirm the booking.",
   },
   {
     id: 7,
-    question: "What if my pet has special needs or health conditions?",
+    question: "How does the cancellation and refund policy work?",
     answer:
-      "When booking, you can specify any special needs, medications, or health conditions. Many of our pet workers have experience with special needs pets and can provide the extra care your pet requires.",
+      "Refunds depend on how early you cancel. Cancellations over 48 hours in advance receive a full refund. Less than 48 hours follows a tiered policy, and within 1 hour is non-refundable.",
   },
   {
     id: 8,
-    question: "Is FunNTail available outside major UK cities?",
+    question: "Can I meet the sitter before confirming?",
     answer:
-      "We're rapidly expanding across the UK! While we started in major cities, we now serve many smaller towns and rural areas. Check our coverage map or enter your postcode to see available services in your area.",
+      "Yes! FunNTail encourages meet-and-greets. You can message your sitter to arrange a meet-up or chat before the booking.",
   },
   {
     id: 9,
-    question: "Will I get reminders before my booking?",
+    question: "Does FunNTail work across the UK?",
     answer:
-      "Yes! We'll send you email and SMS reminders 24 hours before your booking, plus any specific instructions or updates from your pet worker.",
+      "Yes — FunNTail is available nationwide. Whether you’re in a major city or a smaller town, sitters can apply to your posted job.",
   },
   {
     id: 10,
-    question: "What if I'm not happy with the service?",
+    question: "What if I’m not satisfied with the service?",
     answer:
-      "Your satisfaction is important to us. If you're not happy with the service, contact our customer support team immediately. We'll work to resolve the issue and may offer a refund or rebooking with a different pet worker.",
+      "Your peace of mind matters. If something goes wrong, contact our 24/7 support team immediately. We’ll investigate, assist with refunds, or help you rebook with a different sitter.",
+  },
+
+  {
+    id: 11,
+    question: "How does FunNTail match me with the right sitter?",
+    answer:
+      "Our algorithm alerts sitters whose experience, location, and availability match your job. Only suitable, vetted professionals apply.",
+  },
+  {
+    id: 12,
+    question: "Can I book recurring services like daily walks?",
+    answer:
+      "Yes. You can post recurring schedules, and sitters who can commit long-term will apply.",
+  },
+  {
+    id: 13,
+    question: "Can sitters care for pets with medical needs?",
+    answer:
+      "Many sitters are experienced with senior pets, anxiety management, and medication routines. Just include details in your job post.",
+  },
+  {
+    id: 14,
+    question: "What happens if my sitter doesn’t show up?",
+    answer:
+      "Contact FunNTail Support immediately. We will help you find a replacement and may offer refunds depending on the situation.",
+  },
+  {
+    id: 15,
+    question: "Are exotic or unusual pets supported?",
+    answer:
+      "Yes! FunNTail includes sitters experienced with reptiles, birds, rabbits, hamsters, and more. Just specify the species in your post.",
+  },
+  {
+    id: 16,
+    question: "Do sitters bring their own supplies?",
+    answer:
+      "Most sitters rely on your pet’s own food, lead, medication, crates, or grooming tools. Details can be discussed in chat.",
+  },
+  {
+    id: 17,
+    question: "Can I make changes to my booking after confirming?",
+    answer:
+      "Yes, you can adjust times, instructions, or add-on services. The sitter must accept the changes before they apply.",
+  },
+  {
+    id: 18,
+    question: "How do I know the sitter actually arrived?",
+    answer:
+      "Sitters check in through the app, and you’ll receive a notification along with live tracking and time-stamped activity updates.",
+  },
+  {
+    id: 19,
+    question: "Does FunNTail allow last-minute bookings?",
+    answer:
+      "Yes. Many sitters accept same-day or even same-hour bookings depending on availability.",
+  },
+  {
+    id: 20,
+    question: "Can I request multiple sitters at once?",
+    answer:
+      "Yes. You can post a job publicly and multiple sitters may apply. You choose your preferred match.",
   },
 ];
 
@@ -74,62 +135,122 @@ const petWorkersFAQ: FAQItem[] = [
     id: 1,
     question: "How do I become a pet worker on FunNTail?",
     answer:
-      "Sign up on our platform, complete your profile with photos and experience details, pass our verification process including ID checks, and you'll be ready to start accepting bookings from pet owners in your area.",
+      "Sign up, complete your profile with photos and experience, verify your identity, provide references, and pass our approval process.",
   },
   {
     id: 2,
-    question: "What verification process do I need to complete?",
+    question: "How does FunNTail’s matchmaking system help me get jobs?",
     answer:
-      "You'll need to provide valid ID, share photos with pets (if you have them), complete an experience questionnaire, and undergo a background check. This ensures pet owners can trust you with their beloved pets.",
+      "Owners post jobs and qualified sitters apply. The more complete and trustworthy your profile, the more likely you are to be selected.",
   },
   {
     id: 3,
-    question: "How much can I earn as a pet worker?",
+    question: "How much can I earn on FunNTail?",
     answer:
-      "Earnings vary based on services offered, location, and demand. Dog walking typically ranges from £10-20 per walk, while overnight stays can earn £25-50 per night. You set your own rates within market guidelines.",
+      "Walks average £10–£20, and overnight stays £25–£50. Your earnings vary based on location, services, experience, and demand.",
   },
   {
     id: 4,
-    question: "How do I get paid for my services?",
+    question: "How and when do I get paid?",
     answer:
-      "Payments are processed securely through our platform. You'll receive payment within 24-48 hours after completing a service. We offer direct bank transfer to your registered account.",
+      "Sitters earn 85% of the booking. Payouts are sent to your bank through Stripe 48 hours after the service ends.",
   },
   {
     id: 5,
-    question: "Can I choose which pets I work with?",
+    question: "What protection does FunNTail provide for sitters?",
     answer:
-      "Yes! You can specify which types of pets you're comfortable with, size preferences, and any animals you'd prefer not to work with. You have full control over accepting or declining booking requests.",
+      "You are protected by liability coverage during bookings and have 24/7 access to support for emergencies.",
   },
   {
     id: 6,
-    question: "What if a pet gets injured while in my care?",
+    question: "Can I choose which pets and jobs to accept?",
     answer:
-      "All verified pet workers are covered by our insurance policy for accidents that occur during bookings. Report any incidents immediately through our emergency support line, and we'll guide you through the process.",
+      "Yes. You are free to apply to jobs you want and decline any that don’t match your preferences.",
   },
   {
     id: 7,
-    question: "How do I handle difficult or anxious pets?",
+    question: "What happens if I need to cancel a booking?",
     answer:
-      "We provide training resources and tips for handling various pet behaviors. For anxious pets, take things slow, use calm voices, and follow the owner's specific instructions. You can always contact our support team for guidance.",
+      "Each cancellation adds a strike. Three strikes result in removal, and fraudulent cancellations may cause instant suspension.",
   },
   {
     id: 8,
-    question:
-      "Can I work in multiple areas or do I need to stick to one location?",
+    question: "How do I build a strong reputation?",
     answer:
-      "You can work across multiple postcodes and areas. Simply update your service areas in your profile settings. This flexibility allows you to maximize your earning potential.",
+      "Respond quickly, show professionalism, follow owner instructions, and maintain a complete profile to increase positive reviews.",
   },
   {
     id: 9,
-    question: "What happens if I need to cancel a confirmed booking?",
+    question: "Can I work in multiple areas or postcodes?",
     answer:
-      "While we encourage reliability, emergencies happen. Cancel as early as possible through the app and provide a reason. Frequent cancellations may affect your profile rating, so only cancel when absolutely necessary.",
+      "Yes. You can expand your service areas anytime to increase visibility and bookings.",
   },
   {
     id: 10,
-    question: "How do I build a good reputation and get more bookings?",
+    question: "Are there subscriptions or extra fees?",
     answer:
-      "Provide excellent service, be reliable, communicate well with pet owners, arrive on time, and follow all instructions carefully. Positive reviews and ratings will help you attract more bookings and potentially charge higher rates.",
+      "No subscriptions. Owners pay a 5% service fee, and sitters keep 85% of every booking.",
+  },
+
+  {
+    id: 11,
+    question: "How do I stand out to pet owners?",
+    answer:
+      "Upload high-quality pet photos, write a warm bio, list your skills, and respond quickly to job posts.",
+  },
+  {
+    id: 12,
+    question: "Can I offer additional services like training or grooming?",
+    answer:
+      "Yes. Many sitters add grooming assistance, puppy training, or medication handling to increase earnings.",
+  },
+  {
+    id: 13,
+    question: "What if a pet behaves aggressively?",
+    answer:
+      "Stay calm, follow the owner’s notes, and contact support if needed. You may decline any booking if uncomfortable.",
+  },
+  {
+    id: 14,
+    question: "Can I bring my own pets to a booking?",
+    answer:
+      "This is allowed only with owner approval. Always discuss it beforehand via chat.",
+  },
+  {
+    id: 15,
+    question: "How quickly should I respond to job posts?",
+    answer:
+      "The first 10 minutes drastically increase your chances of being chosen. Fast responses build trust and visibility.",
+  },
+  {
+    id: 16,
+    question: "How do taxes work on FunNTail?",
+    answer:
+      "Sitters are independent workers and are responsible for reporting their own income to HMRC.",
+  },
+  {
+    id: 17,
+    question: "What if the owner provides incomplete instructions?",
+    answer:
+      "Message them to ask for clarity before the booking begins. Clear communication prevents issues.",
+  },
+  {
+    id: 18,
+    question: "Can I decline a job after applying?",
+    answer:
+      "Yes, as long as the booking hasn’t been confirmed. After confirmation, cancellation rules apply.",
+  },
+  {
+    id: 19,
+    question: "How does GPS tracking work for walkers?",
+    answer:
+      "Walkers start a GPS-tracked session. Owners see routes, duration, and time-stamped photo updates.",
+  },
+  {
+    id: 20,
+    question: "Do I need professional experience?",
+    answer:
+      "Not required, but helpful. Many sitters start with personal pet experience. Training resources are available in-app.",
   },
 ];
 

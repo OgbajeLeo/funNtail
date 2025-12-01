@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import protectionImage from "../../assets/coveredImage.jpg";
 const CoveredSection = () => {
   const coveredItems = [
-    "Up to £25,000 in vet care reimbursement for eligible claims related to injury to either the pet owner's or sitter's pets.",
+    "Up to £20,000 in vet care reimbursement for eligible claims related to injury to either the pet owner's or sitter's pets.",
     "Property damage to the pet owner's home caused by a sitter, or dog walker.",
     "Certain out-of-pocket medical costs for 3rd party injuries (e.g. someone other than the pet owner, sitter, or dog walker).",
     "24/7 support.",

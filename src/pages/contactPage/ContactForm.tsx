@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Mail, Phone, Check, X } from "lucide-react";
-import dog1 from "../../assets/dog1.svg";
-import dog2 from "../../assets/dog2.svg";
+import dog1 from "../../assets/dog1.png";
+import dog2 from "../../assets/cat1.png";
 import pageTitle from "../../assets/navBGG.png";
 
 interface FAQ {
@@ -31,32 +31,60 @@ const ContactSection: React.FC = () => {
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const faqs: FAQ[] = [
-    {
-      id: 1,
-      question: "How do payments work on the platform?",
-      answer:
-        "We use secure payment processing through Stripe. Pet owners pay upfront when booking, and funds are released to sitters after successful completion of services. All transactions are protected and insured.",
-    },
-    {
-      id: 2,
-      question: "How do I know sitters on FunTail are trustworthy?",
-      answer:
-        "All sitters and workers on FunTail go through a verification and vetting process before being approved. This includes ID checks, profile reviews, and, in many cases, references. Plus, our in-app reviews and real-time GPS tracking give owners peace of mind.",
-    },
-    {
-      id: 3,
-      question: "What if I need last-minute pet care?",
-      answer:
-        "Our platform has many sitters available for emergency and last-minute bookings. Use our urgent booking feature to connect with available sitters in your area who can respond quickly to your pet care needs.",
-    },
-    {
-      id: 4,
-      question: "Can I meet a sitter before booking?",
-      answer:
-        "Absolutely! We encourage meet-and-greets before your first booking. You can message sitters directly through our platform to arrange a meeting, discuss your pet's needs, and ensure it's a good fit for both you and your furry friend.",
-    },
-  ];
+  // KEEP ONLY 4 MAIN QUESTIONS FOR EACH TAB
+  const faqs: FAQ[] =
+    activeTab === "owners"
+      ? [
+          {
+            id: 1,
+            question: "How do payments work?",
+            answer:
+              "Owners pay securely through Stripe. Funds are held and released to sitters only after the booking is completed.",
+          },
+          {
+            id: 2,
+            question: "Are sitters verified?",
+            answer:
+              "All sitters complete ID verification, profile checks, and references when needed.",
+          },
+          {
+            id: 3,
+            question: "Can I book last-minute?",
+            answer:
+              "Yes. Many sitters accept urgent bookings and can help on short notice.",
+          },
+          {
+            id: 4,
+            question: "Can I meet the sitter first?",
+            answer:
+              "Yes. You can arrange a meet-and-greet through in-app messaging.",
+          },
+        ]
+      : [
+          {
+            id: 1,
+            question: "How do sitters get paid?",
+            answer:
+              "Payments are automatically transferred to your bank after each completed service.",
+          },
+          {
+            id: 2,
+            question: "Do I need experience?",
+            answer:
+              "Experience helps, but beginners are welcome as long as you are reliable and friendly.",
+          },
+          {
+            id: 3,
+            question: "How can I get more bookings?",
+            answer:
+              "Respond fast, keep your calendar updated, and maintain a complete profile.",
+          },
+          {
+            id: 4,
+            question: "Can I set my own rates?",
+            answer: "Yes, sitters fully control their pricing.",
+          },
+        ];
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -91,17 +119,20 @@ const ContactSection: React.FC = () => {
     setErrorMessage("");
 
     try {
-      const response = await fetch("https://api.funntail.co.uk/api/v1/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
-      });
+      const response = await fetch(
+        "https://api.funntail.co.uk/api/v1/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -143,17 +174,18 @@ const ContactSection: React.FC = () => {
               <div className="flex justify-center z-30">
                 <motion.div className="flex items-end ">
                   <motion.div className="relative">
-                    <img src={dog1} alt="dog" className="" />
+                    <img src={dog1} alt="dog" width={282} height={267} />
                   </motion.div>
 
                   <motion.div className="relative lg:-ml-12">
-                    <img src={dog2} alt="dog" className="" />
+                    <img src={dog2} alt="cat" width={352} height={333} />
                   </motion.div>
                 </motion.div>
               </div>
             </div>
           </div>
 
+          {/* Tabs */}
           <div className="flex space-x-1 bg-[#E5E4E426] mt-2 backdrop-blur-sm rounded-lg p-1">
             <motion.button
               className={`flex-1 py-3 rounded-md text-sm font-semibold transition-all duration-300 ${
@@ -165,8 +197,9 @@ const ContactSection: React.FC = () => {
             >
               Help for Pet Owners
             </motion.button>
+
             <motion.button
-              className={`flex-1 py-3  rounded-md text-sm font-semibold  transition-all duration-300 ${
+              className={`flex-1 py-3 rounded-md text-sm font-semibold transition-all duration-300 ${
                 activeTab === "workers"
                   ? "bg-[#1ABC9C1A] text-primary_color font-semibold"
                   : "text-gray_text2 hover:bg-white/10"
@@ -177,6 +210,7 @@ const ContactSection: React.FC = () => {
             </motion.button>
           </div>
 
+          {/* FAQ List */}
           <div className="p-6">
             <div className="space-y-3">
               {faqs.map((faq) => (
@@ -202,8 +236,9 @@ const ContactSection: React.FC = () => {
                             : "text-gray_text3"
                         } font-bold text-lg min-w-8`}
                       >
-                        0{faq.id}
+                        {faq.id < 10 ? `0${faq.id}` : faq.id}
                       </span>
+
                       <span
                         className={`${
                           openFAQ === faq.id
@@ -214,6 +249,7 @@ const ContactSection: React.FC = () => {
                         {faq.question}
                       </span>
                     </div>
+
                     <motion.div className="text-gray-400 group-hover:text-emerald-500">
                       <Plus className="w-5 h-5" />
                     </motion.div>
@@ -223,7 +259,7 @@ const ContactSection: React.FC = () => {
                     {openFAQ === faq.id && (
                       <motion.div className="overflow-hidden">
                         <div
-                          className={`px-4 pb-4 pl-16 text-gray-600 text-sm  ${
+                          className={`px-4 pb-4 pl-16 text-gray-600 text-sm ${
                             openFAQ === faq.id
                               ? "bg-[#1ABC9C1A]"
                               : "bg-emerald-50/30"
@@ -312,7 +348,11 @@ const ContactSection: React.FC = () => {
                   <motion.div
                     className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                   />
                 ) : (
                   <span className="text-white text-lg">Submit</span>
@@ -355,6 +395,7 @@ const ContactSection: React.FC = () => {
             <h4 className="text-xl font-bold text-gray_text3 mb-6">
               Contact Information
             </h4>
+
             <div className="flex flex-col lg:flex-row gap-2 lg:items-center space-x-4 justify-between">
               <motion.div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-[#1ABC9C1A] rounded-full flex items-center justify-center flex-shrink-0">

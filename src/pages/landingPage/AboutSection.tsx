@@ -1,12 +1,11 @@
 import { useRef } from "react";
-import { motion,  } from "framer-motion";
-import right from "../../assets/desktopCalendar.png"
+import { motion } from "framer-motion";
+import right from "../../assets/desktopCalendar.png";
 import right2 from "../../assets/mobileCalendar.png";
 import google from "../../assets/andriod.svg";
 import apple from "../../assets/apple.svg";
 const AboutSection = () => {
   const ref = useRef(null);
-
 
   return (
     <div ref={ref} className="bg-gray-50 lg:py-20 py-16 overflow-hidden">
@@ -16,23 +15,16 @@ const AboutSection = () => {
           className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:justify-between  mb-20"
         >
           {/* Left Content */}
-          <motion.div
-            className="space-y-8 max-w-[498px] w-full"
-          >
-            <motion.h2
-              className="text-2xl lg:text-[32px] font-bold text-gray_text3 leading-tight text-center lg:text-left"
-             
-            >
+          <motion.div className="space-y-8 max-w-[498px] w-full">
+            <motion.h2 className="text-2xl lg:text-[32px] font-bold text-gray_text3 leading-tight text-center lg:text-left">
               Find Reliable & Loving Pet Sitters Near You!
             </motion.h2>
 
-            <motion.p
-              className=" text-gray-600 leading-relaxed"
-             
-            >
+            <motion.p className=" text-gray-600 leading-relaxed">
               Find trustworthy, caring sitters for your pets whenever you need
-              them. Browse verified sitters, stay updated with secure chats, and
-              relax knowing your furry friends are in safe hands.
+              them. Browse verified sitters, stay updated with secure chats and
+              photo updates, track your pet’s care in real time, and relax
+              knowing your furry friends are in safe, loving hands.
             </motion.p>
             <p className=" text-gray-600 leading-relaxed">
               Whether it's a quick check-in or an extended stay, our app makes
@@ -46,35 +38,23 @@ const AboutSection = () => {
                   Available for download on
                 </h3>
                 <div className="flex  gap-4">
-                  <motion.button
-                    className="flex items-center font-medium"
-                   
-                  >
+                  <motion.button className="flex items-center font-medium">
                     <img src={apple} alt="" />
                   </motion.button>
 
-                  <motion.button
-                    className="flex items-center  font-medium"
-                   
-                  >
+                  <motion.button className="flex items-center  font-medium">
                     <img src={google} alt="" />
                   </motion.button>
                 </div>
               </motion.div>
 
-              <motion.h2
-                className="lg:text-[20px] mt-4 font-bold text-gray_text3 leading-tight"
-               
-              >
+              <motion.h2 className="lg:text-[20px] mt-4 font-bold text-gray_text3 leading-tight">
                 Fast & Easy Booking—Find a Sitter Today!
               </motion.h2>
 
-              <motion.p
-                className="text-lg text-gray-600 leading-relaxed"
-               
-              >
-                Find a Loving Pet Sitter to Care for Your Pet Like You Would! or
-                Find Trusted Sitters for Your Pet’s Comfort and Care!
+              <motion.p className="text-lg text-gray-600 leading-relaxed">
+                Discover trusted sitters who keep your pet happy, safe, and
+                loved.
               </motion.p>
             </div>
           </motion.div>
@@ -101,33 +81,21 @@ const AboutSection = () => {
                   Available for download on
                 </h3>
                 <div className="flex  gap-4">
-                  <motion.button
-                    className="flex items-center font-medium"
-                   
-                  >
+                  <motion.button className="flex items-center font-medium">
                     <img src={apple} alt="" />
                   </motion.button>
 
-                  <motion.button
-                    className="flex items-center  font-medium"
-                   
-                  >
+                  <motion.button className="flex items-center  font-medium">
                     <img src={google} alt="" />
                   </motion.button>
                 </div>
               </motion.div>
 
-              <motion.h2
-                className="lg:text-[20px] font-bold text-center my-4 text-gray_text3 leading-tight"
-               
-              >
+              <motion.h2 className="lg:text-[20px] font-bold text-center my-4 text-gray_text3 leading-tight">
                 Fast & Easy Booking—Find a Sitter Today!
               </motion.h2>
 
-              <motion.p
-                className="text-lg text-gray-600 text-center  leading-relaxed"
-               
-              >
+              <motion.p className="text-lg text-gray-600 text-center  leading-relaxed">
                 Find a Loving Pet Sitter to Care for Your Pet Like You Would! or
                 Find Trusted Sitters for Your Pet’s Comfort and Care!
               </motion.p>

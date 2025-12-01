@@ -7,36 +7,66 @@ interface FAQItem {
   answer: string;
 }
 
-const guaranteeFAQ: FAQItem[] = [
+const protectionFAQ: FAQItem[] = [
   {
     id: 1,
-    question: "How do I book a pet sitter or walker on FunNTail?",
+    question: "What is FunNTail Protection?",
     answer:
-      "The Rover Guarantee provides protection for eligible claims up to £20,000 in vet care reimbursement for injuries to pets, property damage to the pet owner's home caused by a sitter or dog walker, and certain out-of-pocket medical costs for third-party injuries. It covers incidents that occur during fully booked and paid services on FunNTail.",
+      "FunNTail Protection is our safety coverage included with every eligible booking. It provides support for accidents, injuries, or unexpected issues that occur during a confirmed and fully paid service.",
   },
   {
     id: 2,
-    question: "Are the pet sitters and walkers verified or background checked?",
+    question: "What does FunNTail Protection cover?",
     answer:
-      "Absolutely! Every worker goes through an ID check, shares photos with pets, and fills out an experience form before they’re approved. We take your pet’s safety seriously",
+      "It includes up to £20,000 in eligible vet care for accidents during a booking, coverage for certain damages caused by a sitter, and access to guidance from our support team if an incident occurs.",
   },
   {
     id: 3,
-    question: "What if I need to cancel a booking?",
+    question: "Does FunNTail Protection cover pre-existing health issues?",
     answer:
-      "To book a pet sitter or walker, simply browse through our verified pet care professionals, check their profiles and reviews, select your preferred dates and services, and confirm your booking with secure payment.",
+      "No. Protection only applies to new, unexpected injuries or incidents that occur during the booking. Any illness or condition that existed before the service begins is not eligible.",
   },
   {
     id: 4,
-    question: "How do I pay, and is it secure?",
+    question: "What should I do if an incident happens during a booking?",
     answer:
-      "We use industry-standard encryption and secure payment processing. You can pay with major credit cards, debit cards, or digital wallets. Payment is only processed after you confirm your booking.",
+      "Contact FunNTail Support immediately. We’ll guide you through next steps, help document the situation, and advise on care or reimbursement eligibility.",
   },
   {
     id: 5,
-    question: "Can I request things like overnight stays or pet grooming?",
+    question: "Is the sitter also covered under FunNTail Protection?",
     answer:
-      "Yes! Many of our pet care professionals offer additional services like overnight stays, pet grooming, feeding, and medication administration. You can specify your needs when booking.",
+      "Sitters receive liability protection for accidental pet injuries or certain property-related incidents that occur during a confirmed booking, as long as platform rules are followed.",
+  },
+  {
+    id: 6,
+    question: "Is FunNTail Protection the same as insurance?",
+    answer:
+      "No. It is not a traditional insurance policy. It’s a safety program designed to support owners and sitters in qualifying situations during bookings made on FunNTail.",
+  },
+  {
+    id: 7,
+    question: "Do I need to pay extra for FunNTail Protection?",
+    answer:
+      "No. It’s included automatically with every confirmed and fully paid booking — no subscriptions or additional fees required.",
+  },
+  {
+    id: 8,
+    question: "When is a claim not eligible for Protection?",
+    answer:
+      "Claims are not eligible if the booking wasn’t paid on FunNTail, if instructions were ignored, if the pet had a pre-existing condition, or if off-platform actions contributed to the incident.",
+  },
+  {
+    id: 9,
+    question: "Does FunNTail Protection cover property damage?",
+    answer:
+      "Certain accidental property damage caused by a sitter during a booking may be eligible. Requirements and limits apply and are reviewed case-by-case.",
+  },
+  {
+    id: 10,
+    question: "How do I submit a protection claim?",
+    answer:
+      "Start by contacting FunNTail Support within 48 hours of the incident. We’ll ask for documentation such as vet invoices, photos, or written statements, and then guide you through the full review process.",
   },
 ];
 
@@ -60,14 +90,14 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-[18px] leading-relaxed max-w-[1352px] mx-auto">
-            Find answers to common questions about our protection and guarantee
-            policies.
+            Find answers to the most common questions about FunNTail’s
+            protection coverage and safety policies.
           </p>
         </motion.div>
 
         {/* FAQ Items */}
         <div className="space-y-4 max-w-4xl mx-auto">
-          {guaranteeFAQ.map((item) => {
+          {protectionFAQ.map((item) => {
             const isOpen = openItem === item.id;
 
             return (

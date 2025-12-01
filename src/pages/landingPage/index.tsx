@@ -15,7 +15,7 @@ const landingPage = () => {
       <PetSitterSection />
       <ServicesSection />
       <ProfileShowcaseSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <Footer />
     </div>
   );

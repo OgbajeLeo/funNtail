@@ -12,7 +12,7 @@ const InvitePage = () => {
           <Navbar />
           <img
             src={pageTitle}
-            className="absolute top-0 left-0 w-full opacity-20 h-full lg:object-cover"
+            className="absolute top-0 left-0 w-full opacity-12 h-full lg:object-cover"
             alt="bg"
           />
 

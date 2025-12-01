@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const YourClaim = () => {
   const vetCareItems = [
-    "All veterinary treatment notes and invoices from a board-certified practising veterinarian.",
-    "Any photos, additional receipts and other relevant documents.",
+    "Full veterinary records, including treatment notes and itemized invoices from a licensed veterinarian.",
+    "Photos, receipts, and any additional documents that help explain the injury or support the claim.",
   ];
 
   const propertyDamageItems = [
     {
-      sub: ["Photos of the damage."],
+      sub: ["Clear photos of the damage from multiple angles."],
     },
-    "Receipts, original product packaging, warranty cards or other proof of ownership to help establish fair market value.",
+    "Receipts, packaging, warranty details, or any proof of ownership that helps confirm the item’s value.",
   ];
 
   const vetCareNote =
-    "All documentation must be submitted within seven days of the injury. Once we've received these documents, Rover's claims team will review to determine eligibility. Should we have additional questions, we may follow up with either party.";
+    "Please submit all documentation within seven days of the incident. Once received, our FunNTail Claims Team will review everything to confirm eligibility. If more details are needed, we may reach out to either party for clarification.";
 
   const propertyDamageNote =
-    "Only damages to the pet owner's dwelling or property are eligible. Generally, damages caused by a pet owner's dog to their own property is not covered. We may require you to provide proof of claim submission with your homeowners insurance or a documented police report to move forward with a claim.";
+    "Only damage to the pet owner’s property or home may be eligible for coverage. Damage caused by a pet owner’s own dog to their own belongings is generally not covered. We may ask for proof of a homeowners insurance claim or a police report before moving forward.";
 
   return (
     <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden">
@@ -25,14 +25,15 @@ const YourClaim = () => {
         {/* Header Section */}
         <motion.div className="mb-6 md:mb-8 lg:mb-10 text-center">
           <h2 className="text-[24px] md:text-[30px] lg:text-[32px] font-bold text-gray_text3 mb-3">
-            What to include with your claim
+            What to include when you file a claim
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-[18px] leading-relaxed max-w-[1352px] mx-auto text-left md:text-center">
-            As pet owners ourselves, we know how emotional and challenging these
-            situations can be, which is why we offer the protection of the Rover
-            Guarantee. Rover Support and our Trust & Safety team are also
-            available 24/7 to help you through this process, answer questions
-            and simply be there for you and your pets.
+            As fellow pet owners, we understand how stressful it can be when
+            something unexpected happens. To help our team review your claim
+            quickly and support you with clarity, please gather as much detail
+            as you can. The FunNTail Support and Trust & Safety teams are here
+            24/7 to guide you, answer questions, and provide compassionate help
+            throughout the entire process.
           </p>
         </motion.div>
 
@@ -69,12 +70,9 @@ const YourClaim = () => {
           </motion.div>
 
           {/* Right Card - Property Damage Claims */}
-          <motion.div
-            
-            className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow"
-          >
+          <motion.div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow">
             <h3 className="text-lg lg:text-[22px] font-semibold text-gray_text3 mb-6">
-              For property damage claims, include the following:
+              What to include for a property damage claim{" "}
             </h3>
 
             <ul className="space-y-4 mb-6 font-medium">
@@ -92,13 +90,13 @@ const YourClaim = () => {
                       <div>
                         <span className="text-gray_text3 text-sm md:text-base leading-relaxed">
                           <div>
-                            All potentially relevant documentation, including
+                            Please provide all relevant documentation,
+                            including:{" "}
                           </div>
                         </span>
                         <ul className="mt-2 space-y-2 list-disc list-inside">
                           {item.sub.map((subItem, subIndex) => (
                             <li key={subIndex} className="flex  items-start">
-                              
                               <span className="text-gray_text3 text-sm md:text-base leading-relaxed">
                                 {subItem}
                               </span>

@@ -10,33 +10,33 @@ interface FAQItem {
 const guaranteeFAQ: FAQItem[] = [
   {
     id: 1,
-    question: "How do I book a pet sitter or walker on FunNTail?",
+    question: "What does the FunNTail Guarantee cover?",
     answer:
-      "The Rover Guarantee provides protection for eligible claims up to £20,000 in vet care reimbursement for injuries to pets, property damage to the pet owner's home caused by a sitter or dog walker, and certain out-of-pocket medical costs for third-party injuries. It covers incidents that occur during fully booked and paid services on FunNTail.",
+      "The FunNTail Guarantee provides up to £20,000 in eligible veterinary reimbursement for injuries that occur during a fully booked and paid service. It also covers certain types of property damage and limited third-party medical costs when the responsible party cannot or will not pay.",
   },
   {
     id: 2,
-    question: "Are the pet sitters and walkers verified or background checked?",
+    question: "What types of incidents are not covered?",
     answer:
-      "Absolutely! Every worker goes through an ID check, shares photos with pets, and fills out an experience form before they’re approved. We take your pet’s safety seriously",
+      "The Guarantee does not cover pre-existing conditions, injuries to sitters or family members, damage to a sitter’s property, preventable issues (such as fleas or ticks), or costs occurring more than 30 days after the incident.",
   },
   {
     id: 3,
-    question: "What if I need to cancel a booking?",
+    question: "Do I need to report incidents within a specific time frame?",
     answer:
-      "To book a pet sitter or walker, simply browse through our verified pet care professionals, check their profiles and reviews, select your preferred dates and services, and confirm your booking with secure payment.",
+      "Yes. Any injury or damage must be reported to FunNTail Support as soon as possible — and no later than 48 hours after the booking ends. Delayed reporting may affect eligibility.",
   },
   {
     id: 4,
-    question: "How do I pay, and is it secure?",
+    question: "When should I file a claim with my insurance provider?",
     answer:
-      "We use industry-standard encryption and secure payment processing. You can pay with major credit cards, debit cards, or digital wallets. Payment is only processed after you confirm your booking.",
+      "If you have an insurance policy that may cover the incident (such as pet, renters, or homeowners insurance), you should file with them first. The FunNTail Guarantee may cover eligible costs not handled by your provider, such as deductibles or remaining balances.",
   },
   {
     id: 5,
-    question: "Can I request things like overnight stays or pet grooming?",
+    question: "What documentation is required to submit a claim?",
     answer:
-      "Yes! Many of our pet care professionals offer additional services like overnight stays, pet grooming, feeding, and medication administration. You can specify your needs when booking.",
+      "Depending on the incident, you may need vet invoices, treatment notes, photos, receipts, proof of ownership for damaged items, or other relevant evidence. All documentation must be provided within seven days to ensure a smooth review process.",
   },
 ];
 
@@ -60,8 +60,8 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-[18px] leading-relaxed max-w-[1352px] mx-auto">
-            Find answers to common questions about our protection and guarantee
-            policies.
+            Find answers to the most common questions about the FunNTail
+            Guarantee and how it protects you.{" "}
           </p>
         </motion.div>
 

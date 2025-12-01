@@ -161,7 +161,7 @@ const ContactSection: React.FC = () => {
             <div className="absolute inset-0">
               <img
                 src={pageTitle}
-                className="absolute top-0 left-0 w-full opacity-20 h-full"
+                className="absolute top-0 left-0 w-full opacity-12 h-full"
                 alt="bg"
               />
             </div>

@@ -1,7 +1,9 @@
+// src/pages/waitlistPage.tsx
 import Footer from "../../components/shared/Footer";
 import Navbar from "../../components/shared/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Check, X } from "lucide-react";
 import ios from "../../assets/apple.svg";
 import google from "../../assets/andriod.svg";
 import app from "../../assets/app.png";
@@ -45,7 +47,11 @@ const WaitList = () => {
     minutes: 0,
     seconds: 0,
   });
+
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -70,6 +76,17 @@ const WaitList = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // basic validation like contact form
+    if (!email.trim() || !email.includes("@")) {
+      setStatus("error");
+      setErrorMsg("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus("idle");
+    setErrorMsg("");
+
     try {
       const response = await fetch(
         "https://api.funntail.co.uk/api/v1/waitlist",
@@ -83,13 +100,26 @@ const WaitList = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        alert("🎉 You're on the waitlist!");
+        setStatus("success");
         setEmail("");
+
+        // GTM analytics event
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: "waitlist_signup",
+        });
       } else {
-        alert(data.message || "Failed to join waitlist.");
+        setStatus("error");
+        setErrorMsg(
+          data.message || "Failed to join waitlist. Please try again."
+        );
       }
     } catch (err) {
-      alert("Network error. Please try again.");
+      console.error("Waitlist error:", err);
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -99,11 +129,12 @@ const WaitList = () => {
 
   return (
     <div>
-      <div className=" w-full pb-12">
+      <div className="w-full pb-12">
         <div className="relative pt-[150px] lg:pt-[40px] w-full max-w-7xl mx-auto">
           <Navbar />
         </div>
       </div>
+
       <div className="max-w-[1280px] mx-auto text-[#032921] w-full min-h-screen flex items-center justify-center px-6 pb-20 lg:pb-8">
         <motion.div className="flex w-full flex-col lg:flex-row justify-between gap-20 items-center">
           {/* Phone Mockup Side */}
@@ -174,7 +205,7 @@ const WaitList = () => {
             {/* Email Form */}
             <motion.form
               onSubmit={handleSubmit}
-              className="w-full mb-8 mt-12"
+              className="w-full mb-4 mt-12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -187,7 +218,13 @@ const WaitList = () => {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (status !== "idle") {
+                        setStatus("idle");
+                        setErrorMsg("");
+                      }
+                    }}
                     placeholder="StrongestAvenger@example.com"
                     className="w-full px-4 py-3 pl-10 bg-[#1ABC9C0D] border border-primary_color rounded-[16px] focus:outline-none focus:ring focus:ring-primary_color text-[#6B7280] text-sm"
                     required
@@ -210,25 +247,75 @@ const WaitList = () => {
                   type="submit"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-4 py-2 bg-[#14B8A6] text-white font-semibold rounded-[16px] hover:bg-[#0D9488] transition-colors flex items-center gap-2"
+                  disabled={isSubmitting || !email.trim()}
+                  className={`px-4 py-2 rounded-[16px] flex items-center gap-2 font-semibold transition-colors ${
+                    isSubmitting || !email.trim()
+                      ? "bg-[#14B8A6]/60 cursor-not-allowed text-white"
+                      : "bg-[#14B8A6] hover:bg-[#0D9488] text-white"
+                  }`}
                 >
-                  <svg
-                    className="w-5 h-5 rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                  {isSubmitting ? (
+                    <motion.div
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     />
-                  </svg>
-                  Send
+                  ) : (
+                    <>
+                      <svg
+                        className="w-5 h-5 rotate-45"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                        />
+                      </svg>
+                      <span>Join Waitlist</span>
+                    </>
+                  )}
                 </motion.button>
               </div>
             </motion.form>
+
+            {/* Success / Error messages */}
+            <AnimatePresence>
+              {status === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  className="w-full mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center space-x-2"
+                >
+                  <Check className="w-5 h-5 text-primary_color flex-shrink-0" />
+                  <span className="text-primary_color text-sm">
+                    You’re subscribed! Thank you.
+                  </span>
+                </motion.div>
+              )}
+
+              {status === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  className="w-full mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-2"
+                >
+                  <X className="w-5 h-5 text-red-600 flex-shrink-0" />
+                  <span className="text-red-700 text-sm">
+                    {errorMsg || "Something went wrong. Please try again."}
+                  </span>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* App Store Badges */}
             <motion.div

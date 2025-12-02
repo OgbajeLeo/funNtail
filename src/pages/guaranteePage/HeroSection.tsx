@@ -48,7 +48,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative  overflow-hidden flex items-center pt-12 lg:pt-0">
+    <section className="relative  overflow-hidden flex items-center mt-12 lg:mt-0">
       <div className="hidden lg:block absolute inset-0 max-w-4xl w-full mx-auto pointer-events-none">
         <div className="absolute bottom-10 left-40 md:bottom-20 md:left-20">
           <PawPrint size={80} className="" />
@@ -89,7 +89,7 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="max-w-[1544px] mx-auto w-full relative z-10">
+      <div className="max-w-[1644px] mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3  items-center">
           {/* Left Side - Cat with Teal Shape */}
           <motion.div className="relative hidden lg:block">

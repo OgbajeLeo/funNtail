@@ -67,10 +67,9 @@ const TermsScreen: React.FC = () => {
       content: (
         <div className="space-y-6">
           <p className="text-gray_text2 leading-relaxed">
-            FunNTail is a neutral online marketplace that connects Pet Owners
-            with Sitters, Dog Walkers, and Groomers (“Service Providers”). We
-            provide the tools to help users find, communicate, and book pet care
-            services.
+            FunNTail is a platform that connects Pet Owners with Sitters, Dog
+            Walkers, and Groomers (“Service Providers”). We provide tools to
+            help users find, communicate, and book pet care services.
           </p>
 
           <p className="text-gray_text2 leading-relaxed">

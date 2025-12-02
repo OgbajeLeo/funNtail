@@ -2,7 +2,7 @@ import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
-import AgreementScreen from "./agreement";
+import AgreementScreen from "./Agreement";
 import pageTitleMobile from "../../assets/mobileBGG.png";
 
 const AgreementPage = () => {

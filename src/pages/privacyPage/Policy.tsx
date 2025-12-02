@@ -1066,21 +1066,24 @@ const LegalScreen: React.FC = () => {
             {/* Introduction */}
             <motion.div className=" lg:p-8 mb-8">
               <p className="text-gray_text2 leading-relaxed mb-4">
-                Thanks for using our products and services ("Services"). The
-                Services are provided by Queryfier LLC. ("Queryfier"), located
-                at 1942 Broadway Street, Suite 314c Boulder, Colorado 80302,
-                USA.
+                This Privacy Policy explains how FunNTail Ltd (“FunNTail”, “we”,
+                “us”, “our”) collects, uses, stores, and protects your personal
+                information when you use our website, mobile application, and
+                related services that connect pet owners with sitters, walkers,
+                and groomers.
               </p>
+
               <p className="text-gray_text2 leading-relaxed mb-4">
-                By using our Services, you are agreeing to these terms. Please
-                read them carefully.
+                By accessing or using FunNTail, you acknowledge and agree to the
+                data practices described in this Privacy Policy. Please read it
+                carefully to understand how your information is handled.
               </p>
+
               <p className="text-gray_text2 leading-relaxed">
-                Our Services are very diverse, so sometimes additional terms or
-                product requirements (including age requirements) may apply.
-                Additional terms will be available with the relevant Services,
-                and those additional terms become part of your agreement with us
-                if you use those Services.
+                FunNTail complies with the UK General Data Protection Regulation
+                (UK GDPR), the Data Protection Act 2018, and all applicable UK
+                privacy laws. This policy applies to all users of our platform
+                unless stated otherwise.
               </p>
             </motion.div>
 

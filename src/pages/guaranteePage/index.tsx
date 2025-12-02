@@ -7,6 +7,7 @@ import FileClaim from "./FileClaim";
 import YourClaim from "./YourClaim";
 import FAQ from "./FAQ";
 import pageTitle from "../../assets/navBGG.png";
+import pageTitleMobile from "../../assets/mobileBGG.png";
 import { motion } from "framer-motion";
 
 const GuaranteePage = () => {
@@ -17,7 +18,12 @@ const GuaranteePage = () => {
           <Navbar />
           <img
             src={pageTitle}
-            className="absolute top-0 left-0 w-full opacity-12 h-full lg:object-cover"
+            className="absolute hidden lg:block top-0 left-0 w-full opacity-12 h-full lg:object-cover "
+            alt="bg"
+          />
+          <img
+            src={pageTitleMobile}
+            className="absolute block lg:hidden top-0 left-0 w-full opacity-12 h-full object-cover "
             alt="bg"
           />
 

@@ -42,7 +42,7 @@ const HeroSection = () => {
               Join thousands of pet owners using FunNTail to find reliable
               sitters. We love em just as much!
             </motion.p>
-            {/* add buttons and trustpilot back later */}.
+            {/* add buttons and trustpilot back later */}
             {/* <motion.button
               className="mt-6 bg-primary_color mx-auto lg:mx-0 text-white font-semibold w-[174px] h-[48px] rounded-xl flex justify-center items-center gap-3  transition-shadow"
               variants={buttonVariants}

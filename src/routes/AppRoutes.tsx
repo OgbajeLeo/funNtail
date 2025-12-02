@@ -13,6 +13,7 @@ import InvitePage from "../pages/invitePage";
 import GuaranteePage from "../pages/guaranteePage";
 import ProtectPage from "../pages/protectPage";
 import WaitList from "../pages/waitlistPage";
+import ManageCookies from "../pages/manageCookiesPage";
 
 const LandingPage = lazy(() => import("../pages/landingPage"));
 
@@ -27,13 +28,13 @@ export default function AppRoutes() {
         <Route path="/download" element={<DownloadPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/managecookies" element={<ManageCookies />} />
         <Route path="/safety" element={<SafetyPage />} />
         <Route path="/faqs" element={<FaqSection />} />
         <Route path="/invite" element={<InvitePage />} />
         <Route path="/guarantee" element={<GuaranteePage />} />
         <Route path="/protect" element={<ProtectPage />} />
         <Route path="/waitlist" element={<WaitList />} />
-
 
         <Route path="/*" element={<NotFound />} />
         {/* Protected admin route */}

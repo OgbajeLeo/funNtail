@@ -269,7 +269,7 @@ const Footer: React.FC = () => {
                 {[
                   { text: "Terms of Service", path: "/terms" },
                   { text: "Privacy Policy", path: "/privacy" },
-                  { text: "Manage Cookies", path: "#" },
+                  { text: "Manage Cookies", path: "/managecookies" },
                 ].map((link) => (
                   <motion.button
                     key={link.text}

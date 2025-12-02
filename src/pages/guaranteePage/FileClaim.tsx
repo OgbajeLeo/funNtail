@@ -6,23 +6,23 @@ const FileClaim = () => {
     {
       id: 1,
       number: "1",
-      title: "Report the incident quickly",
+      title: "Gather all required details",
       description:
-        "Let Funntail Support know as soon as something happens — and definitely within 48 hours after the service ends. Early reporting helps us step in fast and keep everything clear.",
+        "Collect any photos, vet invoices, receipts, or messages related to the incident. Having everything ready helps our team review your claim quickly and accurately.",
     },
     {
       id: 2,
       number: "2",
-      title: "Reach out to the other party",
+      title: "Submit your claim to FunNTail",
       description:
-        "Message the sitter or pet owner through your Funntail inbox to try resolving the issue together. Keeping the conversation on-platform makes sure there's a record if we need to review it.",
+        "Complete the claim form and include the details of what happened. The more context you provide, the faster our Trust & Safety team can begin the review.",
     },
     {
       id: 3,
       number: "3",
-      title: "Submit your claim for review",
+      title: "Work with our review team",
       description:
-        "Let Funntail Support know as soon as something happens — and definitely within 48 hours after the service ends. Early reporting helps us step in fast and keep everything clear.",
+        "Once submitted, a FunNTail specialist will reach out if any additional information is needed. We’ll guide you through the process and keep you updated until the claim is resolved.",
     },
   ];
 
@@ -30,26 +30,22 @@ const FileClaim = () => {
     <section className="bg-[#1ABC9C0D] py-8 md:py-12 lg:py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Section */}
-        <motion.div
-          className="mb-8 md:mb-12 lg:mb-16 text-center"
-        >
+        <motion.div className="mb-8 md:mb-12 lg:mb-16 text-center">
           <h2 className="text-[24px] md:text-[30px] lg:text-[32px] font-bold text-gray_text3 mb-3">
-            How to File a Claim
+            Steps to Submit a Claim{" "}
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-[20px] leading-relaxed max-w-[1352px] mx-auto text-left md:text-center">
-            To be covered, the injury or damage has to happen during a service
-            that was fully booked and paid for on FunNTail. If something goes
-            wrong and the person responsible can't (or won't) handle the cost,
-            the Guarantee steps in to help with reimbursement.
+            For your claim to be eligible, the incident must happen during a
+            FunNTail booking that was fully paid through the platform. If
+            something goes wrong and the person responsible can’t cover the
+            cost, the FunNTail Guarantee is here to help.
           </p>
         </motion.div>
 
         {/* Main Content - Two Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start w-full">
           {/* Left Column - Image */}
-          <motion.div
-            className="w-full"
-          >
+          <motion.div className="w-full">
             <div className="rounded-2xl md:rounded-[40px] overflow-hidden">
               <img
                 src={sleepingcat}
@@ -60,11 +56,8 @@ const FileClaim = () => {
           </motion.div>
 
           {/* Right Column - Steps */}
-          <motion.div
-           
-            className="w-full space-y-8 md:space-y-10 lg:space-y-12"
-          >
-            {steps.map((step,) => (
+          <motion.div className="w-full space-y-8 md:space-y-10 lg:space-y-12">
+            {steps.map((step) => (
               <motion.div
                 key={step.id}
                 className="flex gap-4 md:gap-6 items-start"

@@ -7,27 +7,29 @@ const ClaimSection = () => {
   const steps = [
     {
       id: 1,
-      title: "Notify FunNTail",
+      title: "Let FunNTail Know Right Away",
       image: claim1,
       content: [
-        "Call 888-727-1140 or email trust@rover.com and notify our 24/7 Trust & Safety team of the incident if you have not already. We can't help if we don't know what has happened!",
-        "In many cases, we can help you take immediate steps to mitigate the injury or damage caused by an incident, such as connecting you with a board-certified veterinarian by phone or providing resources to help locate a lost pet. For this reason, we ask both pet sitters and pet owners to notify us as soon as possible after an incident occurs - and in any event no later than 48 hours after the booking has ended.",
+        "Reach out to FunNTail Support as soon as an incident occurs. Our team is available 24/7 to guide you, answer questions, and help you take the right next steps.",
+        "The sooner we know what happened, the faster we can support you — including helping you connect with a vet, providing resources, or advising on urgent situations. Please notify us as quickly as possible after an incident and no later than 48 hours after the booking ends.",
       ],
     },
     {
       id: 2,
-      title: "Contact the other party",
+      title: "Reach Out to the Other Party",
       image: claim2,
       content: [
-        "Contact the other party through your Rover inbox to see if you can find a resolution together. We know from experience that issues are often best resolved by simply talking to the other person. It's important to communicate through your Rover inbox so there is a record of the conversation. If you're unable to come to an agreement, absolutely let us know.",
+        "Send a message through your FunNTail inbox to discuss the situation directly. Many issues are resolved quickly and smoothly through open communication.",
+        "Keeping the conversation in your FunNTail inbox ensures everything is documented. If you can’t reach an agreement or need help at any point, just let us know — we’re here to assist.",
       ],
     },
     {
       id: 3,
-      title: "Work with your insurance provider",
+      title: "Check With Your Insurance Provider",
       image: claim3,
       content: [
-        "If you have insurance that may cover some or all costs arising from an injury or damage otherwise falling under the Rover Guarantee, such as pet or homeowner's insurance, you should file a claim under that policy before seeking reimbursement from Rover. In such a case the Rover Guarantee may be leveraged to meet deductibles or cover costs that fall outside your policy.",
+        "If you have personal insurance (such as pet, renters, or homeowners insurance) that may cover part of the costs, file a claim with them first.",
+        "Once your provider has processed their portion, the FunNTail Guarantee may help cover eligible expenses that remain, such as deductibles or uncovered costs.",
       ],
     },
   ];
@@ -38,14 +40,12 @@ const ClaimSection = () => {
         {/* Main Heading */}
         <motion.div className="mb-8 md:mb-10 lg:mb-12 mx-auto text-center">
           <h2 className="text-[24px] md:text-[30px] lg:text-[32px] font-bold text-gray_text3 mb-6 md:mb-8">
-            Take these steps before filing a claim
+            Steps to Take Before Submitting a Claim{" "}
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-lg leading-relaxed max-w-[1352px] mx-auto">
-            As pet owners ourselves, we know how emotional and challenging these
-            situations can be, which is why we offer the protection of the Rover
-            Guarantee. Rover Support and our Trust & Safety team are also
-            available 24/7 to help you through this process, answer questions
-            and simply be there for you and your pets.
+            Before starting a claim, follow these important steps to help us
+            understand what happened and support you quickly. Our team is here
+            to guide you with care and clarity every step of the way.
           </p>
         </motion.div>
 

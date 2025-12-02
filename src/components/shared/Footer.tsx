@@ -434,14 +434,14 @@ const Footer: React.FC = () => {
 
               <div className="items-center hidden sm:flex space-x-3">
                 <motion.button
-                  onClick={() => router("/download")}
+                  onClick={() => router("/waitlist")}
                   className="flex items-center font-medium"
                 >
                   <img src={apple} alt="" className="h-10" />
                 </motion.button>
 
                 <motion.button
-                  onClick={() => router("/download")}
+                  onClick={() => router("/waitlist")}
                   className="flex items-center font-medium"
                 >
                   <img src={google} alt="" className="h-10" />

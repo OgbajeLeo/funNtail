@@ -46,7 +46,7 @@ const CookiePreferencesModal: React.FC<Props> = ({ open, onClose }) => {
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
-            className="bg-white p-6 rounded-xl shadow-xl max-w-lg w-full space-y-4"
+            className="bg-white p-6 rounded-xl shadow-xl max-w-lg w-full space-y-4 mx-4"
           >
             <h2 className="text-xl font-semibold text-gray-900">
               Cookie Preferences

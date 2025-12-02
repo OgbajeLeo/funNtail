@@ -7,36 +7,66 @@ interface FAQItem {
   answer: string;
 }
 
-const guaranteeFAQ: FAQItem[] = [
+const protectionFAQ: FAQItem[] = [
   {
     id: 1,
-    question: "What does the FunNTail Guarantee cover?",
+    question: "What is FunNTail Protection?",
     answer:
-      "The FunNTail Guarantee provides up to £20,000 in eligible veterinary reimbursement for injuries that occur during a fully booked and paid service. It also covers certain types of property damage and limited third-party medical costs when the responsible party cannot or will not pay.",
+      "FunNTail Protection is our safety coverage included with every eligible booking. It provides support for accidents, injuries, or unexpected issues that occur during a confirmed and fully paid service.",
   },
   {
     id: 2,
-    question: "What types of incidents are not covered?",
+    question: "What does FunNTail Protection cover?",
     answer:
-      "The Guarantee does not cover pre-existing conditions, injuries to sitters or family members, damage to a sitter’s property, preventable issues (such as fleas or ticks), or costs occurring more than 30 days after the incident.",
+      "It includes up to £20,000 in eligible vet care for accidents during a booking, coverage for certain damages caused by a sitter, and access to guidance from our support team if an incident occurs.",
   },
   {
     id: 3,
-    question: "Do I need to report incidents within a specific time frame?",
+    question: "Does FunNTail Protection cover pre-existing health issues?",
     answer:
-      "Yes. Any injury or damage must be reported to FunNTail Support as soon as possible — and no later than 48 hours after the booking ends. Delayed reporting may affect eligibility.",
+      "No. Protection only applies to new, unexpected injuries or incidents that occur during the booking. Any illness or condition that existed before the service begins is not eligible.",
   },
   {
     id: 4,
-    question: "When should I file a claim with my insurance provider?",
+    question: "What should I do if an incident happens during a booking?",
     answer:
-      "If you have an insurance policy that may cover the incident (such as pet, renters, or homeowners insurance), you should file with them first. The FunNTail Guarantee may cover eligible costs not handled by your provider, such as deductibles or remaining balances.",
+      "Contact FunNTail Support immediately. We’ll guide you through next steps, help document the situation, and advise on care or reimbursement eligibility.",
   },
   {
     id: 5,
-    question: "What documentation is required to submit a claim?",
+    question: "Is the sitter also covered under FunNTail Protection?",
     answer:
-      "Depending on the incident, you may need vet invoices, treatment notes, photos, receipts, proof of ownership for damaged items, or other relevant evidence. All documentation must be provided within seven days to ensure a smooth review process.",
+      "Sitters receive liability protection for accidental pet injuries or certain property-related incidents that occur during a confirmed booking, as long as platform rules are followed.",
+  },
+  {
+    id: 6,
+    question: "Is FunNTail Protection the same as insurance?",
+    answer:
+      "No. It is not a traditional insurance policy. It’s a safety program designed to support owners and sitters in qualifying situations during bookings made on FunNTail.",
+  },
+  {
+    id: 7,
+    question: "Do I need to pay extra for FunNTail Protection?",
+    answer:
+      "No. It’s included automatically with every confirmed and fully paid booking — no subscriptions or additional fees required.",
+  },
+  {
+    id: 8,
+    question: "When is a claim not eligible for Protection?",
+    answer:
+      "Claims are not eligible if the booking wasn’t paid on FunNTail, if instructions were ignored, if the pet had a pre-existing condition, or if off-platform actions contributed to the incident.",
+  },
+  {
+    id: 9,
+    question: "Does FunNTail Protection cover property damage?",
+    answer:
+      "Certain accidental property damage caused by a sitter during a booking may be eligible. Requirements and limits apply and are reviewed case-by-case.",
+  },
+  {
+    id: 10,
+    question: "How do I submit a protection claim?",
+    answer:
+      "Start by contacting FunNTail Support within 48 hours of the incident. We’ll ask for documentation such as vet invoices, photos, or written statements, and then guide you through the full review process.",
   },
 ];
 
@@ -60,14 +90,14 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-[18px] leading-relaxed max-w-[1352px] mx-auto">
-            Find answers to the most common questions about the FunNTail
-            Guarantee and how it protects you.{" "}
+            Find answers to the most common questions about FunNTail’s
+            protection coverage and safety policies.
           </p>
         </motion.div>
 
         {/* FAQ Items */}
         <div className="space-y-4 max-w-4xl mx-auto">
-          {guaranteeFAQ.map((item) => {
+          {protectionFAQ.map((item) => {
             const isOpen = openItem === item.id;
 
             return (

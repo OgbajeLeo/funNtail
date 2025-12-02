@@ -1,4 +1,3 @@
-
 import CallIcon from "../../components/iconComponent/CallIcon";
 import CheckIcon from "../../components/iconComponent/CheckIcon";
 import HelpIcon from "../../components/iconComponent/HelpIcon";
@@ -8,27 +7,27 @@ const BookingTool = () => {
   const features = [
     {
       icon: <CallIcon />,
-      label: "Screened pet sitters",
+      label: "Screened & Verified Sitters",
       description:
-        "Find sitters who’ve passed identity verification and have repeat clients. Read trusted reviews to choose someone who’s the perfect match.",
+        "Every sitter completes identity checks and profile verification. Browse trusted reviews and repeat clients to find the perfect match for your pet.",
     },
     {
       icon: <CheckIcon />,
-      label: "The Rover Guarantee",
+      label: "FunNTail Guarantee",
       description:
-        "If your pet needs vet care during a booking, fast support and up to $25,000 in eligible vet care reimbursement.",
+        "If something unexpected happens during a booking, you’re protected with fast support and coverage through the FunNTail Guarantee.",
     },
     {
       icon: <HelpIcon />,
       label: "24/7 Trust & Safety Support",
       description:
-        "FunNTail’s here for you 24/7 with real support anytime. Your sitter also gets access to vet pros during every booking.",
+        "Our team is available around the clock to help with questions, concerns, and urgent issues—keeping every booking safe and supported.",
     },
     {
-      icon: <ChatIcon />,
-      label: "Messaging and photos",
+      icon: <ChatIcon />, // or replace with a combined/chat-tracking icon if you have one
+      label: "Messaging, Photos & Real-Time Tracking",
       description:
-        "Stay in the loop with cute photo updates and messages from your sitter.",
+        "Stay connected throughout every booking with instant messaging, adorable photo updates, and live GPS tracking for walks and outdoor time.",
     },
   ];
 
@@ -38,13 +37,14 @@ const BookingTool = () => {
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="text-gray_text3 text-[20px] md:text-[32px] font-bold leading-tight mb-4 md:mb-6">
-            Every booking has the tools to help keep you and your pet safe.
+            Because your pet deserves care that feels safe, connected, and
+            trustworthy.
           </h2>
 
           {/* Subtitle */}
           <p className="text-gray_text2 text-base md:text-lg lg:text-xl leading-relaxed max-w-[900px] mx-auto mb-12 md:mb-16 lg:mb-20">
-            From real-time updates to vetted sitters and built-in support, you
-            get peace of mind from start to finish.
+            With live updates, reliable sitters, and round-the-clock support,
+            FunNTail gives you confidence from the moment you book.”
           </p>
 
           {/* Icons Grid */}

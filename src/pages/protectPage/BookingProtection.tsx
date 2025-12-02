@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import dog4 from "../../assets/dog4.jpg"
+import { motion } from "framer-motion";
+import dog4 from "../../assets/dog4.jpg";
 
 const BookingProtection = () => {
   return (
@@ -8,12 +8,12 @@ const BookingProtection = () => {
         {/* Header Section */}
         <motion.div className="mb-8 md:mb-12 lg:mb-16 text-center">
           <h2 className="text-[24px] md:text-[30px] lg:text-[32px] font-bold text-gray_text3 mb-3">
-            Booking Protection
+            Booking Protection You Can Rely On{" "}
           </h2>
           <p className="text-gray_text2 text-base md:text-base lg:text-[18px] leading-relaxed max-w-[1352px] mx-auto text-left md:text-center">
-            In the rare instance a sitter or dog walker needs to cancel at the
-            last minute, we've got your back. Every booking made through Rover
-            includes reservation protection. Here's what that means:
+            If a sitter ever needs to cancel unexpectedly, FunNTail makes sure
+            you’re never left without options. Every booking includes built-in
+            protection to keep your plans secure and your pet cared for.
           </p>
         </motion.div>
 
@@ -34,18 +34,17 @@ const BookingProtection = () => {
               {/* First Section */}
               <div className="mb-8 md:mb-10">
                 <h3 className="text-lg lg:text-[20px] font-semibold text-gray_text3 mb-3">
-                  We'll help make up the difference
+                  We’ll make sure you’re covered
                 </h3>
                 <div className="space-y-4">
                   <p className="text-gray_text2 text-sm md:text-base lg:text-lg leading-relaxed">
-                    You'll receive a full refund if your booking is cancelled by
-                    your sitter or dog walker within seven days of the service
-                    start date (or within 14 days of the service start date for
-                    recognised holidays).
+                    If your sitter cancels close to the start of your booking,
+                    you’ll receive a full refund—simple and stress-free.
                   </p>
                   <p className="text-gray_text2 text-sm md:text-base lg:text-lg leading-relaxed">
-                    We'll also give you Rover credit to put towards the cost of
-                    a replacement booking.
+                    To help you find care quickly, we’ll also provide FunNTail
+                    credit you can use toward your next booking with a new
+                    sitter.
                   </p>
                 </div>
               </div>
@@ -53,18 +52,19 @@ const BookingProtection = () => {
               {/* Second Section */}
               <div>
                 <h3 className="text-lg md:text-lg lg:text-[20px] font-semibold text-gray_text3 mb-3">
-                  Has your sitter cancelled? Contact us
+                  Sitter cancelled? We’re here to help.{" "}
                 </h3>
                 <p className="text-gray_text2 text-sm md:text-base lg:text-lg leading-relaxed">
-                  We would love to help you find a great replacement. Send Rover
-                  Support a{" "}
+                  Our team is ready to guide you through finding a trusted
+                  replacement. Reach out to{" "}
                   <a
-                    href="#"
-                    className="text-gray_text2 hover:underline"
+                    href="/contact"
+                    className="text-primary_color font-semibold hover:underline"
                   >
-                    message here
-                  </a>
-                  .
+                    FunNTail Support
+                  </a>{" "}
+                  anytime and we’ll help you get a new sitter booked as quickly
+                  as possible.
                 </p>
               </div>
             </div>

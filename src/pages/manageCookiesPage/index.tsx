@@ -2,9 +2,10 @@ import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
-import ManageCookies from "./ManageCookies";
+import ManageCookiesScreen from "./ManageCookies";
+import pageTitleMobile from "../../assets/mobileBGG.png";
 
-const PrivacyPage = () => {
+const ManageCookiesPage = () => {
   return (
     <div>
       <div className="bg-[#032921] w-full ">
@@ -13,7 +14,12 @@ const PrivacyPage = () => {
 
           <img
             src={pageTitle}
-            className="absolute top-0 left-0 w-full opacity-12 h-full lg:object-cover"
+            className="absolute hidden lg:block top-0 left-0 w-full opacity-12 h-full lg:object-cover "
+            alt="bg"
+          />
+          <img
+            src={pageTitleMobile}
+            className="absolute block lg:hidden top-0 left-0 w-full opacity-12 h-full object-cover "
             alt="bg"
           />
           {/* Header Section */}
@@ -30,10 +36,10 @@ const PrivacyPage = () => {
           </motion.header>
         </div>
       </div>
-      <ManageCookies />
+      <ManageCookiesScreen />
       <Footer />
     </div>
   );
 };
 
-export default PrivacyPage;
+export default ManageCookiesPage;

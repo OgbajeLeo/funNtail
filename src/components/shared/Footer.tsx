@@ -63,7 +63,12 @@ const Footer: React.FC = () => {
                     BETA
                   </motion.span>
                 </motion.div>
-
+                <motion.button
+                  onClick={() => router("/agreement")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                >
+                  FunNTail Agreement
+                </motion.button>
                 <motion.div className="flex items-center space-x-3">
                   <motion.button
                     onClick={() => router("/community")}
@@ -76,13 +81,6 @@ const Footer: React.FC = () => {
                     BETA
                   </motion.span>
                 </motion.div>
-
-                <motion.button
-                  onClick={() => router("/safety")}
-                  className="block text-gray-300 hover:text-white transition-colors"
-                >
-                  Safety
-                </motion.button>
 
                 <motion.button
                   onClick={() => router("/protect")}
@@ -113,6 +111,12 @@ const Footer: React.FC = () => {
                   className="block text-gray-300 hover:text-white transition-colors"
                 >
                   About Us
+                </motion.button>
+                <motion.button
+                  onClick={() => router("/safety")}
+                  className="block text-gray-300 hover:text-white transition-colors"
+                >
+                  Safety
                 </motion.button>
 
                 <motion.div className="flex items-center space-x-3">
@@ -269,6 +273,7 @@ const Footer: React.FC = () => {
                 {[
                   { text: "Terms of Service", path: "/terms" },
                   { text: "Privacy Policy", path: "/privacy" },
+                  { text: "Refund Policy", path: "/refund" },
                   { text: "Manage Cookies", path: "/managecookies" },
                 ].map((link) => (
                   <motion.button

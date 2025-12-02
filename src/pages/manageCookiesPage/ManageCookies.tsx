@@ -74,6 +74,53 @@ const ManageCookies: React.FC = () => {
       ),
     },
     {
+      id: "cookies-we-use",
+      title: "Cookies We Use",
+      icon: <FileText className="w-5 h-5" />,
+      content: (
+        <div className="space-y-6">
+          <p className="text-gray_text2 leading-relaxed">
+            FunNTail uses a wide range of cookies and tracking technologies to
+            keep the platform secure, improve performance, and personalise your
+            experience. Below is an overview of the categories of cookies used
+            on our website and app:
+          </p>
+
+          <ul className="list-disc pl-6 space-y-3 text-gray_text2">
+            <li>
+              <strong>Essential Cookies:</strong>
+              Required for core platform operations, including login, payments,
+              session management, and security.
+            </li>
+
+            <li>
+              <strong>Analytics Cookies:</strong>
+              Used to measure performance, track user behaviour, and identify
+              errors. Includes Google Analytics and Firebase Analytics.
+            </li>
+
+            <li>
+              <strong>Functional Cookies:</strong>
+              Support features such as remembering preferences, saved logins,
+              and user interface settings.
+            </li>
+
+            <li>
+              <strong>Marketing Cookies:</strong>
+              Used (with consent) to deliver tailored adverts through platforms
+              such as Google Ads and Meta (Facebook/Instagram).
+            </li>
+          </ul>
+
+          <p className="text-gray_text2 leading-relaxed">
+            A full, detailed list of cookie names and purposes can be provided
+            upon request.
+          </p>
+        </div>
+      ),
+    },
+
+    {
       id: "record-of-versions",
       title: "Record of Versions",
       icon: <FileText className="w-5 h-5" />,
@@ -99,31 +146,80 @@ const ManageCookies: React.FC = () => {
       ),
     },
     {
-      id: "third-party-cookies",
-      title: "Third-Party Cookies",
+      id: "third-party-providers",
+      title: "Third-Party Cookie Providers",
       icon: <AlertTriangle className="w-5 h-5" />,
       content: (
         <div className="space-y-6">
           <p className="text-gray_text2 leading-relaxed">
-            Some cookies on FunNTail are placed by trusted third-party providers
-            who help us deliver secure payments, analytics, and advertising
-            services. These partners may collect data in accordance with their
-            own privacy policies.
-          </p>
-
-          <p className="text-gray_text2 leading-relaxed">
-            Examples of third-party cookie providers include:
+            Some cookies used on FunNTail are created and managed by trusted
+            third-party service providers who support payments, analytics,
+            advertising, and platform security. These third parties may process
+            data according to their own privacy and cookie policies.
           </p>
 
           <ul className="list-disc pl-6 space-y-3 text-gray_text2">
-            <li>Stripe (payments and fraud detection)</li>
-            <li>Google (analytics and advertising)</li>
-            <li>Meta / Facebook (advertising)</li>
-            <li>Cloud hosting and security platforms</li>
+            <li>
+              <strong>Stripe:</strong> Payment processing, fraud detection, and
+              secure checkout functionality.
+            </li>
+            <li>
+              <strong>Google:</strong> Analytics, advertising, and performance
+              tracking.
+            </li>
+            <li>
+              <strong>Meta (Facebook/Instagram):</strong> Advertising and
+              marketing performance.
+            </li>
+            <li>
+              <strong>Cloud Hosting Providers:</strong> Security, optimisation,
+              and load balancing.
+            </li>
           </ul>
+
+          <p className="text-gray_text2 leading-relaxed">
+            We carefully vet all third-party partners to ensure they meet strong
+            data protection standards.
+          </p>
         </div>
       ),
     },
+    {
+      id: "cookie-consent-process",
+      title: "How Cookie Consent Works",
+      icon: <Shield className="w-5 h-5" />,
+      content: (
+        <div className="space-y-6">
+          <p className="text-gray_text2 leading-relaxed">
+            When you visit the FunNTail website for the first time, or after
+            clearing your cookies, we display a Cookie Consent Banner. This
+            banner allows you to choose whether to accept, reject, or customise
+            our use of cookies.
+          </p>
+
+          <ul className="list-disc pl-6 space-y-3 text-gray_text2">
+            <li>
+              <strong>Accept All:</strong> Enables all cookie types, including
+              analytics and marketing.
+            </li>
+            <li>
+              <strong>Reject Non-Essential:</strong> Only essential cookies are
+              used.
+            </li>
+            <li>
+              <strong>Customise:</strong> You choose which cookie categories to
+              enable.
+            </li>
+          </ul>
+
+          <p className="text-gray_text2 leading-relaxed">
+            You may update your preferences at any time using the “Manage
+            Cookies” link available in the footer of our website.
+          </p>
+        </div>
+      ),
+    },
+
     {
       id: "cookie-consent",
       title: "Cookie Consent",

@@ -2,7 +2,7 @@ import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
-import LegalScreen from "./Policy";
+import PrivacyScreen from "./Policy";
 import pageTitleMobile from "../../assets/mobileBGG.png";
 
 const PrivacyPage = () => {
@@ -19,7 +19,7 @@ const PrivacyPage = () => {
           />
           <img
             src={pageTitleMobile}
-            className="absolute block lg:hidden top-0 left-0 w-full opacity-90 h-full object-cover "
+            className="absolute block lg:hidden top-0 left-0 w-full opacity-12 h-full object-cover "
             alt="bg"
           />
           {/* Header Section */}
@@ -36,7 +36,7 @@ const PrivacyPage = () => {
           </motion.header>
         </div>
       </div>
-      <LegalScreen />
+      <PrivacyScreen />
       <Footer />
     </div>
   );

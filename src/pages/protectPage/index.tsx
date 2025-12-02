@@ -5,6 +5,7 @@ import BookingProtection from "./BookingProtection";
 import BookingTool from "./BookingTool";
 import HeroSection from "./HeroSection";
 import pageTitle from "../../assets/navBGG.png";
+import pageTitleMobile from "../../assets/mobileBGG.png";
 import { motion } from "framer-motion";
 const ProtectPage = () => {
   return (
@@ -14,7 +15,12 @@ const ProtectPage = () => {
           <Navbar />
           <img
             src={pageTitle}
-            className="absolute top-0 left-0 w-full opacity-12 h-full lg:object-cover"
+            className="absolute hidden lg:block top-0 left-0 w-full opacity-12 h-full lg:object-cover "
+            alt="bg"
+          />
+          <img
+            src={pageTitleMobile}
+            className="absolute block lg:hidden top-0 left-0 w-full opacity-90 h-full object-cover "
             alt="bg"
           />
           <motion.header className="relative py-8 z-20 overflow-hidden ">

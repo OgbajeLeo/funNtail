@@ -1,22 +1,20 @@
-import { motion, type Variants } from "framer-motion";
+import { motion, } from "framer-motion";
 import heroImage from "../../assets/heroDogBg.png";
-import ArrowRight from "../../components/iconComponent/ArrowRight";
-import TrustPilot from "../../components/iconComponent/TrustPilot";
 
 const HeroSection = () => {
-  const buttonVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-    tap: { scale: 0.95 },
-  };
+  // const buttonVariants: Variants = {
+  //   hidden: { opacity: 0, scale: 0.8 },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: { duration: 0.5, ease: "easeOut" },
+  //   },
+  //   hover: {
+  //     scale: 1.05,
+  //     transition: { duration: 0.2 },
+  //   },
+  //   tap: { scale: 0.95 },
+  // };
 
   return (
     <motion.div

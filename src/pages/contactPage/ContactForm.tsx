@@ -31,7 +31,6 @@ const ContactSection: React.FC = () => {
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // KEEP ONLY 4 MAIN QUESTIONS FOR EACH TAB
   const faqs: FAQ[] =
     activeTab === "owners"
       ? [
@@ -161,7 +160,7 @@ const ContactSection: React.FC = () => {
             <div className="absolute inset-0">
               <img
                 src={pageTitle}
-                className="absolute top-0 left-0 w-full opacity-12 h-full"
+                className="absolute top-0 left-0 w-full opacity-30 h-full"
                 alt="bg"
               />
             </div>

@@ -3,8 +3,8 @@ import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
 import AboutContent from "./AboutContent";
+import Team from "./Team";
 import ServicesSection from "../landingPage/Services";
-import TestimonialSection from "../landingPage/Testimonials";
 const AboutPage = () => {
   return (
     <div>
@@ -30,7 +30,7 @@ const AboutPage = () => {
       </div>
       <AboutContent />
       <ServicesSection />
-      <TestimonialSection />
+      <Team />
       <Footer />
     </div>
   );

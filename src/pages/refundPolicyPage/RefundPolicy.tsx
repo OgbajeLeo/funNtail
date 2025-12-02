@@ -249,7 +249,8 @@ const RefundPolicyScreen: React.FC = () => {
           <p className="text-gray_text2 leading-relaxed">
             In some cases a refund or chargeback may be processed{" "}
             <strong>after</strong> a payout has already been sent to the Sitter.
-            To keep the marketplace fair and sustainable, Sitters agree that:
+            To keep the FunNTail platform fair and sustainable, Sitters agree
+            that:
           </p>
 
           <ul className="list-disc pl-6 text-gray_text2 space-y-2">
@@ -513,8 +514,7 @@ const RefundPolicyScreen: React.FC = () => {
         <div className="space-y-4">
           <p className="text-gray_text2 leading-relaxed">
             FunNTail may update this Refund &amp; Cancellation Policy from time
-            to time to reflect changes in our services, legal obligations, or
-            marketplace practices.
+            to time to reflect changes in our services or legal obligations.
           </p>
 
           <ul className="list-disc pl-6 text-gray_text2 space-y-2">

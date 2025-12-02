@@ -32,12 +32,11 @@ const AgreementsScreen: React.FC = () => {
           </p>
 
           <p className="text-gray_text2 leading-relaxed">
-            FunNTail is a neutral online marketplace that connects Sitters and
-            Pet Owners. You acknowledge that you are engaged as an independent
-            contractor, not an employee, worker, agent, or partner of FunNTail.
-            You are solely responsible for the services you provide and for
-            complying with any legal, tax, or licensing obligations that apply
-            to you.
+            FunNTail is a platform that connects Sitters and Pet Owners. You
+            acknowledge that you are engaged as an independent contractor, not
+            an employee, worker, agent, or partner of FunNTail. You are solely
+            responsible for the services you provide and for complying with any
+            legal, tax, or licensing obligations that apply to you.
           </p>
         </div>
       ),
@@ -209,9 +208,10 @@ const AgreementsScreen: React.FC = () => {
           </p>
 
           <p className="text-gray_text2 leading-relaxed">
-            FunNTail provides a marketplace and tools to help you find, review,
+            FunNTail provides tools within the app that help you find, review,
             and book independent Sitters. FunNTail does not directly provide pet
-            care and is not responsible for the acts or omissions of Sitters.
+            care services and is not responsible for the acts or omissions of
+            Sitters.
           </p>
         </div>
       ),
@@ -489,7 +489,7 @@ const AgreementsScreen: React.FC = () => {
               <p className="text-gray_text2 leading-relaxed">
                 Please read these sections carefully. They set out the
                 expectations, responsibilities, and standards of conduct for
-                both Sitters and Pet Owners using the FunNTail marketplace.
+                both Sitters and Pet Owners using the FunNTail app.
               </p>
             </motion.div>
 

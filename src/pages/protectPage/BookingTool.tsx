@@ -44,7 +44,7 @@ const BookingTool = () => {
           {/* Subtitle */}
           <p className="text-gray_text2 text-base md:text-lg lg:text-xl leading-relaxed max-w-[900px] mx-auto mb-12 md:mb-16 lg:mb-20">
             With live updates, reliable sitters, and round-the-clock support,
-            FunNTail gives you confidence from the moment you book.”
+            FunNTail gives you confidence from the moment you book.
           </p>
 
           {/* Icons Grid */}

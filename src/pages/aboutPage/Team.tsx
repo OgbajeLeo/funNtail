@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import efe from "../../assets/efe.jpg";
-// import tens from "../../assets/tens.png";
+import tens from "../../assets/teni.jpg";
 import ogbaje from "../../assets/leo.jpg";
 import chizoba from "../../assets/cheezy.jpg";
 import bg from "../../assets/navBGG.png";
@@ -19,7 +19,8 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Tens",
-    title: "Project Manager",
+      title: "Project Manager",
+    image: tens,
   },
   {
     name: "Ogbaje Leo Arome",
@@ -44,21 +45,13 @@ const TeamCard = ({ member, index }: { member: TeamMember; index: number }) => {
     >
       {/* Image Container */}
       <div className="relative w-full overflow-hidden border border-white rounded-xl">
-        {member.image ? (
+        
           <img
             src={member.image}
             alt={member.name}
             className="min-w-[320px] lg:max-w-[320px] w-full h-[392px] object-cover"
           />
-        ) : (
-          <div className="min-w-[320px] lg:max-w-[320px] w-full h-[392px] bg-black/20 flex items-center justify-center">
-            {member.name === "Tens" ? (
-              <span className="text-white/30 text-xs">No Image</span>
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black" />
-            )}
-          </div>
-        )}
+        
         {/* Info Overlay  */}
         <div className="absolute bottom-0 left-0 right-0 px-3 pb-3">
           <div className="relative bg-[#1ABC9C80] px-4 py-3 lg:px-5 lg:py-4 overflow-hidden rounded-lg">
@@ -68,7 +61,7 @@ const TeamCard = ({ member, index }: { member: TeamMember; index: number }) => {
               className="absolute opacity-20 bg-transparent top-0 left-0 w-full h-full object-cover"
             />
             <div className="relative z-10">
-              <h3 className="text-gray_text3 font-semibold text-base lg:text-lg mb-0.5 lg:mb-1">
+              <h3 className="text-gray_text3 font-bold text-base lg:text-lg mb-0.5 lg:mb-1">
                 {member.name}
               </h3>
               <p className="text-gray_text3 text-xs sm:text-sm  opacity-95">

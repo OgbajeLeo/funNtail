@@ -2,9 +2,10 @@ import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
-import AboutContent from "./AboutContent";
+// import AboutContent from "./AboutContent";
 import Team from "./Team";
 import ServicesSection from "../landingPage/Services";
+import OurStory from "./OurStory";
 const AboutPage = () => {
   return (
     <div>
@@ -28,7 +29,8 @@ const AboutPage = () => {
           </motion.header>
         </div>
       </div>
-      <AboutContent />
+      <OurStory />
+      {/* <AboutContent /> */}
       <ServicesSection />
       <Team />
       <Footer />

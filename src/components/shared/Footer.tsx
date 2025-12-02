@@ -9,31 +9,67 @@ import LinkedinIcon from "../iconComponent/LinkedinIcon";
 import YoutubeIcon from "../iconComponent/YoutubeIcon";
 import { Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "../cookies/CookieProvider";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const router = useNavigate();
+  const { openPreferences } = useCookies();
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && isChecked) {
-      setIsSubscribed(true);
-      setTimeout(() => {
-        setIsSubscribed(false);
+
+    if (!email || !isChecked) return;
+
+    setIsSubscribed(false);
+
+    try {
+      const res = await fetch("https://api.funntail.co.uk/api/v1/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSubscribed(true);
         setEmail("");
         setIsChecked(false);
-      }, 3000);
+      }
+    } catch (err) {
+      console.error("Newsletter error:", err);
     }
   };
 
   const socialLinks = [
-    { icon: <YoutubeIcon />, href: "#", name: "YouTube" },
-    { icon: <FacebookIcon />, href: "#", name: "Facebook" },
-    { icon: <XIcon />, href: "#", name: "Twitter" },
-    { icon: <InstagramIcon />, href: "#", name: "Instagram" },
-    { icon: <LinkedinIcon />, href: "#", name: "LinkedIn" },
+    {
+      icon: <YoutubeIcon />,
+      href: "https://www.youtube.com/@FunNTail",
+      name: "FunNTail YouTube",
+    },
+    {
+      icon: <FacebookIcon />,
+      href: "https://www.facebook.com/FunNTail",
+      name: "FunNTail Facebook",
+    },
+    {
+      icon: <XIcon />,
+      href: "https://x.com/FunNTail",
+      name: "FunNTail X",
+    },
+    {
+      icon: <InstagramIcon />,
+      href: "https://www.instagram.com/funntail?igsh=OGNwaTZpMWozd2hr&utm_source=qr",
+      name: "FunNTail Instagram",
+    },
+    {
+      icon: <LinkedinIcon />,
+      href: "https://www.linkedin.com/company/efexng/about/",
+      name: "FunNTail LinkedIn",
+    },
   ];
 
   return (
@@ -167,12 +203,13 @@ const Footer: React.FC = () => {
                 className="text-base font-semibold text-white leading-tight"
                 whileHover={{ color: "#10B981" }}
               >
-                All the pet care tips you need - straight to your inbox
+                Get all the pet-care tips you need delivered straight to your
+                inbox.
               </motion.h3>
 
               <motion.p className="text-gray-300 text-sm leading-relaxed">
-                Receive the latest adorable pet photos, care tips, training
-                advice, product recommendations and more.
+                Enjoy adorable pet photos, expert advice, training tips, product
+                picks, and more.
               </motion.p>
 
               {/* Email Form */}
@@ -274,7 +311,7 @@ const Footer: React.FC = () => {
                   { text: "Terms of Service", path: "/terms" },
                   { text: "Privacy Policy", path: "/privacy" },
                   { text: "Refund Policy", path: "/refund" },
-                  { text: "Manage Cookies", path: "/managecookies" },
+                  { text: "Cookies Policy", path: "/managecookies" },
                 ].map((link) => (
                   <motion.button
                     key={link.text}
@@ -286,6 +323,12 @@ const Footer: React.FC = () => {
                 ))}
               </div>
             </div>
+            <motion.button
+              onClick={openPreferences}
+              className="text-[#E2E8F0] hover:text-white text-sm transition-colors"
+            >
+              Manage Cookies
+            </motion.button>
 
             {/* Social Links and App Store Buttons */}
             <div className="flex items-center space-x-6">

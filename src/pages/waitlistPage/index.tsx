@@ -67,10 +67,30 @@ const WaitList = () => {
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you! We'll notify you at ${email}`);
-    setEmail("");
+
+    try {
+      const response = await fetch(
+        "https://api.funntail.co.uk/api/v1/waitlist",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        alert("🎉 You're on the waitlist!");
+        setEmail("");
+      } else {
+        alert(data.message || "Failed to join waitlist.");
+      }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    }
   };
 
   const handleButtonClick = (platform: string) => {

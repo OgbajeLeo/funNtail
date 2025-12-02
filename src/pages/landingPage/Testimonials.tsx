@@ -1,7 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import avatar from "../../assets/avatar.png"
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import avatar from "../../assets/avatar.png";
+
+export const StarIcon: React.FC<{ fill: string; size?: number }> = ({
+  fill,
+  size = 24,
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M12.695 3.36862C12.3199 2.46681 11.0424 2.46681 10.6673 3.36862L8.5287 8.51045L2.97767 8.95547C2.00409 9.03352 1.60931 10.2485 2.35108 10.8839L6.58038 14.5068L5.28826 19.9236C5.06164 20.8737 6.09517 21.6246 6.92869 21.1155L11.6812 18.2127L16.4336 21.1155C17.2671 21.6246 18.3007 20.8737 18.074 19.9236L16.7819 14.5068L21.0112 10.8839C21.753 10.2485 21.3582 9.03352 20.3846 8.95547L14.8336 8.51045L12.695 3.36862Z"
+        fill={fill}
+      />
+    </svg>
+  );
+};
 
 interface Testimonial {
   id: number;
@@ -60,11 +82,11 @@ const TestimonialSection: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-//   const cardsPerView = {
-//     mobile: 1,
-//     tablet: 2,
-//     desktop: 3,
-//   };
+  //   const cardsPerView = {
+  //     mobile: 1,
+  //     tablet: 2,
+  //     desktop: 3,
+  //   };
 
   useEffect(() => {
     if (!isAutoPlay) return;
@@ -76,7 +98,6 @@ const TestimonialSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [isAutoPlay]);
 
-    
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
@@ -115,13 +136,7 @@ const TestimonialSection: React.FC = () => {
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        size={16}
-        className={`${
-          i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
-        }`}
-      />
+      <StarIcon key={i} size={24} fill={i < rating ? "#FBBF24" : "#E5E4E4"} />
     ));
   };
 
@@ -134,8 +149,8 @@ const TestimonialSection: React.FC = () => {
     return result;
   };
 
-//   const totalSlides = testimonials.length;
-//   const currentSlide =Math.floor(currentStartIndex / 3) % Math.ceil(totalSlides / 3);
+  //   const totalSlides = testimonials.length;
+  //   const currentSlide =Math.floor(currentStartIndex / 3) % Math.ceil(totalSlides / 3);
 
   return (
     <section className="py-12 lg:py-16 bg-[#1ABC9C1A] relative overflow-hidden">

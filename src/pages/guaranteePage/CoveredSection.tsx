@@ -25,22 +25,22 @@ const CoveredSection = () => {
             <img
               src={protectionImage}
               alt="Four dogs on leashes in a park setting"
-              className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
+              className="w-full h-[500px] md:h-[400px] lg:h-[500px] object-cover"
             />
           </div>
         </motion.div>
 
         {/* Bottom Section - Two Columns */}
-        <div className=" p-6 md:p-8 lg:p-12">
+        <div className=" p-3 md:p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Column - What is covered */}
             <motion.div>
-              <h2 className="text-2xl md:text-[28px] lg:text-[28px] font-bold text-primary_color mb-6">
+              <h2 className="text-[20px] md:text-[28px] lg:text-[28px] font-bold text-primary_color mb-6">
                 What the Guarantee Covers
               </h2>
               <ul className="space-y-4">
                 {coveredItems.map((item, index) => (
-                  <li key={index} className="flex items-start pl-4">
+                  <li key={index} className="flex items-start pl-1 lg:pl-4">
                     <span className="text-gray_text3 mr-3 mt-1 flex-shrink-0">
                       •
                     </span>
@@ -54,12 +54,12 @@ const CoveredSection = () => {
 
             {/* Right Column - What is not covered */}
             <motion.div>
-              <h2 className="text-2xl md:text-[28px] lg:text-[28px] font-bold text-primary_color mb-6">
+              <h2 className="text-[20px] md:text-[28px] lg:text-[28px] font-bold text-primary_color mb-6">
                 What the Guarantee Doesn’t Cover{" "}
               </h2>
               <ul className="space-y-4">
                 {notCoveredItems.map((item, index) => (
-                  <li key={index} className="flex items-start pl-4">
+                  <li key={index} className="flex items-start pl-1 lg:pl-4">
                     <span className="text-gray_text3 mr-3 mt-1 flex-shrink-0">
                       •
                     </span>

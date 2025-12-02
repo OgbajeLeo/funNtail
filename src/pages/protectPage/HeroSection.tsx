@@ -10,15 +10,15 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
         <div className="flex max-w-[1172px] mx-auto w-full py-1 lg:py-20 gap-[62px] justify-between flex-col-reverse lg:flex-row items-center">
           {/* Left Side - Text Content */}
-          <motion.div className="space-y-6 lg:space-y-8 w-full">
+          <motion.div className="space-y-6 lg:space-y-8 ">
             {/* Headline */}
-            <h1 className="text-[28px] lg:text-[48px] max-w-[650px] w-full font-bold leading-tight text-gray_text3">
+            <h1 className="text-[28px] lg:text-[48px] max-w-[650px] w-full font-semibold leading-tight text-gray_text3">
               Each booking gives you everything you need to keep your pet safe,
               supported, and cared for
             </h1>
 
             {/* Body Text */}
-            <p className="text-gray_text2 text-base md:text-lg lg:text-xl leading-relaxed max-w-[600px]">
+            <p className="text-gray_text2 text-base md:text-lg lg:text-lg leading-relaxed max-w-[600px]">
               Every step you take on FunNTail is supported by trusted safety
               features, verified sitter information, and tools designed to keep
               you and your pet protected

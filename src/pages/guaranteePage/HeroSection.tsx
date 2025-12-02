@@ -48,7 +48,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative  overflow-hidden flex items-center">
+    <section className="relative  overflow-hidden flex items-center pt-12 lg:pt-0">
       <div className="hidden lg:block absolute inset-0 max-w-4xl w-full mx-auto pointer-events-none">
         <div className="absolute bottom-10 left-40 md:bottom-20 md:left-20">
           <PawPrint size={80} className="" />
@@ -97,7 +97,7 @@ const HeroSection = () => {
               <img
                 src={sittingcat}
                 alt="Cat"
-                className="w-full min-h-[449px] max-w-[450px] h-auto rounded-2xl object-cover"
+                className="w-full min-h-[447px] max-w-[447px] h-auto -ml-10 rounded-2xl object-cover"
               />
             </div>
           </motion.div>
@@ -129,7 +129,7 @@ const HeroSection = () => {
                 <img
                   src={sittingdog}
                   alt="Dog"
-                  className="w-full min-h-[449px] max-w-[450px] h-auto rounded-2xl object-cover"
+                  className="w-full min-h-[447px] -mr-10 max-w-[447px] h-auto rounded-2xl object-cover"
                 />
               </div>
             </div>
@@ -142,14 +142,14 @@ const HeroSection = () => {
             <img
               src={sittingcat}
               alt="Cat"
-              className="w-full h-auto min-h-[212px] rounded-2xl object-cover relative z-10"
+              className="w-full h-auto -ml-14 min-h-[212px] rounded-2xl object-cover relative z-10"
             />
           </motion.div>
           <motion.div className="relative">
             <img
               src={sittingdog}
               alt="Dog"
-              className="w-full h-auto min-h-[212px] rounded-2xl object-cover relative z-10"
+              className="w-full h-auto ml-10 min-h-[212px] rounded-2xl object-cover relative z-10"
             />
           </motion.div>
         </div>

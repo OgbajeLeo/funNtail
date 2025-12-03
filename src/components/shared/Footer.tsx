@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
     },
     {
       icon: <LinkedinIcon />,
-      href: "https://www.linkedin.com/company/efexng/about/",
+      href: "https://www.linkedin.com/company/funntail/",
       name: "FunNTail LinkedIn",
     },
   ];

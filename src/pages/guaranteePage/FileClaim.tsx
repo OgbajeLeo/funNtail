@@ -65,7 +65,7 @@ const FileClaim = () => {
                 {/* Step Number Circle */}
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 lg:w-[60px] lg:h-[60px] rounded-full bg-[#1ABC9C33] flex items-center justify-center">
-                    <span className="text-primary_color text-xl lg:text-[37px] font-bold">
+                    <span className="text-primary_color text-xl lg:text-[37px] font-semibold">
                       {step.number}
                     </span>
                   </div>

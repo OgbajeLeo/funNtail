@@ -40,7 +40,7 @@ const YourClaim = () => {
         {/* Content Cards - Two Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           {/* Left Card - Vet Care Claims */}
-          <motion.div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow">
+          <motion.div className="bg-[#f5f5f5] rounded-2xl md:rounded-3xl border border-gray-200 p-6 md:p-8 lg:p-10 shadow-xl">
             <h3 className="text-lg lg:text-[22px] font-semibold text-gray_text3 mb-6">
               For vet care-related claims, include the following:
             </h3>
@@ -70,7 +70,7 @@ const YourClaim = () => {
           </motion.div>
 
           {/* Right Card - Property Damage Claims */}
-          <motion.div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow">
+          <motion.div className="bg-[#f5f5f5] rounded-2xl md:rounded-3xl border border-gray-200 p-6 md:p-8 lg:p-10 shadow-xl">
             <h3 className="text-lg lg:text-[22px] font-semibold text-gray_text3 mb-6">
               What to include for a property damage claim{" "}
             </h3>

@@ -18,7 +18,7 @@ const BookingProtection = () => {
         </motion.div>
 
         {/* Main Content Card */}
-        <motion.div className="bg-white p-10 rounded-2xl md:rounded-[40px] shadow overflow-hidden">
+        <motion.div className="bg-[#f5f5f5] p-10 rounded-2xl md:rounded-[40px] shadow overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Left Side - Image */}
             <div className="w-full h-[300px] rounded-2xl md:rounded-[40px] md:h-[400px]">

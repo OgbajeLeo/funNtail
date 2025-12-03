@@ -297,7 +297,7 @@ const WaitList = () => {
                 >
                   <Check className="w-5 h-5 text-primary_color flex-shrink-0" />
                   <span className="text-primary_color text-sm">
-                    You’re subscribed! Thank you.
+                    You’ve Joined The Waitlist! Thank you.
                   </span>
                 </motion.div>
               )}

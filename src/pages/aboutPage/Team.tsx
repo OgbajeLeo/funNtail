@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import efe from "../../assets/efe.jpg";
-import tens from "../../assets/teni.jpg";
+import tens from "../../assets/tens.jpg";
 import ogbaje from "../../assets/leo.jpg";
 import chizoba from "../../assets/cheezy.jpg";
 import bg from "../../assets/navBGG.png";
@@ -41,7 +41,7 @@ const TeamCard = ({ member, index }: { member: TeamMember; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col bg-transparent rounded-xl overflow-hidden min-w-[320px] w-full mx-auto"
+      className="flex flex-col bg-transparent rounded-xl overflow-hidden min-w-[320px] lg:max-w-[320px] w-full mx-auto"
     >
       {/* Image Container */}
       <div className="relative w-full overflow-hidden border border-white rounded-xl">

@@ -8,7 +8,7 @@ const ProtectPage = () => {
   return (
     <div>
       <div>
-        <div className="relative pt-[40px] lg:pt-[140px] w-full mx-auto">
+        <div className="relative pt-[90px] lg:pt-[60px] w-full mx-auto">
           <Navbar />
         </div>
       </div>

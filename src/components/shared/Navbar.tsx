@@ -84,8 +84,8 @@ const Navbar: React.FC = () => {
 
   const handleDownloadClick = () => {
     // setIsDownloadDropdownOpen(!isDownloadDropdownOpen);
-    router("/waitlist");
     setIsDownloadDropdownOpen(false);
+    router("/waitlist");
   };
 
   const handleDropdownOptionClick = (e: React.MouseEvent) => {

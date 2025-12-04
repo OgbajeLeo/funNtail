@@ -14,12 +14,12 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Efe Apoki Prayer",
-    title: "CEO & Software Engineer",
+    title: "CTO",
     image: efe,
   },
   {
     name: "Tens",
-      title: "Project Manager",
+      title: "CSO",
     image: tens,
   },
   {

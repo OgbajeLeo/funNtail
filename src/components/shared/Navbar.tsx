@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.svg";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import HarmburgerIcon from "../iconComponent/HarmburgerIcon";
 
 interface NavItem {
@@ -15,6 +16,7 @@ const Navbar: React.FC = () => {
   const [isDownloadDropdownOpen, setIsDownloadDropdownOpen] =
     useState<boolean>(false);
   const router = useNavigate();
+  const location = useLocation();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileDropdownRef = useRef<HTMLDivElement>(null);
@@ -51,6 +53,14 @@ const Navbar: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const isActiveRoute = (href: string): boolean => {
+    if (href.startsWith("#")) {
+      // For hash links, check if we're on the home page
+      return location.pathname === "/";
+    }
+    return location.pathname === href;
+  };
 
   const isActiveRoute = (href: string): boolean => {
     if (href.startsWith("#")) {
@@ -165,6 +175,35 @@ const Navbar: React.FC = () => {
                       </motion.button>
                     );
                   })}
+                  {navItems.map((item) => {
+                    const isActive = isActiveRoute(item.href);
+                    return (
+                      <motion.button
+                        key={item.href}
+                        onClick={() => handleNavClick(item.href)}
+                        className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                          isActive
+                            ? "text-primary_color"
+                            : isScrolled
+                            ? "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
+                            : "text-gray_text3 hover:text-primary_color hover:bg-white/10"
+                        }`}
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.label}
+                        {isActive && (
+                          <motion.div
+                            className="absolute bottom-0 left-2 right-0 h-[2px] bg-primary_color"
+                            layoutId="activeIndicator"
+                            initial={{ opacity: 0, scaleX: 0 }}
+                            animate={{ opacity: 1, scaleX: 1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        )}
+                      </motion.button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -175,6 +214,7 @@ const Navbar: React.FC = () => {
                 onClick={handleDownloadClick}
                 className="inline-flex justify-center items-center w-[179px] h-[46px] bg-primary_color text-white font-medium rounded-2xl shadow-lg hover:shadow-xl "
               >
+                <span>Join the Waitlist</span>
                 <span>Join the Waitlist</span>
               </motion.button>
 
@@ -247,6 +287,31 @@ const Navbar: React.FC = () => {
                 </motion.button>
               );
             })}
+            {navItems.map((item) => {
+              const isActive = isActiveRoute(item.href);
+              return (
+                <motion.button
+                  key={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className={`relative block w-full px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                    isActive
+                      ? "text-primary_color"
+                      : "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      className="absolute bottom-0 left-4 right-4 h-[2px] bg-primary_color"
+                      layoutId="mobileActiveIndicator"
+                      initial={{ opacity: 0, scaleX: 0 }}
+                      animate={{ opacity: 1, scaleX: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </motion.button>
+              );
+            })}
 
             {/* Mobile Download Button with Dropdown */}
             <div className="w-full mt-4" ref={mobileDropdownRef}>
@@ -254,6 +319,7 @@ const Navbar: React.FC = () => {
                 onClick={handleDownloadClick}
                 className="w-full px-6 py-3 bg-primary_color text-white font-medium rounded-2xl transition-all duration-300"
               >
+                <span>Join the Waitlist</span>
                 <span>Join the Waitlist</span>
               </motion.button>
 

@@ -1,24 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import avatar from "../../assets/ProfileImage.svg";
 import phone from "../../assets/right4.png";
+import { StarIcon } from "./Testimonials";
+
 
 const ProfileShowcaseSection: React.FC = () => {
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <motion.div key={index}>
-        <Star
-          size={20}
-          className={`${
-            index < Math.floor(rating)
-              ? "text-yellow-400 fill-yellow-400"
-              : "text-gray-300"
-          } transition-colors`}
-        />
-      </motion.div>
-    ));
-  };
+   const renderStars = (rating: number) => {
+     return Array.from({ length: 5 }, (_, i) => (
+       <StarIcon key={i} size={24} fill={i < rating ? "#FBBF24" : "#E5E4E4"} />
+     ));
+   };
 
   return (
     <section className="py-20 bg-[#90919C0F] overflow-hidden relative">
@@ -46,7 +38,7 @@ const ProfileShowcaseSection: React.FC = () => {
                 </motion.p>
 
                 <motion.div className="flex items-center space-x-2">
-                  <div className="flex space-x-1">{renderStars(4.8)}</div>
+                  <div className="flex space-x-1">{renderStars(4)}</div>
                   <motion.span
                     className="text-gray_text3 font-semibold text-lg ml-2"
                     whileHover={{ color: "#059669" }}

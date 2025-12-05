@@ -81,7 +81,7 @@ const FAQ = () => {
               >
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full lg:px-6 px-4 py-4 text-left flex items-center justify-between focus:outline-none rounded-md"
+                  className="w-full lg:px-6 px-4 py-4 lg:py-8 text-left flex items-center justify-between focus:outline-none rounded-md"
                 >
                   <div className="flex items-center space-x-4 flex-1">
                     <span className="text-primary_color font-semibold text-lg min-w-[2rem]">

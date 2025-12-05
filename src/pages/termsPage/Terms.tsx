@@ -67,10 +67,9 @@ const TermsScreen: React.FC = () => {
       content: (
         <div className="space-y-6">
           <p className="text-gray_text2 leading-relaxed">
-            FunNTail is a neutral online marketplace that connects Pet Owners
-            with Sitters, Dog Walkers, and Groomers (“Service Providers”). We
-            provide the tools to help users find, communicate, and book pet care
-            services.
+            FunNTail is a platform that connects Pet Owners with Sitters, Dog
+            Walkers, and Groomers (“Service Providers”). We provide tools to
+            help users find, communicate, and book pet care services.
           </p>
 
           <p className="text-gray_text2 leading-relaxed">
@@ -768,21 +767,23 @@ const TermsScreen: React.FC = () => {
             {/* Introduction */}
             <motion.div className=" lg:p-8 mb-8">
               <p className="text-gray_text2 leading-relaxed mb-4">
-                Thanks for using our products and services ("Services"). The
-                Services are provided by Queryfier LLC. ("Queryfier"), located
-                at 1942 Broadway Street, Suite 314c Boulder, Colorado 80302,
-                USA.
+                These Terms & Conditions (“Terms”) govern your access to and use
+                of the FunNTail mobile application, website, and related
+                services. By creating an account or using FunNTail, you agree to
+                be bound by these Terms.
               </p>
+
               <p className="text-gray_text2 leading-relaxed mb-4">
-                By using our Services, you are agreeing to these terms. Please
-                read them carefully.
+                Please read these Terms carefully, as they outline your rights,
+                responsibilities, and the rules that apply when using our
+                platform. If you do not agree with any part of these Terms, you
+                must not use FunNTail.
               </p>
+
               <p className="text-gray_text2 leading-relaxed">
-                Our Services are very diverse, so sometimes additional terms or
-                product requirements (including age requirements) may apply.
-                Additional terms will be available with the relevant Services,
-                and those additional terms become part of your agreement with us
-                if you use those Services.
+                FunNTail may update these Terms from time to time. Continued use
+                of the platform after changes are posted constitutes acceptance
+                of the updated version.
               </p>
             </motion.div>
 

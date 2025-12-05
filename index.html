@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Primary Meta Tags -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WVJQDLPQ");
+    </script>
+
     <title>Pet Sitting, Grooming & Walking You Can Trust</title>
+
     <meta
       name="title"
       content="FunNTail – Pet Sitting, Grooming & Walking You Can Trust"
@@ -21,9 +33,13 @@
       content="Find local vetted pet sitters, groomers, and dog walkers. Safe payments, protected bookings, and 24/7 support make pet care simple, stress-free, and reliable."
     />
 
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://funntail.co.uk/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://funntail.co.uk/" />
+    <meta property="og:site_name" content="FunNTail" />
     <meta
       property="og:title"
       content="FunNTail – Pet Sitting, Grooming & Walking You Can Trust"
@@ -34,34 +50,44 @@
     />
     <meta
       property="og:image"
-      content="src/assets/link_preview.png"
+      content="https://funntail.co.uk/assets/link_preview.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
-    <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://funntail.co.uk/" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://funntail.co.uk/" />
     <meta
-      property="twitter:title"
+      name="twitter:title"
       content="FunNTail – Pet Sitting, Grooming & Walking You Can Trust"
     />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Find local vetted pet sitters, groomers, and dog walkers. Safe payments, protected bookings, and 24/7 support make pet care simple, stress-free, and reliable."
     />
     <meta
-      property="twitter:image"
-      content="src/assets/link_preview.png"
+      name="twitter:image"
+      content="https://funntail.co.uk/assets/link_preview.png"
     />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WVJQDLPQ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+
     <div class="montserrat" id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

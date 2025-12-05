@@ -2,10 +2,10 @@ import Navbar from "../../components/shared/Navbar";
 import Footer from "../../components/shared/Footer";
 import { motion } from "framer-motion";
 import pageTitle from "../../assets/navBGG.png";
-import PrivacyScreen from "./Policy";
+import AgreementScreen from "./Agreement";
 import pageTitleMobile from "../../assets/mobileBGG.png";
 
-const PrivacyPage = () => {
+const AgreementPage = () => {
   return (
     <div>
       <div className="bg-[#032921] w-full ">
@@ -27,19 +27,19 @@ const PrivacyPage = () => {
             {/* Header content */}
             <div className="relative z-10 max-w-4xl mx-auto text-center pt-10 lg:p-0">
               <motion.h1 className="text-[24px] md:text-3xl lg:text-[40px] font-bold text-primary_color mb-4">
-                Privacy Policy
+                User Agreement
               </motion.h1>
               <div className="text-lg lg:text-xl text-center text-white">
-                Last updated Date: 20th July 2025
+                Last updated Date: 2nd December 2025
               </div>
             </div>
           </motion.header>
         </div>
       </div>
-      <PrivacyScreen />
+      <AgreementScreen />
       <Footer />
     </div>
   );
 };
 
-export default PrivacyPage;
+export default AgreementPage;

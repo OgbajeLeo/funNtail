@@ -1,4 +1,4 @@
-import { motion, } from "framer-motion";
+import { motion } from "framer-motion";
 import heroImage from "../../assets/heroDogBg.png";
 
 const HeroSection = () => {
@@ -42,7 +42,7 @@ const HeroSection = () => {
               Join thousands of pet owners using FunNTail to find reliable
               sitters. We love em just as much!
             </motion.p>
-            {/* add buttons and trustpilot back later */}.
+            {/* add buttons and trustpilot back later */}
             {/* <motion.button
               className="mt-6 bg-primary_color mx-auto lg:mx-0 text-white font-semibold w-[174px] h-[48px] rounded-xl flex justify-center items-center gap-3  transition-shadow"
               variants={buttonVariants}
@@ -98,33 +98,16 @@ const HeroSection = () => {
       </div>
 
       {/* Background decorative elements */}
-      {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-10 w-2 h-2 bg-emerald-300 rounded-full"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.5, 1, 0.5]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          className="absolute top-1/4 left-10 w-[150px] h-[250px] bg-primary_color/10 rounded-full blur-xl"   
+         
         ></motion.div>
         <motion.div
-          className="absolute bottom-1/3 right-20 w-3 h-3 bg-pink-300 rounded-full"
-          animate={{
-            scale: [1, 2, 1],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
+          className="absolute bottom-1/3 right-20 w-[200px] h-[200px] bg-primary_color/30 rounded-full blur-xl"
+                
         ></motion.div>
-      </div> */}
+      </div>
     </motion.div>
   );
 };

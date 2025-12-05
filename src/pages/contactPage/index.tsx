@@ -18,7 +18,7 @@ const ContactPage = () => {
           />
           <img
             src={pageTitleMobile}
-            className="absolute block lg:hidden top-0 left-0 w-full opacity-90 h-full object-cover "
+            className="absolute block lg:hidden top-0 left-0 w-full opacity-12 h-full object-cover "
             alt="bg"
           />
           {/* Header Section */}

@@ -11,7 +11,7 @@ const GuaranteePage = () => {
   return (
     <div>
       <div>
-        <div className="relative pt-[40px] lg:pt-[140px] w-full">
+        <div className="relative pt-[90px] lg:pt-[60px] w-full">
           <Navbar />
         </div>
       </div>

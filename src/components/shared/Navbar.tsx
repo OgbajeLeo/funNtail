@@ -84,8 +84,8 @@ const Navbar: React.FC = () => {
 
   const handleDownloadClick = () => {
     // setIsDownloadDropdownOpen(!isDownloadDropdownOpen);
-    router("/waitlist");
     setIsDownloadDropdownOpen(false);
+    router("/waitlist");
   };
 
   const handleDropdownOptionClick = (e: React.MouseEvent) => {
@@ -136,6 +136,35 @@ const Navbar: React.FC = () => {
               {/* Desktop Navigation */}
               <div className="hidden md:block">
                 <div className="ml-[38px] flex items-baseline space-x-1">
+                  {navItems.map((item) => {
+                    const isActive = isActiveRoute(item.href);
+                    return (
+                      <motion.button
+                        key={item.href}
+                        onClick={() => handleNavClick(item.href)}
+                        className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                          isActive
+                            ? "text-primary_color"
+                            : isScrolled
+                            ? "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
+                            : "text-gray_text3 hover:text-primary_color hover:bg-white/10"
+                        }`}
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.label}
+                        {isActive && (
+                          <motion.div
+                            className="absolute bottom-0 left-2 right-0 h-[2px] bg-primary_color"
+                            layoutId="activeIndicator"
+                            initial={{ opacity: 0, scaleX: 0 }}
+                            animate={{ opacity: 1, scaleX: 1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        )}
+                      </motion.button>
+                    );
+                  })}
                   {navItems.map((item) => {
                     const isActive = isActiveRoute(item.href);
                     return (
@@ -222,6 +251,31 @@ const Navbar: React.FC = () => {
           }}
         >
           <div className="px-4 pt-2 pb-6 space-y-1 border-t border-gray-100">
+            {navItems.map((item) => {
+              const isActive = isActiveRoute(item.href);
+              return (
+                <motion.button
+                  key={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className={`relative block w-full px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                    isActive
+                      ? "text-primary_color"
+                      : "text-gray_text3 hover:text-primary_color hover:bg-gray-50"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      className="absolute bottom-0 left-4 right-4 h-[2px] bg-primary_color"
+                      layoutId="mobileActiveIndicator"
+                      initial={{ opacity: 0, scaleX: 0 }}
+                      animate={{ opacity: 1, scaleX: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </motion.button>
+              );
+            })}
             {navItems.map((item) => {
               const isActive = isActiveRoute(item.href);
               return (

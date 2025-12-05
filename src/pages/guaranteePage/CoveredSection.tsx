@@ -17,7 +17,7 @@ const CoveredSection = () => {
   ];
 
   return (
-    <section className="py-8 md:py-12 lg:py-16 bg-[#F5F5F5]">
+    <section className="py-10 md:py-12 lg:py-16 bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Image Section */}
         <motion.div className="mb-6 md:mb-8 lg:mb-10">

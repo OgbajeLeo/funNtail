@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.svg";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom";
 import HarmburgerIcon from "../iconComponent/HarmburgerIcon";
 
 interface NavItem {
@@ -16,7 +15,6 @@ const Navbar: React.FC = () => {
   const [isDownloadDropdownOpen, setIsDownloadDropdownOpen] =
     useState<boolean>(false);
   const router = useNavigate();
-  const location = useLocation();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileDropdownRef = useRef<HTMLDivElement>(null);
@@ -53,14 +51,6 @@ const Navbar: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  const isActiveRoute = (href: string): boolean => {
-    if (href.startsWith("#")) {
-      // For hash links, check if we're on the home page
-      return location.pathname === "/";
-    }
-    return location.pathname === href;
-  };
 
   const isActiveRoute = (href: string): boolean => {
     if (href.startsWith("#")) {
@@ -215,7 +205,6 @@ const Navbar: React.FC = () => {
                 className="inline-flex justify-center items-center w-[179px] h-[46px] bg-primary_color text-white font-medium rounded-2xl shadow-lg hover:shadow-xl "
               >
                 <span>Join the Waitlist</span>
-                <span>Join the Waitlist</span>
               </motion.button>
 
               {/* Dropdown Menu */}
@@ -319,7 +308,6 @@ const Navbar: React.FC = () => {
                 onClick={handleDownloadClick}
                 className="w-full px-6 py-3 bg-primary_color text-white font-medium rounded-2xl transition-all duration-300"
               >
-                <span>Join the Waitlist</span>
                 <span>Join the Waitlist</span>
               </motion.button>
 

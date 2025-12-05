@@ -38,7 +38,7 @@ const AboutPage = () => {
       <OurStory />
       {/* <AboutContent /> */}
       <ServicesSection />
-      <Team />
+      {/* <Team /> */}
       <Footer />
     </div>
   );
